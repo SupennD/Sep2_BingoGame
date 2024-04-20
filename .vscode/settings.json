@@ -1,0 +1,14 @@
+{
+  "java.project.referencedLibraries": [
+    "*/libs/*.jar"
+  ],
+  "java.project.sourcePaths": [
+    "client/src/",
+    "client/resources/",
+    "client/test/",
+    "server/src/",
+    "server/resources/",
+    "server/test/"
+  ],
+  "java.format.settings.url": "codeStyleConfigEclipse.xml"
+}

@@ -8,9 +8,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69055953-a1eb-40be-bf41-6f36698da6d9" name="Changes" comment="bootstrap client/server application">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="69055953-a1eb-40be-bf41-6f36698da6d9" name="Changes" comment="add VsCode editor support" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,6 +21,7 @@
         <option value="FxmlFile" />
         <option value="Class" />
         <option value="Interface" />
+        <option value="module-info" />
       </list>
     </option>
   </component>
@@ -81,7 +80,7 @@
       <recent name="view" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Client">
+  <component name="RunManager" selected="Application.Server">
     <list>
       <item itemvalue="Application.Server" />
       <item itemvalue="Application.Client" />
@@ -120,7 +119,47 @@
       <option name="project" value="LOCAL" />
       <updated>1713625444248</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="bootstrap client/server application">
+      <option name="closed" value="true" />
+      <created>1713626364675</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1713626364675</updated>
+    </task>
+    <task id="LOCAL-00005" summary="bootstrap client/server application">
+      <option name="closed" value="true" />
+      <created>1713633561604</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1713633561604</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add VsCode editor support">
+      <option name="closed" value="true" />
+      <created>1713633722689</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1713633722689</updated>
+    </task>
+    <task id="LOCAL-00007" summary="add VsCode editor support">
+      <option name="closed" value="true" />
+      <created>1713633878959</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1713633878959</updated>
+    </task>
+    <task id="LOCAL-00008" summary="add VsCode editor support">
+      <option name="closed" value="true" />
+      <created>1713634360741</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1713634360741</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -138,7 +177,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="create project" />
     <MESSAGE value="bootstrap client/server application" />
-    <option name="LAST_COMMIT_MESSAGE" value="bootstrap client/server application" />
+    <MESSAGE value="add VsCode editor support" />
+    <option name="LAST_COMMIT_MESSAGE" value="add VsCode editor support" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
