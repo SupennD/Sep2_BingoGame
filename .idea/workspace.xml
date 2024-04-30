@@ -8,7 +8,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69055953-a1eb-40be-bf41-6f36698da6d9" name="Changes" comment="add VsCode editor support" />
+    <list default="true" id="69055953-a1eb-40be-bf41-6f36698da6d9" name="Changes" comment="add VsCode editor support">
+      <change afterPath="$PROJECT_DIR$/client/src/utils/DateTime.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/utils/log/Log.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/utils/log/LogLine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/utils/DateTime.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/utils/log/Log.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/utils/log/LogLine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/Main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,13 +31,18 @@
       <list>
         <option value="Enum" />
         <option value="FxmlFile" />
-        <option value="Class" />
         <option value="Interface" />
         <option value="module-info" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -51,9 +68,9 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "alex/add-utils",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "/Users/lucia/IdeaProjects/SEP2/client/src",
+    "last_opened_file_path": "/Users/lucia/IdeaProjects/VIA-SEP2/client/src",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.30393487",
@@ -77,10 +94,11 @@
       <recent name="$PROJECT_DIR$/client/libs" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="utils" />
       <recent name="view" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Server">
+  <component name="RunManager" selected="Application.Client">
     <list>
       <item itemvalue="Application.Server" />
       <item itemvalue="Application.Client" />
