@@ -68,4 +68,14 @@ public class Server implements RemoteModel, LocalListener<Object, Object>
   {
     return false; // TODO: implement
   }
+
+  @Override public void register(String userName, String password) throws RemoteException
+  {
+    // TODO: implement
+  }
+
+  @Override public void login(String userName, String password) throws RemoteException
+  {
+    // TODO: implement
+  }
 }

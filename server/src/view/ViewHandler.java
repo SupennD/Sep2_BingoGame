@@ -4,6 +4,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.Region;
 import javafx.stage.Stage;
+import utils.log.Log;
 import viewmodel.ViewModelFactory;
 
 import java.util.HashMap;
@@ -21,6 +22,7 @@ public class ViewHandler
 {
   private final ViewModelFactory viewModelFactory;
   private final Map<View, ViewController> viewControllers;
+  private final Log log = Log.getInstance();
   private Stage primaryStage;
   private Scene currentScene;
 
@@ -95,8 +97,7 @@ public class ViewHandler
       }
       catch (Exception e)
       {
-        // TODO: replace with log instance
-        System.out.println("Could not load view: " + e.getMessage());
+        log.warn("Could not load view: " + e.getMessage());
       }
     }
 

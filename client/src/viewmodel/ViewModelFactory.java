@@ -7,7 +7,8 @@ import view.View;
  * A simple parameterized factory that creates concrete view models based on a {@link View} parameter.
  *
  * @author Alexandru Tofan
- * @version 1.0.0 - April 2024
+ * @author Lucia Andronic
+ * @version 1.0.1 - April 2024
  */
 public class ViewModelFactory
 {
@@ -42,8 +43,7 @@ public class ViewModelFactory
   {
     return switch (view)
     {
-      // TODO: add cases for needed view types and remove the EXAMPLE
-      case EXAMPLE -> new ExampleViewModel(model, viewModelState);
+      case LOGIN -> new LoginViewModel(model, viewModelState);
     };
   }
 }

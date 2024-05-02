@@ -4,13 +4,13 @@ package view;
  * An enum to hold the names of all the views used in the application and providing a way to get their FXML file path.
  *
  * @author Alexandru Tofan
- * @version 1.0.0 - April 2024
+ * @author Octavian
+ * @version 1.0.1 - April 2024
  */
 public enum View
 {
-  // TODO: add values for views to be used and remove the EXAMPLE view
-  // TODO: corresponds to the FXML file name in resources/view/ExampleView.fxml
-  EXAMPLE("ExampleView");
+  LOGIN("LoginView");
+
   private final String name;
 
   /**

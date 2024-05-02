@@ -19,7 +19,6 @@ import java.util.Map;
 public class Main extends Application
 {
   private final String HOST = "localhost";
-  private final String PORT = "1099"; // Using a String to match the command line parameters type
 
   /**
    * The main entry point.
@@ -39,13 +38,12 @@ public class Main extends Application
    */
   @Override public void start(Stage primaryStage) throws Exception
   {
-    // Allow connecting to different servers using command line parameters
-    // Ex... --host=127.0.0.1 --port=3444
+    // Allow connecting to different server hosts using command line parameters
+    // Ex... --host=127.0.0.1
     Map<String, String> namedParameters = getParameters().getNamed();
     String host = namedParameters.getOrDefault("host", HOST);
-    int port = Integer.parseInt(namedParameters.getOrDefault("port", PORT));
 
-    Client client = new Client(host, port);
+    Client client = new Client(host);
 
     // Stop the server when the javafx application is closed
     primaryStage.setOnCloseRequest(windowEvent -> {

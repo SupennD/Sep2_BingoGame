@@ -9,12 +9,21 @@ import viewmodel.ViewModel;
  * TODO: fix generic type
  *
  * @param <VM> the concrete {@link ViewModel} to be used in this view controller
+ * @author Alexandru Tofan
+ * @version 1.0.0 - April 2024
  */
 public class ViewController<VM extends ViewModel>
 {
   protected VM viewModel;
   protected ViewHandler viewHandler;
   private Region root;
+
+  /**
+   * Constructor invoked by FXML on load, should be empty.
+   */
+  public ViewController()
+  {
+  }
 
   /**
    * A method to be used for initialization after the controller was loaded. Can be overriden by subclasses to add other

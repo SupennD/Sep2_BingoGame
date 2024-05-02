@@ -8,18 +8,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69055953-a1eb-40be-bf41-6f36698da6d9" name="Changes" comment="add VsCode editor support">
-      <change afterPath="$PROJECT_DIR$/client/src/utils/DateTime.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/utils/log/Log.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/utils/log/LogLine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/utils/DateTime.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/utils/log/Log.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/utils/log/LogLine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="69055953-a1eb-40be-bf41-6f36698da6d9" name="Changes" comment="remove User, to be added in a later commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/mediator/RemoteModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/mediator/RemoteModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/model/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/viewmodel/ViewModelFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/viewmodel/ViewModelFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/mediator/RemoteModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/mediator/RemoteModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/mediator/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/mediator/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/view/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/view/ViewController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,16 +33,27 @@
       </list>
     </option>
   </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="PawsitiveCoder &lt;167691828+pawsitivecoder@users.noreply.github.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="lucia/database" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
@@ -68,13 +75,16 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "alex/add-utils",
+    "code.cleanup.on.save": "true",
+    "git-widget-placeholder": "Supen/client-rmi",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "/Users/lucia/IdeaProjects/VIA-SEP2/client/src",
+    "last_opened_file_path": "/Users/lucia/IdeaProjects/VIA-SEP2/client/resources/view",
+    "node.js.selected.package.tslint": "(autodetect)",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.30393487",
-    "settings.editor.selected.configurable": "preferences.sourceCode.Java"
+    "rearrange.code.on.save": "true",
+    "settings.editor.selected.configurable": "actions.on.save"
   },
   "keyToStringList": {
     "ChangesTree.GroupingKeys": [
@@ -89,12 +99,16 @@
       <recent name="model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/resources/view" />
       <recent name="$PROJECT_DIR$/client/src" />
       <recent name="$PROJECT_DIR$/client/resources" />
       <recent name="$PROJECT_DIR$/client/libs" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="utils" />
+      <recent name="view" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="view" />
     </key>
   </component>
@@ -177,7 +191,71 @@
       <option name="project" value="LOCAL" />
       <updated>1713634360741</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="add login view fxml and controller">
+      <option name="closed" value="true" />
+      <created>1714648267812</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1714648267812</updated>
+    </task>
+    <task id="LOCAL-00010" summary="fix view controller/model">
+      <option name="closed" value="true" />
+      <created>1714650033411</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1714650033411</updated>
+    </task>
+    <task id="LOCAL-00011" summary="fix RemoteModel interface">
+      <option name="closed" value="true" />
+      <created>1714650986819</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1714650986819</updated>
+    </task>
+    <task id="LOCAL-00012" summary="update view title">
+      <option name="closed" value="true" />
+      <created>1714655210263</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1714655210263</updated>
+    </task>
+    <task id="LOCAL-00013" summary="fix client implementation">
+      <option name="closed" value="true" />
+      <created>1714655239949</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1714655239949</updated>
+    </task>
+    <task id="LOCAL-00014" summary="replace println with log">
+      <option name="closed" value="true" />
+      <created>1714655286670</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1714655286670</updated>
+    </task>
+    <task id="LOCAL-00015" summary="replace println with log">
+      <option name="closed" value="true" />
+      <created>1714655352735</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1714655352735</updated>
+    </task>
+    <task id="LOCAL-00016" summary="remove User, to be added in a later commit">
+      <option name="closed" value="true" />
+      <created>1714657265316</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1714657265316</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -196,7 +274,17 @@
     <MESSAGE value="create project" />
     <MESSAGE value="bootstrap client/server application" />
     <MESSAGE value="add VsCode editor support" />
-    <option name="LAST_COMMIT_MESSAGE" value="add VsCode editor support" />
+    <MESSAGE value="add login view fxml and controller" />
+    <MESSAGE value="fix view controller/model" />
+    <MESSAGE value="fix RemoteModel interface" />
+    <MESSAGE value="update view title" />
+    <MESSAGE value="fix client implementation" />
+    <MESSAGE value="replace println with log" />
+    <MESSAGE value="remove User, to be added in a later commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove User, to be added in a later commit" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
