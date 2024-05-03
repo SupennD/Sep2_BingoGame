@@ -4,26 +4,64 @@ import model.Model;
 import utility.observer.event.ObserverEvent;
 import utility.observer.listener.GeneralListener;
 import utility.observer.listener.LocalListener;
+import utility.observer.subject.PropertyChangeHandler;
+import utils.log.Log;
 
 import java.net.MalformedURLException;
+import java.rmi.Naming;
+import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.server.ExportException;
+import java.rmi.server.UnicastRemoteObject;
 
 /**
  * A class that will be exposed as a remote object using RMI, to be used by clients for communicating with the server.
  *
  * @author Alexandru Tofan
- * @version 1.0.0 - April 2024
+ * @version 1.1.0 - April 2024
  */
 public class Server implements RemoteModel, LocalListener<Object, Object>
 {
+  private final Model model;
+  private final int PORT = 1099;
+  private final Log log = Log.getInstance();
+  private final PropertyChangeHandler<Object, Object> propertyChangeHandler;
+
   /**
    * The default constructor responsible for initializing variables and starting the RMI server.
    *
    * @param model the main application model
    */
-  public Server(Model model)
+  public Server(Model model) throws MalformedURLException, RemoteException
   {
-    // TODO: implement
+    this.model = model;
+    this.model.addListener(this);
+    this.propertyChangeHandler = new PropertyChangeHandler<>(this, true);
+
+    start(); // Start the RMI server
+  }
+
+  private void start() throws RemoteException, MalformedURLException
+  {
+    try
+    {
+      // Start the registry
+      LocateRegistry.createRegistry(PORT);
+      log.info("Registry started...");
+    }
+    catch (ExportException e)
+    {
+      log.warn("Registry already started, " + e.getMessage());
+    }
+
+    // Export the object and start waiting for calls
+    UnicastRemoteObject.exportObject(this, 0);
+    log.info("Server started...");
+
+    // Add the stub to the registry
+    Naming.rebind("RemoteModel", this);
+    log.info("Stub added to the registry...");
   }
 
   /**
@@ -34,7 +72,30 @@ public class Server implements RemoteModel, LocalListener<Object, Object>
    */
   public void stop() throws RemoteException, MalformedURLException
   {
-    // TODO: implement
+    try
+    {
+      // Un-export the object and stop accepting calls
+      UnicastRemoteObject.unexportObject(this, false);
+      log.info("Server stopped...");
+
+      // Remove the stub from the registry
+      Naming.unbind("RemoteModel");
+      log.info("Stub removed from the registry...");
+    }
+    catch (NotBoundException e)
+    {
+      log.warn("The name is not in the registry, " + e.getMessage());
+    }
+  }
+
+  @Override public void register(String userName, String password) throws RemoteException
+  {
+    model.register(userName, password);
+  }
+
+  @Override public void login(String userName, String password) throws RemoteException
+  {
+    model.login(userName, password);
   }
 
   /**
@@ -44,7 +105,7 @@ public class Server implements RemoteModel, LocalListener<Object, Object>
    */
   @Override public void propertyChange(ObserverEvent<Object, Object> observerEvent)
   {
-    // TODO: implement
+    propertyChangeHandler.firePropertyChange(observerEvent);
   }
 
   /**
@@ -55,7 +116,7 @@ public class Server implements RemoteModel, LocalListener<Object, Object>
   @Override public boolean addListener(GeneralListener<Object, Object> listener, String... propertyNames)
       throws RemoteException
   {
-    return false; // TODO: implement
+    return propertyChangeHandler.addListener(listener, propertyNames);
   }
 
   /**
@@ -66,16 +127,6 @@ public class Server implements RemoteModel, LocalListener<Object, Object>
   @Override public boolean removeListener(GeneralListener<Object, Object> listener, String... propertyNames)
       throws RemoteException
   {
-    return false; // TODO: implement
-  }
-
-  @Override public void register(String userName, String password) throws RemoteException
-  {
-    // TODO: implement
-  }
-
-  @Override public void login(String userName, String password) throws RemoteException
-  {
-    // TODO: implement
+    return propertyChangeHandler.removeListener(listener, propertyNames);
   }
 }
