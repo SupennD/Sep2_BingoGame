@@ -3,7 +3,7 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.52">
     <root id="1">
       <DateStyle>mdy</DateStyle>
-      <IntrospectionStateNumber>13690</IntrospectionStateNumber>
+      <IntrospectionStateNumber>13710</IntrospectionStateNumber>
       <ServerVersion>15.1</ServerVersion>
       <StartupTime>1713094306</StartupTime>
       <TimeZones>true ACDT
@@ -796,7 +796,7 @@ false Zulu
     <database id="3" parent="1" name="postgres">
       <Comment>default administrative connection database</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>13690</IntrospectionStateNumber>
+      <IntrospectionStateNumber>13710</IntrospectionStateNumber>
       <ObjectId>5</ObjectId>
       <OwnerName>postgres</OwnerName>
     </database>
@@ -4200,8 +4200,8 @@ false Zulu
       <ValidatorSchema>pg_catalog</ValidatorSchema>
     </language>
     <schema id="261" parent="3" name="bingo">
-      <IntrospectionStateNumber>13690</IntrospectionStateNumber>
-      <LastIntrospectionLocalTimestamp>2024-05-02.16:22:15</LastIntrospectionLocalTimestamp>
+      <IntrospectionStateNumber>13710</IntrospectionStateNumber>
+      <LastIntrospectionLocalTimestamp>2024-05-03.16:32:16</LastIntrospectionLocalTimestamp>
       <ObjectId>17428</ObjectId>
       <StateNumber>13630</StateNumber>
       <OwnerName>postgres</OwnerName>
@@ -4265,8 +4265,8 @@ false Zulu
     <schema id="273" parent="3" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>13690</IntrospectionStateNumber>
-      <LastIntrospectionLocalTimestamp>2024-05-02.16:22:15</LastIntrospectionLocalTimestamp>
+      <IntrospectionStateNumber>13710</IntrospectionStateNumber>
+      <LastIntrospectionLocalTimestamp>2024-05-03.16:32:16</LastIntrospectionLocalTimestamp>
       <ObjectId>2200</ObjectId>
       <StateNumber>517</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
@@ -4276,97 +4276,86 @@ false Zulu
       <StateNumber>869</StateNumber>
       <OwnerName>postgres</OwnerName>
     </schema>
-    <sequence id="275" parent="261" name="user_id_seq">
-      <DasType>integer|0s</DasType>
-      <ObjectId>17482</ObjectId>
-      <SequenceIdentity>1</SequenceIdentity>
-      <StartValue>1</StartValue>
-      <StateNumber>13687</StateNumber>
-      <OwnerName>postgres</OwnerName>
-    </sequence>
-    <table id="276" parent="261" name="player">
-      <ObjectId>17489</ObjectId>
-      <StateNumber>13689</StateNumber>
+    <table id="275" parent="261" name="player">
+      <ObjectId>17509</ObjectId>
+      <StateNumber>13709</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <table id="277" parent="261" name="user">
-      <ObjectId>17483</ObjectId>
-      <StateNumber>13689</StateNumber>
+    <table id="276" parent="261" name="user">
+      <ObjectId>17499</ObjectId>
+      <StateNumber>13709</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
-    <column id="278" parent="276" name="userId">
-      <DasType>integer|0s</DasType>
+    <column id="277" parent="275" name="userName">
+      <DasType>varchar(50)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>13689</StateNumber>
-      <TypeId>23</TypeId>
+      <StateNumber>13709</StateNumber>
+      <TypeId>1043</TypeId>
     </column>
-    <foreign-key id="279" parent="276" name="player_userId_fkey">
-      <ColNames>userId</ColNames>
+    <foreign-key id="278" parent="275" name="player_userName_fkey">
+      <ColNames>userName</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>17494</ObjectId>
+      <ObjectId>17514</ObjectId>
       <OnDelete>cascade</OnDelete>
       <OnUpdate>cascade</OnUpdate>
-      <StateNumber>13689</StateNumber>
+      <StateNumber>13709</StateNumber>
       <RefKeyColPositions>1</RefKeyColPositions>
-      <RefTableId>17483</RefTableId>
+      <RefTableId>17499</RefTableId>
     </foreign-key>
-    <index id="280" parent="276" name="player_pkey">
-      <ColNames>userId</ColNames>
+    <index id="279" parent="275" name="player_pkey">
+      <ColNames>userName</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>17492</ObjectId>
+      <ObjectId>17512</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>13689</StateNumber>
+      <StateNumber>13709</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
+      <CollationNames>default</CollationNames>
+      <CollationIds>100</CollationIds>
+      <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <key id="281" parent="276" name="player_pkey">
+    <key id="280" parent="275" name="player_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>17493</ObjectId>
+      <ObjectId>17513</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>13689</StateNumber>
-      <UnderlyingIndexId>17492</UnderlyingIndexId>
+      <StateNumber>13709</StateNumber>
+      <UnderlyingIndexId>17512</UnderlyingIndexId>
     </key>
-    <column id="282" parent="277" name="id">
-      <DasType>integer|0s</DasType>
-      <DefaultExpression>nextval(&apos;bingo.user_id_seq&apos;::regclass)</DefaultExpression>
+    <column id="281" parent="276" name="userName">
+      <DasType>varchar(50)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>13687</StateNumber>
-      <SequenceId>17482</SequenceId>
-      <TypeId>23</TypeId>
+      <StateNumber>13705</StateNumber>
+      <TypeId>1043</TypeId>
     </column>
-    <column id="283" parent="277" name="userName">
+    <column id="282" parent="276" name="password">
       <DasType>varchar(50)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>13687</StateNumber>
+      <StateNumber>13705</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="284" parent="277" name="password">
-      <DasType>varchar(50)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
-      <StateNumber>13687</StateNumber>
-      <TypeId>1043</TypeId>
-    </column>
-    <index id="285" parent="277" name="user_pkey">
-      <ColNames>id</ColNames>
+    <index id="283" parent="276" name="user_pkey">
+      <ColNames>userName</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>17487</ObjectId>
+      <ObjectId>17502</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>13687</StateNumber>
+      <StateNumber>13705</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
+      <CollationNames>default</CollationNames>
+      <CollationIds>100</CollationIds>
+      <CollationParentNames>pg_catalog</CollationParentNames>
     </index>
-    <key id="286" parent="277" name="user_pkey">
+    <key id="284" parent="276" name="user_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>17488</ObjectId>
+      <ObjectId>17503</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>13687</StateNumber>
-      <UnderlyingIndexId>17487</UnderlyingIndexId>
+      <StateNumber>13705</StateNumber>
+      <UnderlyingIndexId>17502</UnderlyingIndexId>
     </key>
   </database-model>
 </dataSource>

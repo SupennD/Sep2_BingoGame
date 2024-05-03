@@ -7,9 +7,11 @@ import utility.observer.subject.LocalSubject;
  * also acts as a subject in the observer pattern as part of the MVVM application.
  *
  * @author Alexandru Tofan
- * @version 1.0.0 - April 2024
+ * @author Lucia Andronic
+ * @version 1.1.0 - April 2024
  */
 public interface Model extends LocalSubject<Object, Object>
 {
-  // TODO: implement
+  void register(String userName, String password) throws IllegalArgumentException, IllegalStateException;
+  void login(String userName, String password) throws IllegalArgumentException, IllegalStateException;
 }

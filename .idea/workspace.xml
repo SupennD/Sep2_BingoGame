@@ -8,27 +8,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69055953-a1eb-40be-bf41-6f36698da6d9" name="Changes" comment="add db datasource and driver">
-      <change afterPath="$PROJECT_DIR$/server/resources/sql/bootstrap.sql" afterDir="false" />
+    <list default="true" id="69055953-a1eb-40be-bf41-6f36698da6d9" name="Changes" comment="add printouts to LoginViewController for visibility">
+      <change afterPath="$PROJECT_DIR$/server/src/persistence/Database.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/persistence/DatabaseCache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/persistence/Persistence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7160dce1-45e9-456a-8763-30a1db96a5e0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7160dce1-45e9-456a-8763-30a1db96a5e0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7160dce1-45e9-456a-8763-30a1db96a5e0/storage_v2/_src_/database/postgres.edMnLQ/schema/bingo.L2SWBQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7160dce1-45e9-456a-8763-30a1db96a5e0/storage_v2/_src_/database/postgres.edMnLQ/schema/bingo.L2SWBQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7160dce1-45e9-456a-8763-30a1db96a5e0/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7160dce1-45e9-456a-8763-30a1db96a5e0/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/mediator/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/mediator/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/model/ModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/model/ModelManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/model/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/model/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DatabaseLocalColorSettings">
-    <colors>
-      <entry key="7160dce1-45e9-456a-8763-30a1db96a5e0" value="Violet" />
-    </colors>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
         <option value="FxmlFile" />
-        <option value="Interface" />
         <option value="module-info" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -44,11 +48,26 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="lucia/database" />
+        <entry key="$PROJECT_DIR$" value="alex/rmi-server-login" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SAVE_CHANGES_POLICY" value="STASH" />
   </component>
+  <component name="GitHubPullRequestState"><![CDATA[{
+  "prStates": [
+    {
+      "id": {
+        "id": "PR_kwDOLw6xhc5uXsYy",
+        "number": 5
+      },
+      "lastSeen": 1714670043686
+    }
+  ]
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "editorReviewEnabled": false
+}]]></component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -72,36 +91,34 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.Client.executor": "Run",
+    "Application.Huinea.executor": "Run",
+    "Application.Server.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "code.cleanup.on.save": "true",
-    "git-widget-placeholder": "lucia/database-login-register",
+    "git-widget-placeholder": "#5 on lucia/model-classes",
     "jdk.selected.JAVA_MODULE": "17",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/lucia/IdeaProjects/VIA-SEP2",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
+    "last_opened_file_path": "/Users/lucia/IdeaProjects/VIA-SEP2/client/resources/view",
+    "node.js.detected.package.stylelint": "true",
+    "node.js.selected.package.stylelint": "",
     "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.30393487",
     "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+    "settings.editor.selected.configurable": "preferences.keymap"
   },
   "keyToStringList": {
     "ChangesTree.GroupingKeys": [
       "directory"
-    ],
-    "DatabaseDriversLRU": [
-      "postgresql"
     ]
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="persistence" />
       <recent name="viewmodel" />
       <recent name="mediator" />
       <recent name="model" />
@@ -121,18 +138,26 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.Client">
+    <configuration name="Huinea" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Huinea" />
+      <module name="server" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.Server" />
       <item itemvalue="Application.Client" />
+      <item itemvalue="Application.Huinea" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Huinea" />
+      </list>
+    </recent_temporary>
   </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
-        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
-      </set>
-    </attachedChunks>
+  <component name="ShelveChangesManager">
+    <option name="remove_strategy" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -142,7 +167,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1713467376173</updated>
-      <workItem from="1714665865824" duration="980000" />
     </task>
     <task id="LOCAL-00001" summary="create project">
       <option name="closed" value="true" />
@@ -272,34 +296,67 @@
       <option name="project" value="LOCAL" />
       <updated>1714657265316</updated>
     </task>
-    <task id="LOCAL-00017" summary="add db datasource and driver">
+    <task id="LOCAL-00017" summary="update javaDoc">
       <option name="closed" value="true" />
-      <created>1714666754646</created>
+      <created>1714657914915</created>
       <option name="number" value="00017" />
       <option name="presentableId" value="LOCAL-00017" />
       <option name="project" value="LOCAL" />
-      <updated>1714666754646</updated>
+      <updated>1714657914915</updated>
     </task>
-    <task id="LOCAL-00018" summary="add db datasource and driver">
+    <task id="LOCAL-00018" summary="add register and login to the Model interface">
       <option name="closed" value="true" />
-      <created>1714666826724</created>
+      <created>1714659542509</created>
       <option name="number" value="00018" />
       <option name="presentableId" value="LOCAL-00018" />
       <option name="project" value="LOCAL" />
-      <updated>1714666826724</updated>
+      <updated>1714659542509</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="implement Model with placeholders for methods">
+      <option name="closed" value="true" />
+      <created>1714660219959</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1714660219959</updated>
+    </task>
+    <task id="LOCAL-00020" summary="update DDL">
+      <option name="closed" value="true" />
+      <created>1714762431918</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1714762431918</updated>
+    </task>
+    <task id="LOCAL-00021" summary="add printouts to LoginViewController for visibility">
+      <option name="closed" value="true" />
+      <created>1714762472183</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1714762472183</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="lucia/model-classes" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -307,6 +364,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <MESSAGE value="create project" />
     <MESSAGE value="bootstrap client/server application" />
     <MESSAGE value="add VsCode editor support" />
@@ -317,8 +375,12 @@
     <MESSAGE value="fix client implementation" />
     <MESSAGE value="replace println with log" />
     <MESSAGE value="remove User, to be added in a later commit" />
-    <MESSAGE value="add db datasource and driver" />
-    <option name="LAST_COMMIT_MESSAGE" value="add db datasource and driver" />
+    <MESSAGE value="update javaDoc" />
+    <MESSAGE value="add register and login to the Model interface" />
+    <MESSAGE value="implement Model with placeholders for methods" />
+    <MESSAGE value="update DDL" />
+    <MESSAGE value="add printouts to LoginViewController for visibility" />
+    <option name="LAST_COMMIT_MESSAGE" value="add printouts to LoginViewController for visibility" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

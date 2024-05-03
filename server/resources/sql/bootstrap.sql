@@ -5,17 +5,16 @@ SET SCHEMA 'bingo';
 DROP TABLE IF EXISTS "user";
 CREATE TABLE "user"
 (
-    "id"       SERIAL      NOT NULL,
     "userName" VARCHAR(50) NOT NULL,
     "password" VARCHAR(50) NOT NULL,
-    PRIMARY KEY (id)
+    PRIMARY KEY ("userName")
 );
 
 DROP TABLE IF EXISTS player;
 CREATE TABLE player
 (
-    "userId" INTEGER NOT NULL,
+    "userName" VARCHAR(50) NOT NULL,
     -- TODO: add other needed columns
-    PRIMARY KEY ("userId"),
-    FOREIGN KEY ("userId") REFERENCES "user" ("id") ON UPDATE CASCADE ON DELETE CASCADE
+    PRIMARY KEY ("userName"),
+    FOREIGN KEY ("userName") REFERENCES "user" ("userName") ON UPDATE CASCADE ON DELETE CASCADE
 );

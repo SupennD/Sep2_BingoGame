@@ -35,6 +35,7 @@ public class LoginViewController extends ViewController<LoginViewModel>
     if (success)
     {
       // TODO: implement logic to open next view
+      System.out.println("Register successful");
     }
   }
 
@@ -45,6 +46,7 @@ public class LoginViewController extends ViewController<LoginViewModel>
     if (success)
     {
       // TODO: implement logic to open next view
+      System.out.println("Login successful");
     }
   }
 }
