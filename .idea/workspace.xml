@@ -8,18 +8,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69055953-a1eb-40be-bf41-6f36698da6d9" name="Changes" comment="add printouts to LoginViewController for visibility">
-      <change afterPath="$PROJECT_DIR$/server/src/persistence/Database.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/persistence/DatabaseCache.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/persistence/Persistence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7160dce1-45e9-456a-8763-30a1db96a5e0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7160dce1-45e9-456a-8763-30a1db96a5e0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7160dce1-45e9-456a-8763-30a1db96a5e0/storage_v2/_src_/database/postgres.edMnLQ/schema/bingo.L2SWBQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7160dce1-45e9-456a-8763-30a1db96a5e0/storage_v2/_src_/database/postgres.edMnLQ/schema/bingo.L2SWBQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7160dce1-45e9-456a-8763-30a1db96a5e0/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7160dce1-45e9-456a-8763-30a1db96a5e0/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
+    <list default="true" id="69055953-a1eb-40be-bf41-6f36698da6d9" name="Changes" comment="implement server rmi for login">
+      <change afterPath="$PROJECT_DIR$/client/libs/apiguardian-api-1.1.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/libs/junit-jupiter-5.8.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/libs/junit-jupiter-api-5.8.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/libs/junit-jupiter-engine-5.8.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/libs/junit-jupiter-params-5.8.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/libs/junit-platform-commons-1.8.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/libs/junit-platform-engine-1.8.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/libs/opentest4j-1.2.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/resources/view/MainView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/resources/view/RoomView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/resources/view/mainScreen.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/model/Room.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/view/MainViewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/view/RoomViewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/viewmodel/MainViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/viewmodel/RoomViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/test/UserRegisterLoginTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/model/Room.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/model/RoomList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/client/client.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/mediator/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/mediator/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/mediator/RemoteModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/mediator/RemoteModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/model/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/model/ModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/model/ModelManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/view/LoginViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/view/LoginViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/view/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/viewmodel/ViewModelFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/viewmodel/ViewModelFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/mediator/RemoteModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/mediator/RemoteModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/mediator/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/mediator/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/model/Model.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/model/ModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/model/ModelManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/model/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/model/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,10 +51,11 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="FxmlFile" />
         <option value="module-info" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="FxmlFile" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -48,26 +70,27 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="alex/rmi-server-login" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="SAVE_CHANGES_POLICY" value="STASH" />
+    <option name="SHOW_RECENT_BRANCHES" value="false" />
   </component>
-  <component name="GitHubPullRequestState"><![CDATA[{
-  "prStates": [
+  <component name="GitHubPullRequestState">{
+  &quot;prStates&quot;: [
     {
-      "id": {
-        "id": "PR_kwDOLw6xhc5uXsYy",
-        "number": 5
+      &quot;id&quot;: {
+        &quot;id&quot;: &quot;PR_kwDOLw6xhc5uXsYy&quot;,
+        &quot;number&quot;: 5
       },
-      "lastSeen": 1714670043686
+      &quot;lastSeen&quot;: 1714670043686
     }
   ]
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "editorReviewEnabled": false
-}]]></component>
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;editorReviewEnabled&quot;: false
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -94,21 +117,36 @@
     "Application.Client.executor": "Run",
     "Application.Huinea.executor": "Run",
     "Application.Server.executor": "Run",
+    "Downloaded.Files.Path": "/Users/lucia/IdeaProjects/VIA-SEP2/client/libs",
+    "Downloaded.Files.Path.Enabled": "true",
+    "JUnit.MainTest.executor": "Run",
+    "JUnit.RegisterLoginTest.executor": "Run",
+    "JUnit.UserRegisterLoginTest.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "code.cleanup.on.save": "true",
-    "git-widget-placeholder": "#5 on lucia/model-classes",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "Supen/user-register-login-integration-test",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "/Users/lucia/IdeaProjects/VIA-SEP2/client/resources/view",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/lucia/IdeaProjects/VIA-SEP2/client/resources/css",
+    "node.js.detected.package.eslint": "true",
     "node.js.detected.package.stylelint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.stylelint": "",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.30393487",
     "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "preferences.keymap"
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
     "ChangesTree.GroupingKeys": [
@@ -124,23 +162,34 @@
       <recent name="model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/resources/css" />
       <recent name="$PROJECT_DIR$/client/resources/view" />
       <recent name="$PROJECT_DIR$/client/src" />
       <recent name="$PROJECT_DIR$/client/resources" />
       <recent name="$PROJECT_DIR$/client/libs" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="utils" />
       <recent name="view" />
     </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="" />
+      <recent name="viewmodel" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="model" />
       <recent name="view" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Client">
-    <configuration name="Huinea" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Huinea" />
-      <module name="server" />
+  <component name="RunManager" selected="JUnit.UserRegisterLoginTest">
+    <configuration name="UserRegisterLoginTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="client" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="UserRegisterLoginTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -148,13 +197,21 @@
     <list>
       <item itemvalue="Application.Server" />
       <item itemvalue="Application.Client" />
-      <item itemvalue="Application.Huinea" />
+      <item itemvalue="JUnit.UserRegisterLoginTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Huinea" />
+        <item itemvalue="JUnit.UserRegisterLoginTest" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="ShelveChangesManager">
     <option name="remove_strategy" value="true" />
@@ -167,6 +224,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1713467376173</updated>
+      <workItem from="1714830824491" duration="46591000" />
     </task>
     <task id="LOCAL-00001" summary="create project">
       <option name="closed" value="true" />
@@ -336,8 +394,19 @@
       <option name="project" value="LOCAL" />
       <updated>1714762472183</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="implement server rmi for login">
+      <option name="closed" value="true" />
+      <created>1714766536834</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1714766536834</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -380,7 +449,8 @@
     <MESSAGE value="implement Model with placeholders for methods" />
     <MESSAGE value="update DDL" />
     <MESSAGE value="add printouts to LoginViewController for visibility" />
-    <option name="LAST_COMMIT_MESSAGE" value="add printouts to LoginViewController for visibility" />
+    <MESSAGE value="implement server rmi for login" />
+    <option name="LAST_COMMIT_MESSAGE" value="implement server rmi for login" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
