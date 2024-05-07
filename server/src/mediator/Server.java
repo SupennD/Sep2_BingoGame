@@ -1,6 +1,8 @@
 package mediator;
 
 import model.Model;
+import model.Player;
+import model.Room;
 import utility.observer.event.ObserverEvent;
 import utility.observer.listener.GeneralListener;
 import utility.observer.listener.LocalListener;
@@ -96,6 +98,11 @@ public class Server implements RemoteModel, LocalListener<Object, Object>
   @Override public void login(String userName, String password) throws RemoteException
   {
     model.login(userName, password);
+  }
+
+  @Override public Room joinRoom(Player player) throws RemoteException
+  {
+    return model.joinRoom(player);
   }
 
   /**

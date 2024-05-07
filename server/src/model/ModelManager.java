@@ -19,14 +19,16 @@ public class ModelManager implements Model
 {
   private final PropertyChangeHandler<Object, Object> propertyChangeHandler;
   private final Persistence persistence;
+  private final Game game;
 
   /**
    * Constructor that returns the facade object
    */
-  public ModelManager() throws ClassNotFoundException
+  public ModelManager(Game game) throws ClassNotFoundException
   {
     this.propertyChangeHandler = new PropertyChangeHandler<>(this, true);
     this.persistence = new DatabaseCache();
+    this.game = game;
   }
 
   @Override public synchronized void register(String userName, String password)
@@ -41,6 +43,14 @@ public class ModelManager implements Model
   {
     User user = persistence.getUser(userName, password);
     propertyChangeHandler.firePropertyChange("login", null, user);
+  }
+
+  @Override public Room joinRoom(Player player)
+  {
+    Room room = game.joinRoom(player);
+    propertyChangeHandler.firePropertyChange("joinRoom", null, room);
+
+    return room;
   }
 
   /**

@@ -2,6 +2,8 @@ import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.stage.Stage;
 import mediator.Server;
+import model.BingoGame;
+import model.Game;
 import model.Model;
 import model.ModelManager;
 import view.ViewHandler;
@@ -36,7 +38,8 @@ public class Main extends Application
    */
   @Override public void start(Stage primaryStage) throws Exception
   {
-    Model model = new ModelManager();
+    Game bingoGame = new BingoGame();
+    Model model = new ModelManager(bingoGame);
     ViewModelFactory viewModelFactory = new ViewModelFactory(model);
     ViewHandler viewHandler = new ViewHandler(viewModelFactory);
 
