@@ -90,29 +90,19 @@ public class Server implements RemoteModel, LocalListener<Object, Object>
     }
   }
 
-  @Override public void register(String userName, String password) throws RemoteException
+  @Override public Player register(String userName, String password) throws RemoteException
   {
-    model.register(userName, password);
+    return model.register(userName, password);
   }
 
-  @Override public void login(String userName, String password) throws RemoteException
+  @Override public Player login(String userName, String password) throws RemoteException
   {
-    model.login(userName, password);
+    return model.login(userName, password);
   }
 
   @Override public Room joinRoom(Player player) throws RemoteException
   {
     return model.joinRoom(player);
-  }
-
-  /**
-   * React to changes this listener is subscribed to.
-   *
-   * @see LocalListener
-   */
-  @Override public void propertyChange(ObserverEvent<Object, Object> observerEvent)
-  {
-    propertyChangeHandler.firePropertyChange(observerEvent);
   }
 
   /**
@@ -123,6 +113,7 @@ public class Server implements RemoteModel, LocalListener<Object, Object>
   @Override public boolean addListener(GeneralListener<Object, Object> listener, String... propertyNames)
       throws RemoteException
   {
+    log.debug("Adding listener: " + listener);
     return propertyChangeHandler.addListener(listener, propertyNames);
   }
 
@@ -134,6 +125,19 @@ public class Server implements RemoteModel, LocalListener<Object, Object>
   @Override public boolean removeListener(GeneralListener<Object, Object> listener, String... propertyNames)
       throws RemoteException
   {
+    log.debug("Removing listener: " + listener);
     return propertyChangeHandler.removeListener(listener, propertyNames);
+  }
+
+  /**
+   * React to changes this listener is subscribed to.
+   *
+   * @see LocalListener
+   */
+  @Override public void propertyChange(ObserverEvent<Object, Object> observerEvent)
+  {
+    log.debug("Model event received: " + observerEvent);
+    propertyChangeHandler.firePropertyChange(observerEvent.getPropertyName(), observerEvent.getValue1(),
+        observerEvent.getValue2());
   }
 }

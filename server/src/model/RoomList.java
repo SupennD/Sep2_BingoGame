@@ -2,6 +2,7 @@ package model;
 
 import utils.blocking.BlockingArrayDeque;
 import utils.blocking.BlockingDeque;
+import utils.log.Log;
 
 /**
  * A class that contains an arraylist of rooms and necessary methods
@@ -12,6 +13,7 @@ import utils.blocking.BlockingDeque;
 public class RoomList
 {
   private final BlockingDeque<Room> rooms;
+  private final Log log = Log.getInstance();
 
   public RoomList()
   {
@@ -30,11 +32,15 @@ public class RoomList
   {
     Room room = rooms.peek();
 
-    if (room != null && room.isAvailable())
+    if (room == null || room.isFull())
     {
-      return room;
+      log.info("No available room found. Creating a new one.");
+      room = new Room();
+      rooms.push(room);
     }
 
-    return new Room();
+    log.info("Available room: " + room);
+
+    return room;
   }
 }

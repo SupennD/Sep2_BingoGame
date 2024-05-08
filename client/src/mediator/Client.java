@@ -1,6 +1,8 @@
 package mediator;
 
 import model.Model;
+import model.Player;
+import model.Room;
 import utility.observer.event.ObserverEvent;
 import utility.observer.listener.GeneralListener;
 import utility.observer.listener.RemoteListener;
@@ -69,12 +71,12 @@ public class Client implements Model, RemoteListener<Object, Object>
     log.info("Client server stopped...");
   }
 
-  @Override public void register(String userName, String password)
+  @Override public Player register(String userName, String password)
       throws IllegalArgumentException, IllegalStateException
   {
     try
     {
-      remoteModel.register(userName, password);
+      return remoteModel.register(userName, password);
     }
     catch (RemoteException e)
     {
@@ -82,11 +84,23 @@ public class Client implements Model, RemoteListener<Object, Object>
     }
   }
 
-  @Override public void login(String userName, String password) throws IllegalArgumentException, IllegalStateException
+  @Override public Player login(String userName, String password) throws IllegalArgumentException, IllegalStateException
   {
     try
     {
-      remoteModel.login(userName, password);
+      return remoteModel.login(userName, password);
+    }
+    catch (RemoteException e)
+    {
+      throw new IllegalStateException(e);
+    }
+  }
+
+  @Override public Room joinRoom(Player player)
+  {
+    try
+    {
+      return remoteModel.joinRoom(player);
     }
     catch (RemoteException e)
     {
@@ -101,6 +115,7 @@ public class Client implements Model, RemoteListener<Object, Object>
    */
   @Override public boolean addListener(GeneralListener<Object, Object> listener, String... propertyNames)
   {
+    log.debug("Added listener: " + listener);
     return propertyChangeHandler.addListener(listener, propertyNames);
   }
 
@@ -111,6 +126,7 @@ public class Client implements Model, RemoteListener<Object, Object>
    */
   @Override public boolean removeListener(GeneralListener<Object, Object> listener, String... propertyNames)
   {
+    log.debug("Removed listener: " + listener);
     return propertyChangeHandler.removeListener(listener, propertyNames);
   }
 
@@ -121,6 +137,7 @@ public class Client implements Model, RemoteListener<Object, Object>
    */
   @Override public void propertyChange(ObserverEvent<Object, Object> observerEvent)
   {
-    // TODO: implement
+    log.debug("Remote event received: " + observerEvent);
+    propertyChangeHandler.firePropertyChange(observerEvent);
   }
 }

@@ -19,13 +19,13 @@ public class LoginViewController extends ViewController<LoginViewModel>
   @FXML private TextField userNameField;
   @FXML private PasswordField passwordField;
 
-  public void init(ViewHandler viewHandler, LoginViewModel loginViewModel, Region root)
+  public void init(ViewHandler viewHandler, LoginViewModel viewModel, Region root)
   {
-    super.init(viewHandler, loginViewModel, root);
+    super.init(viewHandler, viewModel, root);
 
-    errorText.textProperty().bind(loginViewModel.errorProperty());
-    userNameField.textProperty().bindBidirectional(loginViewModel.userNameProperty());
-    passwordField.textProperty().bindBidirectional(loginViewModel.passwordProperty());
+    errorText.textProperty().bind(viewModel.errorProperty());
+    userNameField.textProperty().bindBidirectional(viewModel.userNameProperty());
+    passwordField.textProperty().bindBidirectional(viewModel.passwordProperty());
   }
 
   @FXML public void onRegister()
@@ -34,8 +34,7 @@ public class LoginViewController extends ViewController<LoginViewModel>
 
     if (success)
     {
-      // TODO: implement logic to open next view
-      System.out.println("Register successful");
+      viewHandler.openView(View.MAIN);
     }
   }
 
@@ -45,8 +44,7 @@ public class LoginViewController extends ViewController<LoginViewModel>
 
     if (success)
     {
-      // TODO: implement logic to open next view
-      System.out.println("Login successful");
+      viewHandler.openView(View.MAIN);
     }
   }
 }

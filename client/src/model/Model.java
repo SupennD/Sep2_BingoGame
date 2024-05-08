@@ -8,10 +8,12 @@ import utility.observer.subject.LocalSubject;
  *
  * @author Alexandru Tofan
  * @author Supendra Bogati
- * @version 1.1.0 - April 2024
+ * @author Lucia Andronic
+ * @version 1.1.1 - May 2024
  */
 public interface Model extends LocalSubject<Object, Object>
 {
-  void register(String userName, String password) throws IllegalArgumentException, IllegalStateException;
-  void login(String userName, String password) throws IllegalArgumentException, IllegalStateException;
+  Player register(String userName, String password) throws IllegalArgumentException, IllegalStateException;
+  Player login(String userName, String password) throws IllegalArgumentException, IllegalStateException;
+  Room joinRoom(Player player) throws IllegalStateException;
 }

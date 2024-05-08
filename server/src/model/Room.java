@@ -3,6 +3,7 @@ package model;
 import utils.blocking.BlockingArrayDeque;
 import utils.blocking.BlockingDeque;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
@@ -11,7 +12,7 @@ import java.util.ArrayList;
  * @author Supendra Bogati
  * @version 1.0.0 - May 2024
  */
-public class Room
+public class Room implements Serializable
 {
   private static final int CAPACITY = 4;
   private static int nextId = 1;
@@ -34,9 +35,9 @@ public class Room
     return players.toArrayList();
   }
 
-  public boolean isAvailable()
+  public boolean isFull()
   {
-    return players.size() < CAPACITY;
+    return players.size() == CAPACITY;
   }
 
   public void addPlayer(Player player)

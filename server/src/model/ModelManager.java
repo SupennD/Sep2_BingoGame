@@ -31,18 +31,24 @@ public class ModelManager implements Model
     this.game = game;
   }
 
-  @Override public synchronized void register(String userName, String password)
+  @Override public synchronized Player register(String userName, String password)
       throws IllegalArgumentException, IllegalStateException
   {
     User user = persistence.addUser(userName, password);
-    propertyChangeHandler.firePropertyChange("register", null, user);
+    Player player = new Player(userName, password);
+    propertyChangeHandler.firePropertyChange("register", user, player);
+
+    return player;
   }
 
-  @Override public synchronized void login(String userName, String password)
+  @Override public synchronized Player login(String userName, String password)
       throws IllegalArgumentException, IllegalStateException
   {
     User user = persistence.getUser(userName, password);
-    propertyChangeHandler.firePropertyChange("login", null, user);
+    Player player = new Player(userName, password);
+    propertyChangeHandler.firePropertyChange("login", user, player);
+
+    return player;
   }
 
   @Override public Room joinRoom(Player player)

@@ -44,6 +44,8 @@ public class ViewModelFactory
     return switch (view)
     {
       case LOGIN -> new LoginViewModel(model, viewModelState);
+      case MAIN -> new MainViewModel(model, viewModelState);
+      case ROOM -> new RoomViewModel(model, viewModelState);
     };
   }
 }

@@ -13,11 +13,11 @@ import java.rmi.RemoteException;
  * @author Alexandru Tofan
  * @author Supendra Bogati
  * @author Lucia Andronic
- * @version 1.2.0 - May 2024
+ * @version 1.2.1 - May 2024
  */
 public interface RemoteModel extends RemoteSubject<Object, Object>
 {
-  void register(String userName, String password) throws RemoteException;
-  void login(String userName, String password) throws RemoteException;
+  Player register(String userName, String password) throws RemoteException;
+  Player login(String userName, String password) throws RemoteException;
   Room joinRoom(Player player) throws RemoteException;
 }

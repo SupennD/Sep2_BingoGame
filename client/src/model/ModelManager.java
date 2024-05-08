@@ -14,7 +14,8 @@ import utility.observer.subject.PropertyChangeHandler;
  *
  * @author Alexandru Tofan
  * @author Supendra Bogati
- * @version 1.1.0 - April 2024
+ * @author Lucia Andronic
+ * @version 1.1.1 - May 2024
  */
 public class ModelManager implements Model, LocalListener<Object, Object>
 {
@@ -31,16 +32,20 @@ public class ModelManager implements Model, LocalListener<Object, Object>
     this.propertyChangeHandler = new PropertyChangeHandler<>(this, true);
   }
 
-  @Override public synchronized void register(String userName, String password)
+  @Override public Player register(String userName, String password)
       throws IllegalArgumentException, IllegalStateException
   {
-    client.register(userName, password);
+    return client.register(userName, password);
   }
 
-  @Override public synchronized void login(String userName, String password)
-      throws IllegalArgumentException, IllegalStateException
+  @Override public Player login(String userName, String password) throws IllegalArgumentException, IllegalStateException
   {
-    client.login(userName, password);
+    return client.login(userName, password);
+  }
+
+  @Override public Room joinRoom(Player player) throws IllegalStateException
+  {
+    return client.joinRoom(player);
   }
 
   /**
@@ -65,6 +70,6 @@ public class ModelManager implements Model, LocalListener<Object, Object>
 
   @Override public void propertyChange(ObserverEvent<Object, Object> observerEvent)
   {
-    // TODO: implement logic for "broadcasting" events
+    propertyChangeHandler.firePropertyChange(observerEvent);
   }
 }

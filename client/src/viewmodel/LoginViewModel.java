@@ -3,6 +3,7 @@ package viewmodel;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import model.Model;
+import model.Player;
 
 /**
  * Class responsible for bridging the login model and view
@@ -53,8 +54,8 @@ public class LoginViewModel extends ViewModel
 
     try
     {
-      model.register(userNameProperty.get(), passwordProperty.get());
-      viewModelState.put("userName", userNameProperty.get());
+      Player player = model.register(userNameProperty.get(), passwordProperty.get());
+      viewModelState.put("player", player);
 
       return true;
     }
@@ -72,8 +73,8 @@ public class LoginViewModel extends ViewModel
 
     try
     {
-      model.login(userNameProperty.get(), passwordProperty.get());
-      viewModelState.put("userName", userNameProperty.get());
+      Player player = model.login(userNameProperty.get(), passwordProperty.get());
+      viewModelState.put("player", player);
 
       return true;
     }

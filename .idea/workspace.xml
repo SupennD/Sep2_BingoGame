@@ -8,15 +8,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69055953-a1eb-40be-bf41-6f36698da6d9" name="Changes" comment="add joinRoom method to model">
-      <change afterPath="$PROJECT_DIR$/client/src/model/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/model/Room.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/model/User.java" afterDir="false" />
+    <list default="true" id="69055953-a1eb-40be-bf41-6f36698da6d9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/client/resources/view/MainView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/resources/view/RoomView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/view/MainViewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/view/RoomViewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/viewmodel/MainViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/viewmodel/RoomViewModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/mediator/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/mediator/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/mediator/RemoteModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/mediator/RemoteModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/model/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/model/ModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/model/ModelManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/view/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/viewmodel/LoginViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/viewmodel/LoginViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/viewmodel/ViewModelFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/viewmodel/ViewModelFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/mediator/RemoteModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/mediator/RemoteModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/mediator/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/mediator/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/model/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/model/ModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/model/ModelManager.java" afterDir="false" />
     </list>
     <list id="2ad0883f-27d6-414c-bd6a-e3da7901b8f0" name="Changes by supendd" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,10 +39,10 @@
       <list>
         <option value="Enum" />
         <option value="module-info" />
-        <option value="FxmlFile" />
         <option value="JUnit5 Test Class" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -47,7 +57,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Supen/room-states" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -120,10 +130,10 @@
     "code.cleanup.on.save": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "#8 on Supen/ModelClasses2",
+    "git-widget-placeholder": "lucia/join-room-views",
     "jdk.selected.JAVA_MODULE": "17",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/lucia/IdeaProjects/VIA-SEP2/client/src/model",
+    "last_opened_file_path": "/Users/lucia/IdeaProjects/VIA-SEP2/client/src/utils",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.stylelint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -134,12 +144,15 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.30393487",
     "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "preferences.editor",
+    "settings.editor.selected.configurable": "vcs.Git",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
     "ChangesTree.GroupingKeys": [
       "directory"
+    ],
+    "GitStage.ChangesTree.GroupingKeys": [
+      "repository"
     ]
   }
 }]]></component>
@@ -151,11 +164,11 @@
       <recent name="model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/src/utils" />
       <recent name="$PROJECT_DIR$/client/src/model" />
       <recent name="$PROJECT_DIR$/client/resources/css" />
       <recent name="$PROJECT_DIR$/client/resources/view" />
       <recent name="$PROJECT_DIR$/client/src" />
-      <recent name="$PROJECT_DIR$/client/resources" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -173,20 +186,7 @@
       <recent name="view" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Server">
-    <configuration name="BlockingArrayDeque" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="utils.blocking.BlockingArrayDeque" />
-      <module name="server" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="utils.blocking.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.Client">
     <configuration name="UserRegisterLoginTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="client" />
       <option name="PACKAGE_NAME" value="" />
@@ -199,16 +199,13 @@
     <list>
       <item itemvalue="Application.Server" />
       <item itemvalue="Application.Client" />
-      <item itemvalue="Application.BlockingArrayDeque" />
       <item itemvalue="JUnit.UserRegisterLoginTest" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.UserRegisterLoginTest" />
-        <item itemvalue="Application.BlockingArrayDeque" />
         <item itemvalue="JUnit.UserRegisterLoginTest" />
         <item itemvalue="Application.BlockingArrayDeque" />
-        <item itemvalue="JUnit.UserRegisterLoginTest" />
       </list>
     </recent_temporary>
   </component>
@@ -506,7 +503,23 @@
       <option name="project" value="LOCAL" />
       <updated>1715095976602</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="implement RMI server methods">
+      <option name="closed" value="true" />
+      <created>1715096434821</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1715096434821</updated>
+    </task>
+    <task id="LOCAL-00036" summary="copy blocking deque utils from server">
+      <option name="closed" value="true" />
+      <created>1715097018935</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1715097018935</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -538,8 +551,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
-    <MESSAGE value="add login view fxml and controller" />
-    <MESSAGE value="fix view controller/model" />
     <MESSAGE value="fix RemoteModel interface" />
     <MESSAGE value="update view title" />
     <MESSAGE value="fix client implementation" />
@@ -563,7 +574,9 @@
     <MESSAGE value="add toArrayList method" />
     <MESSAGE value="add Game interface and update impl" />
     <MESSAGE value="add joinRoom method to model" />
-    <option name="LAST_COMMIT_MESSAGE" value="add joinRoom method to model" />
+    <MESSAGE value="implement RMI server methods" />
+    <MESSAGE value="copy blocking deque utils from server" />
+    <option name="LAST_COMMIT_MESSAGE" value="copy blocking deque utils from server" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
