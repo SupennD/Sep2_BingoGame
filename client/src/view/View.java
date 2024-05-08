@@ -9,7 +9,7 @@ package view;
  */
 public enum View
 {
-  LOGIN("LoginView"), MAIN("MainView"), ROOM("RoomView");
+  LOGIN("LoginView"), MAIN("MainView"), ROOM("RoomView"), GAME("GameView");
 
   private final String name;
 

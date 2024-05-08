@@ -130,7 +130,7 @@
     "code.cleanup.on.save": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "lucia/join-room-views",
+    "git-widget-placeholder": "#11 on Supen/implement-game-window",
     "jdk.selected.JAVA_MODULE": "17",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/lucia/IdeaProjects/VIA-SEP2/client/src/utils",
@@ -205,7 +205,6 @@
       <list>
         <item itemvalue="JUnit.UserRegisterLoginTest" />
         <item itemvalue="JUnit.UserRegisterLoginTest" />
-        <item itemvalue="Application.BlockingArrayDeque" />
       </list>
     </recent_temporary>
   </component>
@@ -519,7 +518,39 @@
       <option name="project" value="LOCAL" />
       <updated>1715097018935</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="REMOVE STATES">
+      <option name="closed" value="true" />
+      <created>1715168000382</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1715168000382</updated>
+    </task>
+    <task id="LOCAL-00038" summary="remove blocking list">
+      <option name="closed" value="true" />
+      <created>1715168172397</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1715168172397</updated>
+    </task>
+    <task id="LOCAL-00039" summary="refactor views">
+      <option name="closed" value="true" />
+      <created>1715168334447</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1715168334447</updated>
+    </task>
+    <task id="LOCAL-00040" summary="add security policy for development">
+      <option name="closed" value="true" />
+      <created>1715171724992</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1715171724992</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -551,11 +582,6 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
-    <MESSAGE value="fix RemoteModel interface" />
-    <MESSAGE value="update view title" />
-    <MESSAGE value="fix client implementation" />
-    <MESSAGE value="replace println with log" />
-    <MESSAGE value="remove User, to be added in a later commit" />
     <MESSAGE value="update javaDoc" />
     <MESSAGE value="add register and login to the Model interface" />
     <MESSAGE value="implement Model with placeholders for methods" />
@@ -576,7 +602,12 @@
     <MESSAGE value="add joinRoom method to model" />
     <MESSAGE value="implement RMI server methods" />
     <MESSAGE value="copy blocking deque utils from server" />
-    <option name="LAST_COMMIT_MESSAGE" value="copy blocking deque utils from server" />
+    <MESSAGE value="REMOVE STATES" />
+    <MESSAGE value="remove blocking list" />
+    <MESSAGE value="refactor views" />
+    <MESSAGE value="add security policy for development" />
+    <MESSAGE value="add security manager to server and client" />
+    <option name="LAST_COMMIT_MESSAGE" value="add security manager to server and client" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

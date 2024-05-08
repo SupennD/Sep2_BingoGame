@@ -11,6 +11,7 @@ import viewmodel.ViewModelFactory;
 
 import java.net.MalformedURLException;
 import java.rmi.RemoteException;
+import java.util.Map;
 
 /**
  * Main class of the Server application and the entry point.
@@ -20,6 +21,8 @@ import java.rmi.RemoteException;
  */
 public class Main extends Application
 {
+  private final String HOST = "localhost";
+
   /**
    * The main entry point.
    *
@@ -38,6 +41,12 @@ public class Main extends Application
    */
   @Override public void start(Stage primaryStage) throws Exception
   {
+    // Allow setting the server hostname using command line parameters
+    // Ex... --host=127.0.0.1
+    Map<String, String> namedParameters = getParameters().getNamed();
+    String host = namedParameters.getOrDefault("host", HOST);
+    System.setProperty("java.rmi.server.hostname", host);
+
     Game bingoGame = new BingoGame();
     Model model = new ModelManager(bingoGame);
     ViewModelFactory viewModelFactory = new ViewModelFactory(model);

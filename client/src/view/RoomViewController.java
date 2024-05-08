@@ -58,7 +58,6 @@ public class RoomViewController extends ViewController<RoomViewModel>
 
   private void startGame()
   {
-    // TODO: remove print and open the next view instead after calling startGame on viewModel
-    System.out.println("::::START GAME::::");
+    viewHandler.openView(View.GAME);
   }
 }
