@@ -79,7 +79,10 @@ public class RoomViewModel extends ViewModel implements LocalListener<Object, Ob
       playersProperty.clear();
       playersProperty.addAll(room.getPlayers());
       isFullProperty.set(room.isFull());
+
+      viewModelState.put("room", room);
     }
+
   }
 
   @Override public void propertyChange(ObserverEvent<Object, Object> observerEvent)

@@ -1,5 +1,6 @@
 package view;
 
+import javafx.application.Platform;
 import javafx.collections.ListChangeListener;
 import javafx.fxml.FXML;
 import javafx.scene.layout.HBox;
@@ -11,6 +12,12 @@ import viewmodel.RoomViewModel;
 
 import java.util.List;
 
+/**
+ * A controller class responsible for starting the game when a room is full
+ *
+ * @author Supendra Bogati
+ * @version 1.0.0 - April 2024
+ */
 public class RoomViewController extends ViewController<RoomViewModel>
 {
   @FXML private Text errorText;
@@ -48,10 +55,12 @@ public class RoomViewController extends ViewController<RoomViewModel>
     messageText.textProperty().bind(viewModel.messageProperty());
 
     // Listen for when the room is full and start the game
-    viewModel.isFullProperty().addListener((o, wasFull, isFull) -> {
-      if (wasFull || isFull)
+    viewModel.isFullProperty().addListener((o, ov, isFull) -> {
+      if (isFull)
       {
-        startGame();
+        Platform.runLater(() -> {
+          startGame();
+        });
       }
     });
   }
