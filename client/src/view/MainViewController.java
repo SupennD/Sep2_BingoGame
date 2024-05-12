@@ -20,9 +20,9 @@ public class MainViewController extends ViewController<MainViewModel>
     });
   }
 
-  @FXML public void onStart()
+  @FXML public void onJoinRoom()
   {
-    boolean success = viewModel.start();
+    boolean success = viewModel.joinRoom();
 
     if (success)
     {

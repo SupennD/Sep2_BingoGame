@@ -15,8 +15,9 @@ import java.util.List;
 /**
  * A controller class responsible for starting the game when a room is full
  *
- * @author Supendra Bogati
- * @version 1.0.0 - April 2024
+ * @author Lucia Andronic
+ * @author Alexandru Tofan
+ * @version 1.0.0 - May 2024
  */
 public class RoomViewController extends ViewController<RoomViewModel>
 {
@@ -58,9 +59,7 @@ public class RoomViewController extends ViewController<RoomViewModel>
     viewModel.isFullProperty().addListener((o, ov, isFull) -> {
       if (isFull)
       {
-        Platform.runLater(() -> {
-          startGame();
-        });
+        Platform.runLater(this::startGame);
       }
     });
   }

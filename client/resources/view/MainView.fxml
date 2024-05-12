@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
@@ -8,6 +9,7 @@
 <VBox xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
       minWidth="-Infinity"
       userData="Bingo - Main view"
+      spacing="12.0"
       prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21"
       fx:controller="view.MainViewController">
     <children>
@@ -17,6 +19,9 @@
             </children>
         </TextFlow>
         <Text fx:id="userNameText"/>
-        <Button mnemonicParsing="false" onAction="#onStart" text="Start"/>
+        <Button mnemonicParsing="false" onAction="#onJoinRoom" text="Laso Bingo"/>
     </children>
+    <padding>
+        <Insets bottom="24.0" left="24.0" right="24.0" top="24.0"/>
+    </padding>
 </VBox>

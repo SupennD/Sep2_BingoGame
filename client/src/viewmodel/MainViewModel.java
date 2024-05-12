@@ -38,7 +38,7 @@ public class MainViewModel extends ViewModel
     return errorProperty;
   }
 
-  public boolean start()
+  public boolean joinRoom()
   {
     errorProperty.set(null);
 
