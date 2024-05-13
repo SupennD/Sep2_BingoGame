@@ -39,6 +39,15 @@ public class User implements Serializable
     return password;
   }
 
+  @Override public boolean equals(Object obj)
+  {
+    if (obj == null || getClass() != obj.getClass())
+      return false;
+
+    User other = (User) obj;
+    return userName.equals(other.userName);
+  }
+
   @Override public String toString()
   {
     return userName;

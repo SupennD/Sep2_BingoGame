@@ -19,6 +19,7 @@ public class BingoGame implements Game
 
   @Override public Room joinRoom(Player player)
   {
+    player.setCard(new LasoCard());
     return roomList.joinRoom(player);
   }
 }

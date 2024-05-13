@@ -57,7 +57,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="alex/implement-card-logic" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -108,56 +108,56 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.ArrayBlockingDeque.executor": "Debug",
-    "Application.BingoCard.executor": "Run",
-    "Application.BlockingArrayDeque.executor": "Debug",
-    "Application.Client.executor": "Run",
-    "Application.Huinea.executor": "Run",
-    "Application.Server.executor": "Run",
-    "Downloaded.Files.Path": "/Users/lucia/IdeaProjects/VIA-SEP2/server/libs",
-    "Downloaded.Files.Path.Enabled": "true",
-    "JUnit.BingoCardTest.cardNumbersAreUnique.executor": "Debug",
-    "JUnit.BingoCardTest.executor": "Run",
-    "JUnit.LasoCardTest.executor": "Run",
-    "JUnit.MainTest.executor": "Run",
-    "JUnit.RegisterLoginTest.executor": "Run",
-    "JUnit.UserRegisterLoginTest.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "code.cleanup.on.save": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "alex/implement-card-logic",
-    "jdk.selected.JAVA_MODULE": "17",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/lucia/IdeaProjects/VIA-SEP2/server/src/model",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.stylelint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.stylelint": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.30393487",
-    "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "project.propVCSSupport.Confirmation",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.ArrayBlockingDeque.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.BingoCard.executor&quot;: &quot;Run&quot;,
+    &quot;Application.BlockingArrayDeque.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.Client.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Huinea.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Server.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path&quot;: &quot;/Users/lucia/IdeaProjects/VIA-SEP2/server/libs&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
+    &quot;JUnit.BingoCardTest.cardNumbersAreUnique.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.BingoCardTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LasoCardTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MainTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RegisterLoginTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserRegisterLoginTest.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;code.cleanup.on.save&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;lucia/add-card-view-to-game&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/lucia/IdeaProjects/VIA-SEP2/server/src/model&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.30393487&quot;,
+    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.Confirmation&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "ChangesTree.GroupingKeys": [],
-    "GitStage.ChangesTree.GroupingKeys": [
-      "repository"
+  &quot;keyToStringList&quot;: {
+    &quot;ChangesTree.GroupingKeys&quot;: [],
+    &quot;GitStage.ChangesTree.GroupingKeys&quot;: [
+      &quot;repository&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="persistence" />
@@ -189,7 +189,7 @@
       <recent name="view" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LasoCardTest">
+  <component name="RunManager" selected="Application.Client">
     <configuration name="LasoCardTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="server" />
       <extension name="coverage">
@@ -251,23 +251,8 @@
       <workItem from="1714830824491" duration="46591000" />
       <workItem from="1715089464399" duration="5063000" />
       <workItem from="1715252939780" duration="24939000" />
-      <workItem from="1715540727873" duration="9946000" />
-    </task>
-    <task id="LOCAL-00002" summary="create project">
-      <option name="closed" value="true" />
-      <created>1713467650895</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1713467650895</updated>
-    </task>
-    <task id="LOCAL-00003" summary="bootstrap client/server application">
-      <option name="closed" value="true" />
-      <created>1713625444248</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1713625444248</updated>
+      <workItem from="1715540727873" duration="10395000" />
+      <workItem from="1715590102681" duration="17518000" />
     </task>
     <task id="LOCAL-00004" summary="bootstrap client/server application">
       <option name="closed" value="true" />
@@ -645,7 +630,23 @@
       <option name="project" value="LOCAL" />
       <updated>1715550467636</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="update tests">
+      <option name="closed" value="true" />
+      <created>1715550754666</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1715550754666</updated>
+    </task>
+    <task id="LOCAL-00052" summary="add Bingo card">
+      <option name="closed" value="true" />
+      <created>1715608826541</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1715608826541</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -679,8 +680,6 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <option name="RELOAD_CONTEXT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="add missing methods to the interface and toString" />
-    <MESSAGE value="add missing synchronized" />
     <MESSAGE value="remove changes so that this is not in pr" />
     <MESSAGE value="remove BlockingQue" />
     <MESSAGE value="initial room states" />
@@ -704,7 +703,9 @@
     <MESSAGE value="add unit test for LasoCard" />
     <MESSAGE value="replace start with joinRoom to make it clear" />
     <MESSAGE value="add JavaDoc to Card" />
-    <option name="LAST_COMMIT_MESSAGE" value="add JavaDoc to Card" />
+    <MESSAGE value="update tests" />
+    <MESSAGE value="add Bingo card" />
+    <option name="LAST_COMMIT_MESSAGE" value="add Bingo card" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

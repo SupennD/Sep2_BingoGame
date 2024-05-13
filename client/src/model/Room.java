@@ -30,6 +30,21 @@ public class Room implements Serializable
     return id;
   }
 
+  public Player getPlayer(Player player)
+  {
+    ArrayList<Player> players = getPlayers();
+
+    for (Player roomPlayer : players)
+    {
+      if (roomPlayer.equals(player))
+      {
+        return player;
+      }
+    }
+
+    return null;
+  }
+
   public ArrayList<Player> getPlayers()
   {
     return players.toArrayList();
