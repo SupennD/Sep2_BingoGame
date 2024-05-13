@@ -10,7 +10,8 @@ import java.util.ArrayList;
  * A class that contains and adds some players in a blocking deque
  *
  * @author Supendra Bogati
- * @version 1.0.0 - May 2024
+ * @author Lucia Andronic
+ * @version 1.1.0 - May 2024
  */
 public class Room implements Serializable
 {
@@ -38,7 +39,7 @@ public class Room implements Serializable
     {
       if (roomPlayer.equals(player))
       {
-        return player;
+        return roomPlayer;
       }
     }
 

@@ -6,7 +6,7 @@ import java.io.Serializable;
  * A class containing user specific data and methods.
  *
  * @author Lucia Andronic
- * @version 1.0.0 - April 2024
+ * @version 1.1.0 - May 2024
  */
 public class User implements Serializable
 {

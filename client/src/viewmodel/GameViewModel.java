@@ -15,7 +15,8 @@ import model.Room;
  * A view model class responsible for managing game
  *
  * @author Supendra Bogati
- * @version 1.0.1 - April 2024
+ * @author Lucia Andronic
+ * @version 1.1.0 - May 2024
  */
 public class GameViewModel extends ViewModel
 {

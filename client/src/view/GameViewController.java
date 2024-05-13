@@ -18,7 +18,8 @@ import java.util.ArrayList;
  * A controller class responsible for managing game
  *
  * @author Supendra Bogati
- * @version 1.0.1 - April 2024
+ * @author Lucia Andronic
+ * @version 1.1.0 - May 2024
  */
 public class GameViewController extends ViewController<GameViewModel>
 {
