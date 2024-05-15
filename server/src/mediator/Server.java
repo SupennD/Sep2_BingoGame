@@ -105,6 +105,11 @@ public class Server implements RemoteModel, LocalListener<Object, Object>
     return model.joinRoom(player);
   }
 
+  @Override public String getRules() throws RemoteException
+  {
+    return model.getRules();
+  }
+
   /**
    * Add a remote or local listener to this remote subject.
    *

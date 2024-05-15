@@ -48,6 +48,11 @@ public class ModelManager implements Model, LocalListener<Object, Object>
     return client.joinRoom(player);
   }
 
+  @Override public String getRules() throws IllegalStateException
+  {
+    return client.getRules();
+  }
+
   /**
    * Add a local listener to this local subject.
    *

@@ -47,6 +47,7 @@ public class ViewModelFactory
       case MAIN -> new MainViewModel(model, viewModelState);
       case ROOM -> new RoomViewModel(model, viewModelState);
       case GAME -> new GameViewModel(model, viewModelState);
+      case RULES -> new RulesViewModel(model, viewModelState);
     };
   }
 }

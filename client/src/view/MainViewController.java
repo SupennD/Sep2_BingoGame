@@ -29,4 +29,11 @@ public class MainViewController extends ViewController<MainViewModel>
       viewHandler.openView(View.ROOM);
     }
   }
+
+  @FXML public void onGetRules()
+  {
+
+    viewHandler.openView(View.RULES);
+
+  }
 }

@@ -108,6 +108,18 @@ public class Client implements Model, RemoteListener<Object, Object>
     }
   }
 
+  @Override public String getRules() throws IllegalStateException
+  {
+    try
+    {
+      return remoteModel.getRules();
+    }
+    catch (RemoteException e)
+    {
+      throw new IllegalStateException(e);
+    }
+  }
+
   /**
    * Add a local listener to this local subject.
    *

@@ -16,4 +16,5 @@ public interface Model extends LocalSubject<Object, Object>
   Player register(String userName, String password) throws IllegalArgumentException, IllegalStateException;
   Player login(String userName, String password) throws IllegalArgumentException, IllegalStateException;
   Room joinRoom(Player player) throws IllegalStateException;
+  String getRules() throws IllegalStateException;
 }

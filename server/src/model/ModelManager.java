@@ -59,6 +59,11 @@ public class ModelManager implements Model
     return room;
   }
 
+  @Override public String getRules() throws IllegalStateException
+  {
+    return game.getRules();
+  }
+
   /**
    * Add a local listener to this local subject.
    *

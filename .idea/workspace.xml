@@ -9,24 +9,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69055953-a1eb-40be-bf41-6f36698da6d9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/client/resources/view/MainView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/resources/view/RoomView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/view/MainViewController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/view/RoomViewController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/viewmodel/MainViewModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/viewmodel/RoomViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/resources/view/RulesView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/view/RulesViewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/viewmodel/RulesViewModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/client/client.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/resources/view/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/client/resources/view/MainView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/mediator/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/mediator/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/mediator/RemoteModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/mediator/RemoteModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/model/Model.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/model/ModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/model/ModelManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/view/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/view/MainViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/view/View.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/viewmodel/LoginViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/viewmodel/LoginViewModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/viewmodel/ViewModelFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/viewmodel/ViewModelFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/mediator/RemoteModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/mediator/RemoteModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/mediator/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/mediator/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/model/BingoGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/model/BingoGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/model/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/model/Model.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/model/ModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/model/ModelManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/persistence/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/persistence/Database.java" afterDir="false" />
     </list>
     <list id="2ad0883f-27d6-414c-bd6a-e3da7901b8f0" name="Changes by supendd" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,12 +59,11 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="Get-Rules" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="SAVE_CHANGES_POLICY" value="STASH" />
-    <option name="SHOW_RECENT_BRANCHES" value="false" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -108,56 +109,57 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.ArrayBlockingDeque.executor": "Debug",
-    "Application.BingoCard.executor": "Run",
-    "Application.BlockingArrayDeque.executor": "Debug",
-    "Application.Client.executor": "Run",
-    "Application.Huinea.executor": "Run",
-    "Application.Server.executor": "Run",
-    "Downloaded.Files.Path": "/Users/lucia/IdeaProjects/VIA-SEP2/server/libs",
-    "Downloaded.Files.Path.Enabled": "true",
-    "JUnit.BingoCardTest.cardNumbersAreUnique.executor": "Debug",
-    "JUnit.BingoCardTest.executor": "Run",
-    "JUnit.LasoCardTest.executor": "Run",
-    "JUnit.MainTest.executor": "Run",
-    "JUnit.RegisterLoginTest.executor": "Run",
-    "JUnit.UserRegisterLoginTest.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "code.cleanup.on.save": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "lucia/updates-to-add-card-view",
-    "jdk.selected.JAVA_MODULE": "17",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/lucia/IdeaProjects/VIA-SEP2/server/src/model",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.stylelint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.stylelint": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.30393487",
-    "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "project.propVCSSupport.Confirmation",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.ArrayBlockingDeque.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.BingoCard.executor&quot;: &quot;Run&quot;,
+    &quot;Application.BlockingArrayDeque.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.Client.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Huinea.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Server.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path&quot;: &quot;/Users/lucia/IdeaProjects/VIA-SEP2/server/libs&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
+    &quot;JUnit.BingoCardTest.cardNumbersAreUnique.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.BingoCardTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LasoCardTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.MainTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RegisterLoginTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserRegisterLoginTest.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;code.cleanup.on.save&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;GetRules&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/OctavianPrograming/SEP1 Project/VIA-SEP2/client/resources/view&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.30393487&quot;,
+    &quot;rearrange.code.on.save&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.Confirmation&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "ChangesTree.GroupingKeys": [],
-    "GitStage.ChangesTree.GroupingKeys": [
-      "repository"
+  &quot;keyToStringList&quot;: {
+    &quot;ChangesTree.GroupingKeys&quot;: [
+    ],
+    &quot;GitStage.ChangesTree.GroupingKeys&quot;: [
+      &quot;repository&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="persistence" />
@@ -166,11 +168,11 @@
       <recent name="model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\OctavianPrograming\SEP1 Project\VIA-SEP2\client\resources\view" />
       <recent name="$PROJECT_DIR$/server/src/model" />
       <recent name="$PROJECT_DIR$/client/src/model" />
       <recent name="$PROJECT_DIR$/client/src/utils" />
       <recent name="$PROJECT_DIR$/client/resources/css" />
-      <recent name="$PROJECT_DIR$/client/resources/view" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -223,8 +225,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.LasoCardTest" />
         <item itemvalue="JUnit.UserRegisterLoginTest" />
+        <item itemvalue="JUnit.LasoCardTest" />
         <item itemvalue="JUnit.UserRegisterLoginTest" />
       </list>
     </recent_temporary>

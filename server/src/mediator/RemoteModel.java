@@ -20,4 +20,5 @@ public interface RemoteModel extends RemoteSubject<Object, Object>
   Player register(String userName, String password) throws RemoteException;
   Player login(String userName, String password) throws RemoteException;
   Room joinRoom(Player player) throws RemoteException;
+  String getRules() throws RemoteException;
 }
