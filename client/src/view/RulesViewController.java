@@ -21,6 +21,6 @@ public class RulesViewController extends ViewController<RulesViewModel>
 
   @FXML public void onReturn()
   {
-    viewHandler.openView(View.MAIN);
+    viewHandler.openView(View.ROOM);
   }
 }

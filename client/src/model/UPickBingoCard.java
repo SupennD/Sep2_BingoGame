@@ -10,7 +10,7 @@ import java.util.Random;
  * @author Alexandru Tofan
  * @version 1.0.0 - May 2024
  */
-public class LasoCard implements Card
+public class UPickBingoCard implements Card
 {
   public static final int ROWS = 5;
   public static final int COLUMNS = 5;
@@ -22,7 +22,7 @@ public class LasoCard implements Card
   /**
    * The default constructor initializing the card items to auto-generated numbers and the title to "BINGO".
    */
-  public LasoCard()
+  public UPickBingoCard()
   {
     this.title = initTitle();
     this.numbers = initNumbers();

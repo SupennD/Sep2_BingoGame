@@ -35,12 +35,26 @@ public class RoomList
     if (room == null || room.isFull())
     {
       log.info("No available room found. Creating a new one.");
-      room = new Room();
+      room = new Room(new UPickBingoGame());
       rooms.push(room);
     }
 
     log.info("Available room: " + room);
 
     return room;
+  }
+
+  public String getRules(int roomId)
+  {
+    // TODO: find a better way to do this
+    for (Room room : rooms.toArrayList())
+    {
+      if (room.getId() == roomId)
+      {
+        return room.getRules();
+      }
+    }
+
+    return null;
   }
 }

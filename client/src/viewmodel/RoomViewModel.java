@@ -9,9 +9,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import model.Model;
 import model.Player;
-import model.Room;
 import utility.observer.event.ObserverEvent;
 import utility.observer.listener.LocalListener;
+
+import java.util.ArrayList;
 
 public class RoomViewModel extends ViewModel implements LocalListener<Object, Object>
 {
@@ -24,9 +25,9 @@ public class RoomViewModel extends ViewModel implements LocalListener<Object, Ob
   {
     super(model, viewModelState);
 
-    this.model.addListener(this, "joinRoom", "fullRoom");
+    this.model.addListener(this, "room:join", "room:full");
     this.playersProperty = FXCollections.observableArrayList();
-    this.isFullProperty = new SimpleBooleanProperty(false);
+    this.isFullProperty = new SimpleBooleanProperty();
     this.errorProperty = new SimpleStringProperty();
     this.messageProperty = new SimpleStringProperty();
 
@@ -41,12 +42,10 @@ public class RoomViewModel extends ViewModel implements LocalListener<Object, Ob
 
   @Override public void reset()
   {
-    Room room = (Room) viewModelState.get("room");
-    playersProperty.clear();
-    playersProperty.addAll(room.getPlayers());
-    isFullProperty.set(room.isFull());
+    joinRoom();
+    isFullProperty.set(false);
     errorProperty.set(null);
-    messageProperty.set(room.isFull() ? "The game will now start" : "Waiting for enough players to join");
+    messageProperty.set("Waiting for enough players to join...");
   }
 
   public ObservableList<Player> playersProperty()
@@ -69,20 +68,52 @@ public class RoomViewModel extends ViewModel implements LocalListener<Object, Ob
     return messageProperty;
   }
 
-  private void joinRoom(ObserverEvent<Object, Object> observerEvent)
+  private void joinRoom()
   {
-    Room room = (Room) observerEvent.getValue2();
-    Room currentRoom = (Room) viewModelState.get("room");
+    playersProperty.clear();
+    errorProperty.set(null);
 
-    if (room.equals(currentRoom))
+    try
+    {
+      Player player = (Player) viewModelState.get("player");
+      int roomId = model.joinRoom(player);
+      viewModelState.put("roomId", roomId);
+    }
+    catch (IllegalStateException e)
+    {
+      errorProperty.set(e.getMessage());
+    }
+  }
+
+  private void roomJoined(ObserverEvent<Object, Object> observerEvent)
+  {
+    // TODO: look into how to safely cast this
+    ArrayList<Player> players = (ArrayList<Player>) observerEvent.getValue1();
+    int roomId = (Integer) observerEvent.getValue2();
+    int currentRoomId = (Integer) viewModelState.get("roomId");
+
+    if (currentRoomId == roomId)
     {
       playersProperty.clear();
-      playersProperty.addAll(room.getPlayers());
-      isFullProperty.set(room.isFull());
+      playersProperty.addAll(players);
+      viewModelState.put("players", players);
 
-      viewModelState.put("room", room);
+      // Update current player stored in state
+      Player player = (Player) viewModelState.get("player");
+      int currentPlayerIndex = players.indexOf(player);
+      viewModelState.put("player", players.get(currentPlayerIndex));
     }
+  }
 
+  private void roomFilled(ObserverEvent<Object, Object> observerEvent)
+  {
+    int roomId = (Integer) observerEvent.getValue2();
+    int currentRoomId = (Integer) viewModelState.get("roomId");
+
+    if (currentRoomId == roomId)
+    {
+      isFullProperty.set(true);
+    }
   }
 
   @Override public void propertyChange(ObserverEvent<Object, Object> observerEvent)
@@ -91,7 +122,8 @@ public class RoomViewModel extends ViewModel implements LocalListener<Object, Ob
     Platform.runLater(() -> {
       switch (observerEvent.getPropertyName())
       {
-        case "joinRoom" -> joinRoom(observerEvent);
+        case "room:join" -> roomJoined(observerEvent);
+        case "room:full" -> roomFilled(observerEvent);
       }
     });
   }

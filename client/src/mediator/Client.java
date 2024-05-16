@@ -2,7 +2,6 @@ package mediator;
 
 import model.Model;
 import model.Player;
-import model.Room;
 import utility.observer.event.ObserverEvent;
 import utility.observer.listener.GeneralListener;
 import utility.observer.listener.RemoteListener;
@@ -96,7 +95,7 @@ public class Client implements Model, RemoteListener<Object, Object>
     }
   }
 
-  @Override public Room joinRoom(Player player)
+  @Override public int joinRoom(Player player)
   {
     try
     {
@@ -108,11 +107,11 @@ public class Client implements Model, RemoteListener<Object, Object>
     }
   }
 
-  @Override public String getRules() throws IllegalStateException
+  @Override public String getRules(int roomId) throws IllegalStateException
   {
     try
     {
-      return remoteModel.getRules();
+      return remoteModel.getRules(roomId);
     }
     catch (RemoteException e)
     {

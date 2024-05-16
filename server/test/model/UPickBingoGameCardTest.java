@@ -10,25 +10,25 @@ import java.util.HashSet;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class LasoCardTest
+class UPickBingoGameCardTest
 {
-  private LasoCard lasoCard;
+  private UPickBingoCard UPickBingoCard;
 
   @BeforeEach public void beforeEach()
   {
-    lasoCard = new LasoCard();
+    UPickBingoCard = new UPickBingoCard();
   }
 
   @Test public void theTitleIsBINGO()
   {
-    ArrayList<String> title = lasoCard.getTitle();
+    ArrayList<String> title = UPickBingoCard.getTitle();
     ArrayList<String> expected = new ArrayList<>(Arrays.asList("B", "I", "N", "G", "O"));
     assertEquals(expected, title, "The title should be \"BINGO\"");
   }
 
   @RepeatedTest(value = 5, name = "card {currentRepetition}") public void theItemsAreUnique()
   {
-    int[][] itemsArray = lasoCard.getItems();
+    int[][] itemsArray = UPickBingoCard.getItems();
     int itemsInArray = 0;
     // Sets don't allow duplicate values, so if the length of the set differs it means we have duplicates
     HashSet<Integer> uniqueItems = new HashSet<>();

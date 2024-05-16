@@ -1,12 +1,13 @@
 package view;
 
-import javafx.application.Platform;
+import javafx.animation.PauseTransition;
 import javafx.collections.ListChangeListener;
 import javafx.fxml.FXML;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import javafx.util.Duration;
 import model.Player;
 import viewmodel.RoomViewModel;
 
@@ -21,15 +22,14 @@ import java.util.List;
  */
 public class RoomViewController extends ViewController<RoomViewModel>
 {
-  @FXML private Text errorText;
   @FXML private HBox playersHBox;
+  @FXML private Text errorText;
   @FXML private Text messageText;
 
   @Override public void init(ViewHandler viewHandler, RoomViewModel viewModel, Region root)
   {
     super.init(viewHandler, viewModel, root);
 
-    errorText.textProperty().bind(viewModel.errorProperty());
     // Add a listener to the observable list of players and update the view when it changes
     viewModel.playersProperty().addListener((ListChangeListener<Player>) change -> {
       while (change.next())
@@ -53,19 +53,24 @@ public class RoomViewController extends ViewController<RoomViewModel>
         }
       }
     });
+
+    errorText.textProperty().bind(viewModel.errorProperty());
     messageText.textProperty().bind(viewModel.messageProperty());
 
-    // Listen for when the room is full and start the game
+    PauseTransition pauseTransition = new PauseTransition(Duration.seconds(2));
+    pauseTransition.setOnFinished(event -> viewHandler.openView(View.GAME));
+
+    // Listen for when the room is full and open the game view by playing the transition
     viewModel.isFullProperty().addListener((o, ov, isFull) -> {
       if (isFull)
       {
-        Platform.runLater(this::startGame);
+        pauseTransition.play();
       }
     });
   }
 
-  private void startGame()
+  @FXML public void onGetRules()
   {
-    viewHandler.openView(View.GAME);
+    viewHandler.openView(View.RULES);
   }
 }

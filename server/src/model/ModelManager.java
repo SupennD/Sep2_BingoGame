@@ -19,16 +19,16 @@ public class ModelManager implements Model
 {
   private final PropertyChangeHandler<Object, Object> propertyChangeHandler;
   private final Persistence persistence;
-  private final Game game;
+  private final RoomList roomList;
 
   /**
    * Constructor that returns the facade object
    */
-  public ModelManager(Game game) throws ClassNotFoundException
+  public ModelManager() throws ClassNotFoundException
   {
     this.propertyChangeHandler = new PropertyChangeHandler<>(this, true);
     this.persistence = new DatabaseCache();
-    this.game = game;
+    this.roomList = new RoomList();
   }
 
   @Override public synchronized Player register(String userName, String password)
@@ -51,17 +51,22 @@ public class ModelManager implements Model
     return player;
   }
 
-  @Override public Room joinRoom(Player player)
+  @Override public int joinRoom(Player player)
   {
-    Room room = game.joinRoom(player);
-    propertyChangeHandler.firePropertyChange("joinRoom", null, room);
+    Room room = roomList.joinRoom(player);
+    propertyChangeHandler.firePropertyChange("room:join", room.getPlayers(), room.getId());
 
-    return room;
+    if (room.isFull())
+    {
+      propertyChangeHandler.firePropertyChange("room:full", null, room.getId());
+    }
+
+    return room.getId();
   }
 
-  @Override public String getRules() throws IllegalStateException
+  @Override public String getRules(int roomId) throws IllegalStateException
   {
-    return game.getRules();
+    return roomList.getRules(roomId);
   }
 
   /**

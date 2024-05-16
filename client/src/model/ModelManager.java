@@ -43,14 +43,14 @@ public class ModelManager implements Model, LocalListener<Object, Object>
     return client.login(userName, password);
   }
 
-  @Override public Room joinRoom(Player player) throws IllegalStateException
+  @Override public int joinRoom(Player player) throws IllegalStateException
   {
     return client.joinRoom(player);
   }
 
-  @Override public String getRules() throws IllegalStateException
+  @Override public String getRules(int roomId) throws IllegalStateException
   {
-    return client.getRules();
+    return client.getRules(roomId);
   }
 
   /**

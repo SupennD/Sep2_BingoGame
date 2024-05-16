@@ -19,11 +19,13 @@ public class Room implements Serializable
   private static int nextId = 1;
   private final int id;
   private final BlockingDeque<Player> players;
+  private final Game game;
 
-  public Room()
+  public Room(Game game)
   {
     this.id = nextId++;
     this.players = new BlockingArrayDeque<>(true, CAPACITY);
+    this.game = game;
   }
 
   public int getId()
@@ -58,7 +60,13 @@ public class Room implements Serializable
 
   public void addPlayer(Player player)
   {
+    player.setCard(game.getCard()); // TODO: think of a better place for this
     players.enqueue(player);
+  }
+
+  public String getRules()
+  {
+    return game.getRules();
   }
 
   @Override public boolean equals(Object obj)

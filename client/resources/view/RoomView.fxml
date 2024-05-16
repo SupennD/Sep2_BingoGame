@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 <VBox xmlns:fx="http://javafx.com/fxml/1" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity"
@@ -9,6 +9,11 @@
       minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="24.0"
       userData="Bingo - Public room" xmlns="http://javafx.com/javafx/21" fx:controller="view.RoomViewController">
     <children>
+        <HBox prefWidth="-Infinity" prefHeight="-Infinity" spacing="12.0" alignment="CENTER_LEFT">
+            <children>
+                <Button mnemonicParsing="false" onAction="#onGetRules" text="Rules"/>
+            </children>
+        </HBox>
         <HBox fx:id="playersHBox" prefHeight="100.0" prefWidth="200.0" spacing="24.0">
             <children>
                 <VBox alignment="CENTER" spacing="8.0" HBox.hgrow="ALWAYS">

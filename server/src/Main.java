@@ -2,8 +2,6 @@ import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.stage.Stage;
 import mediator.Server;
-import model.BingoGame;
-import model.Game;
 import model.Model;
 import model.ModelManager;
 import view.ViewHandler;
@@ -47,8 +45,7 @@ public class Main extends Application
     String host = namedParameters.getOrDefault("host", HOST);
     System.setProperty("java.rmi.server.hostname", host);
 
-    Game bingoGame = new BingoGame();
-    Model model = new ModelManager(bingoGame);
+    Model model = new ModelManager();
     ViewModelFactory viewModelFactory = new ViewModelFactory(model);
     ViewHandler viewHandler = new ViewHandler(viewModelFactory);
 

@@ -1,7 +1,9 @@
 package model;
 
-public interface Game
+import java.io.Serializable;
+
+public interface Game extends Serializable
 {
-  Room joinRoom(Player player);
+  Card getCard();
   String getRules();
 }

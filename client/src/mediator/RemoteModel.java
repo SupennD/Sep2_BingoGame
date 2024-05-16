@@ -1,7 +1,6 @@
 package mediator;
 
 import model.Player;
-import model.Room;
 import utility.observer.subject.RemoteSubject;
 
 import java.rmi.RemoteException;
@@ -19,6 +18,6 @@ public interface RemoteModel extends RemoteSubject<Object, Object>
 {
   Player register(String userName, String password) throws RemoteException;
   Player login(String userName, String password) throws RemoteException;
-  Room joinRoom(Player player) throws RemoteException;
-  String getRules() throws RemoteException;
+  int joinRoom(Player player) throws RemoteException;
+  String getRules(int roomId) throws RemoteException;
 }

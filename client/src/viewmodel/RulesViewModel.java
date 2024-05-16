@@ -39,7 +39,7 @@ public class RulesViewModel extends ViewModel
 
     try
     {
-      String rules = model.getRules();
+      String rules = model.getRules(1); // TODO: fix this
       rulesProperty.set(rules);
     }
     catch (IllegalStateException e)
