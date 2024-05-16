@@ -1,12 +1,16 @@
 package view;
 
+import javafx.collections.ListChangeListener;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.geometry.HPos;
 import javafx.geometry.VPos;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import model.Card;
 import model.Player;
@@ -26,6 +30,7 @@ public class GameViewController extends ViewController<GameViewModel>
   @FXML ListView<Player> playersListView;
   @FXML Text errorText;
   @FXML GridPane cardGridPane;
+  @FXML HBox calledNumbers;
 
   @Override public void init(ViewHandler viewHandler, GameViewModel viewModel, Region root)
   {
@@ -33,10 +38,30 @@ public class GameViewController extends ViewController<GameViewModel>
 
     playersListView.setItems(viewModel.playersProperty());
     errorText.textProperty().bind(viewModel.errorProperty());
+    viewModel.numberProperty().addListener((ListChangeListener<Integer>) change -> {
+      while (change.next())
+      {
+        updateCalledNumbers(change.getList());
+      }
+    });
     viewModel.cardProperty().addListener((o, ov, card) -> {
       updateTitle(card);
       updateItems(card);
     });
+  }
+
+  private void updateCalledNumbers(ObservableList<? extends Integer> integers)
+  {
+    if (!integers.isEmpty())
+    {
+      for (int i = integers.size() - 1; i > integers.size() - 6; i--)
+      {
+        Text text = new Text(String.valueOf(integers.get(i)));
+        text.setFont(Font.font(24));
+        calledNumbers.getChildren().add(text);
+
+      }
+    }
   }
 
   private void updateTitle(Card card)

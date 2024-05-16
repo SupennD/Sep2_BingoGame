@@ -6,4 +6,5 @@ public interface Game extends Serializable
 {
   Card getCard();
   String getRules();
+  void addPlayer(Player player);
 }

@@ -62,6 +62,7 @@ public class Room implements Serializable
   {
     player.setCard(game.getCard()); // TODO: think of a better place for this
     players.enqueue(player);
+    game.addPlayer(player);
   }
 
   public String getRules()

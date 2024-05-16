@@ -8,27 +8,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69055953-a1eb-40be-bf41-6f36698da6d9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/client/resources/view/RulesView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/view/RulesViewController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/viewmodel/RulesViewModel.java" afterDir="false" />
+    <list default="true" id="69055953-a1eb-40be-bf41-6f36698da6d9" name="Changes" comment="is current player">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/client/client.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/resources/view/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/client/resources/view/MainView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/mediator/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/mediator/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/mediator/RemoteModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/mediator/RemoteModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/model/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/model/ModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/model/ModelManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/view/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/view/MainViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/view/View.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/viewmodel/ViewModelFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/viewmodel/ViewModelFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/mediator/RemoteModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/mediator/RemoteModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/mediator/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/mediator/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/model/BingoGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/model/BingoGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/model/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/model/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/model/ModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/model/ModelManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/persistence/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/persistence/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/model/UPickBingoGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/model/UPickBingoGame.java" afterDir="false" />
     </list>
     <list id="2ad0883f-27d6-414c-bd6a-e3da7901b8f0" name="Changes by supendd" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -137,7 +119,7 @@
     "code.cleanup.on.save": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "#18 on alex/refactor-rooms-and-game",
+    "git-widget-placeholder": "Supen/Sprint5",
     "jdk.selected.JAVA_MODULE": "17",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/OctavianPrograming/SEP1 Project/VIA-SEP2/client/resources/view",
@@ -155,7 +137,8 @@
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
-    "ChangesTree.GroupingKeys": [],
+    "ChangesTree.GroupingKeys": [
+    ],
     "GitStage.ChangesTree.GroupingKeys": [
       "module",
       "repository"
@@ -258,30 +241,6 @@
       <workItem from="1715540727873" duration="10395000" />
       <workItem from="1715590102681" duration="20306000" />
       <workItem from="1715847249344" duration="5961000" />
-    </task>
-    <task id="LOCAL-00017" summary="update javaDoc">
-      <option name="closed" value="true" />
-      <created>1714657914915</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1714657914915</updated>
-    </task>
-    <task id="LOCAL-00018" summary="add register and login to the Model interface">
-      <option name="closed" value="true" />
-      <created>1714659542509</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1714659542509</updated>
-    </task>
-    <task id="LOCAL-00019" summary="implement Model with placeholders for methods">
-      <option name="closed" value="true" />
-      <created>1714660219959</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1714660219959</updated>
     </task>
     <task id="LOCAL-00020" summary="update DDL">
       <option name="closed" value="true" />
@@ -651,7 +610,31 @@
       <option name="project" value="LOCAL" />
       <updated>1715801035406</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="merge main">
+      <option name="closed" value="true" />
+      <created>1715855226285</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1715855226285</updated>
+    </task>
+    <task id="LOCAL-00067" summary="bingocard changed">
+      <option name="closed" value="true" />
+      <created>1715855447626</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1715855447626</updated>
+    </task>
+    <task id="LOCAL-00068" summary="is current player">
+      <option name="closed" value="true" />
+      <created>1715856270629</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1715856270629</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -685,9 +668,6 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <option name="RELOAD_CONTEXT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="REMOVE STATES" />
-    <MESSAGE value="remove blocking list" />
-    <MESSAGE value="refactor views" />
     <MESSAGE value="add security policy for development" />
     <MESSAGE value="add security manager to server and client" />
     <MESSAGE value="allow setting hostname from command line" />
@@ -710,7 +690,10 @@
     <MESSAGE value="add room:full event and send roomId instead of whole Room" />
     <MESSAGE value="remove dependency on Room from RemoteModel and server/client communication" />
     <MESSAGE value="remove classes made redundant by last commit 0448e8f" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove classes made redundant by last commit 0448e8f" />
+    <MESSAGE value="merge main" />
+    <MESSAGE value="bingocard changed" />
+    <MESSAGE value="is current player" />
+    <option name="LAST_COMMIT_MESSAGE" value="is current player" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
