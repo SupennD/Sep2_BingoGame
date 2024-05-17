@@ -40,7 +40,7 @@ public class Main extends Application
   @Override public void start(Stage primaryStage) throws Exception
   {
     // Allow setting the server hostname using command line parameters
-    // Ex... --host=127.0.0.1
+    // Ex... java -jar server.jar --host=127.0.0.1
     Map<String, String> namedParameters = getParameters().getNamed();
     String host = namedParameters.getOrDefault("host", HOST);
     System.setProperty("java.rmi.server.hostname", host);

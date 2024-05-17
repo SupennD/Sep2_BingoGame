@@ -68,6 +68,25 @@ public class RoomViewModel extends ViewModel implements LocalListener<Object, Ob
     return messageProperty;
   }
 
+  public boolean startGame()
+  {
+    errorProperty.set(null);
+
+    try
+    {
+      int roomId = (Integer) viewModelState.get("roomId");
+      model.startGame(roomId);
+
+      return true;
+    }
+    catch (IllegalStateException e)
+    {
+      errorProperty.set(e.getMessage());
+    }
+
+    return false;
+  }
+
   private void joinRoom()
   {
     playersProperty.clear();

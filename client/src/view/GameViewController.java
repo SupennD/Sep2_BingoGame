@@ -1,7 +1,8 @@
 package view;
 
+import javafx.beans.binding.Bindings;
 import javafx.collections.ListChangeListener;
-import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.HPos;
 import javafx.geometry.VPos;
@@ -17,6 +18,7 @@ import model.Player;
 import viewmodel.GameViewModel;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A controller class responsible for managing game
@@ -27,21 +29,29 @@ import java.util.ArrayList;
  */
 public class GameViewController extends ViewController<GameViewModel>
 {
-  @FXML ListView<Player> playersListView;
-  @FXML Text errorText;
-  @FXML GridPane cardGridPane;
-  @FXML HBox calledNumbers;
+  @FXML private Text playersText;
+  @FXML private ListView<Player> playersListView;
+  @FXML private Text errorText;
+  @FXML private GridPane cardGridPane;
+  @FXML private HBox calledNumbers;
 
   @Override public void init(ViewHandler viewHandler, GameViewModel viewModel, Region root)
   {
     super.init(viewHandler, viewModel, root);
 
+    playersText.textProperty().bind(Bindings.concat("Players ", viewModel.timerProperty()));
     playersListView.setItems(viewModel.playersProperty());
+    viewModel.currentPlayerProperty().addListener((o, ov, currentPlayer) -> {
+      playersListView.getSelectionModel().clearSelection();
+      playersListView.getSelectionModel().select(currentPlayer);
+    });
     errorText.textProperty().bind(viewModel.errorProperty());
-    viewModel.numberProperty().addListener((ListChangeListener<Integer>) change -> {
+    viewModel.calledNumbersProperty().addListener((ListChangeListener<Integer>) change -> {
       while (change.next())
       {
-        updateCalledNumbers(change.getList());
+        // Convert to a normal list
+        List<Integer> numbers = change.getList().stream().map(player -> (Integer) player).toList();
+        updateCalledNumbers(numbers);
       }
     });
     viewModel.cardProperty().addListener((o, ov, card) -> {
@@ -50,16 +60,17 @@ public class GameViewController extends ViewController<GameViewModel>
     });
   }
 
-  private void updateCalledNumbers(ObservableList<? extends Integer> integers)
+  private void updateCalledNumbers(List<Integer> numbers)
   {
-    if (!integers.isEmpty())
+    if (!numbers.isEmpty())
     {
-      for (int i = integers.size() - 1; i > integers.size() - 6; i--)
+      calledNumbers.getChildren().clear();
+      int start = numbers.size() > 5 ? numbers.size() - 5 : 0;
+      for (int i = start; i < numbers.size(); i++)
       {
-        Text text = new Text(String.valueOf(integers.get(i)));
-        text.setFont(Font.font(24));
+        Text text = new Text(String.valueOf(numbers.get(i)));
+        text.setFont(Font.font("Arial Bold", 24));
         calledNumbers.getChildren().add(text);
-
       }
     }
   }
@@ -72,6 +83,7 @@ public class GameViewController extends ViewController<GameViewModel>
     {
       String cellText = cardTitle.get(columnIndex);
       Text text = new Text(cellText);
+      text.setFont(Font.font("Arial Bold", 24));
       GridPane.setValignment(text, VPos.CENTER);
       GridPane.setHalignment(text, HPos.CENTER);
       cardGridPane.add(text, columnIndex, 0);
@@ -88,10 +100,24 @@ public class GameViewController extends ViewController<GameViewModel>
       {
         String cellNumber = cardNumbers[rowIndex][columnIndex] + "";
         Button button = new Button(cellNumber);
-        button.setPrefWidth(300);
-        button.setPrefHeight(300);
+        button.setPrefWidth(64);
+        button.setPrefHeight(64);
+        button.setOnAction(this::makeMove);
         cardGridPane.add(button, columnIndex, rowIndex + 1);
       }
+    }
+  }
+
+  private void makeMove(ActionEvent event)
+  {
+    Button button = (Button) event.getSource();
+    int number = Integer.parseInt(button.getText());
+    boolean success = viewModel.makeMove(number);
+
+    if (success)
+    {
+      button.setStyle("-fx-text-fill: white; -fx-background-color: green;");
+      button.setDisable(true);
     }
   }
 }

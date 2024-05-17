@@ -12,17 +12,26 @@ import java.time.format.DateTimeFormatter;
  * to it to listen for {@code time} and {@code end} events.
  *
  * @author Lucia Andronic
- * @version 1.0.0 - May 2024
+ * @version 1.1.0 - May 2024
  */
 public class Timer implements Runnable, LocalSubject<Integer, String>
 {
   private final PropertyChangeHandler<Integer, String> propertyChangeHandler;
-  private int timerSeconds;
+  private final int timerSeconds;
+  private final boolean infinite;
+  private int elapsedSeconds;
+
+  public Timer(int timerSeconds, boolean infinite)
+  {
+    this.propertyChangeHandler = new PropertyChangeHandler<>(this, true);
+    this.timerSeconds = timerSeconds;
+    this.elapsedSeconds = timerSeconds;
+    this.infinite = infinite;
+  }
 
   public Timer(int timerSeconds)
   {
-    this.timerSeconds = timerSeconds;
-    propertyChangeHandler = new PropertyChangeHandler<>(this, true);
+    this(timerSeconds, false);
   }
 
   public int getSeconds()
@@ -30,27 +39,42 @@ public class Timer implements Runnable, LocalSubject<Integer, String>
     return timerSeconds;
   }
 
+  public void reset()
+  {
+    elapsedSeconds = timerSeconds;
+  }
+
   @Override public void run()
   {
-    LocalTime time = LocalTime.ofSecondOfDay(timerSeconds);
-    DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("mm:ss");
-
-    while (timerSeconds >= 0)
+    try
     {
-      try
+      DateTimeFormatter formatter = DateTimeFormatter.ofPattern("mm:ss");
+
+      while (elapsedSeconds >= 0)
       {
-        propertyChangeHandler.firePropertyChange("time", timerSeconds, time.format(timeFormatter));
+        LocalTime time = LocalTime.ofSecondOfDay(elapsedSeconds);
+        propertyChangeHandler.firePropertyChange("timer:tick", elapsedSeconds, time.format(formatter));
+
+        if (elapsedSeconds == 0)
+        {
+          propertyChangeHandler.firePropertyChange("timer:done", elapsedSeconds, time.format(formatter));
+
+          if (infinite)
+          {
+            propertyChangeHandler.firePropertyChange("timer:reset", elapsedSeconds, time.format(formatter));
+            elapsedSeconds = timerSeconds + 1;
+          }
+        }
+
         Thread.sleep(1000);
-        time = time.minusSeconds(1);
-        timerSeconds--;
-      }
-      catch (InterruptedException e)
-      {
-        // do nothing
+
+        elapsedSeconds--;
       }
     }
-
-    propertyChangeHandler.firePropertyChange("end", 0, null);
+    catch (InterruptedException e)
+    {
+      // do nothing
+    }
   }
 
   @Override public boolean addListener(GeneralListener<Integer, String> generalListener, String... strings)

@@ -119,6 +119,30 @@ public class Client implements Model, RemoteListener<Object, Object>
     }
   }
 
+  @Override public void startGame(int roomId) throws IllegalStateException
+  {
+    try
+    {
+      remoteModel.startGame(roomId);
+    }
+    catch (RemoteException e)
+    {
+      throw new IllegalStateException(e);
+    }
+  }
+
+  @Override public void makeMove(int roomId, Player player, int number) throws IllegalStateException
+  {
+    try
+    {
+      remoteModel.makeMove(roomId, player, number);
+    }
+    catch (RemoteException e)
+    {
+      throw new IllegalStateException(e);
+    }
+  }
+
   /**
    * Add a local listener to this local subject.
    *

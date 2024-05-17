@@ -15,7 +15,6 @@ import java.util.ArrayList;
  */
 public class Room implements Serializable
 {
-  private static final int CAPACITY = 4;
   private static int nextId = 1;
   private final int id;
   private final BlockingDeque<Player> players;
@@ -24,7 +23,7 @@ public class Room implements Serializable
   public Room(Game game)
   {
     this.id = nextId++;
-    this.players = new BlockingArrayDeque<>(true, CAPACITY);
+    this.players = new BlockingArrayDeque<>(true);
     this.game = game;
   }
 
@@ -55,12 +54,16 @@ public class Room implements Serializable
 
   public boolean isFull()
   {
-    return players.size() == CAPACITY;
+    return game.isFull();
   }
 
   public void addPlayer(Player player)
   {
-    player.setCard(game.getCard()); // TODO: think of a better place for this
+    if (isFull())
+    {
+      throw new IllegalStateException("The room is already full");
+    }
+
     players.enqueue(player);
     game.addPlayer(player);
   }
@@ -85,5 +88,15 @@ public class Room implements Serializable
   @Override public String toString()
   {
     return "Room{" + id + ", players=" + players + '}';
+  }
+
+  public void startGame()
+  {
+    game.start(getId());
+  }
+
+  public void makeMove(Player player, int number)
+  {
+    game.makeMove(player, number);
   }
 }

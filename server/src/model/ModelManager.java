@@ -69,6 +69,16 @@ public class ModelManager implements Model
     return roomList.getRules(roomId);
   }
 
+  @Override public void startGame(int roomId) throws IllegalStateException
+  {
+    roomList.startGame(roomId);
+  }
+
+  @Override public void makeMove(int roomId, Player player, int number) throws IllegalStateException
+  {
+    roomList.makeMove(roomId, player, number);
+  }
+
   /**
    * Add a local listener to this local subject.
    *

@@ -53,6 +53,16 @@ public class ModelManager implements Model, LocalListener<Object, Object>
     return client.getRules(roomId);
   }
 
+  @Override public void startGame(int roomId) throws IllegalStateException
+  {
+    client.startGame(roomId);
+  }
+
+  @Override public void makeMove(int roomId, Player player, int number) throws IllegalStateException
+  {
+    client.makeMove(roomId, player, number);
+  }
+
   /**
    * Add a local listener to this local subject.
    *

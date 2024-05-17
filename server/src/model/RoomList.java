@@ -46,15 +46,32 @@ public class RoomList
 
   public String getRules(int roomId)
   {
-    // TODO: find a better way to do this
+    Room room = getRoomById(roomId);
+    return room.getRules();
+  }
+
+  public Room getRoomById(int roomId)
+  {
     for (Room room : rooms.toArrayList())
     {
       if (room.getId() == roomId)
       {
-        return room.getRules();
+        return room;
       }
     }
 
-    return null;
+    throw new IllegalStateException("No room found with id: " + roomId);
+  }
+
+  public void makeMove(int roomId, Player player, int number)
+  {
+    Room room = getRoomById(roomId);
+    room.makeMove(player, number);
+  }
+
+  public void startGame(int roomId)
+  {
+    Room room = getRoomById(roomId);
+    room.startGame();
   }
 }

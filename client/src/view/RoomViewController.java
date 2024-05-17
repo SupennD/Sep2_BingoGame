@@ -2,6 +2,7 @@ package view;
 
 import javafx.animation.PauseTransition;
 import javafx.collections.ListChangeListener;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
@@ -58,7 +59,7 @@ public class RoomViewController extends ViewController<RoomViewModel>
     messageText.textProperty().bind(viewModel.messageProperty());
 
     PauseTransition pauseTransition = new PauseTransition(Duration.seconds(2));
-    pauseTransition.setOnFinished(event -> viewHandler.openView(View.GAME));
+    pauseTransition.setOnFinished(this::startGame);
 
     // Listen for when the room is full and open the game view by playing the transition
     viewModel.isFullProperty().addListener((o, ov, isFull) -> {
@@ -67,6 +68,16 @@ public class RoomViewController extends ViewController<RoomViewModel>
         pauseTransition.play();
       }
     });
+  }
+
+  private void startGame(ActionEvent actionEvent)
+  {
+    boolean success = viewModel.startGame();
+
+    if (success)
+    {
+      viewHandler.openView(View.GAME);
+    }
   }
 
   @FXML public void onGetRules()

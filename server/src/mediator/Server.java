@@ -27,6 +27,7 @@ public class Server implements RemoteModel, LocalListener<Object, Object>
   private final Model model;
   private final int PORT = 1099;
   private final Log log = Log.getInstance();
+  private final GameEvents gameEvents = GameEvents.getInstance();
   private final PropertyChangeHandler<Object, Object> propertyChangeHandler;
 
   /**
@@ -38,6 +39,7 @@ public class Server implements RemoteModel, LocalListener<Object, Object>
   {
     this.model = model;
     this.model.addListener(this);
+    this.gameEvents.addListener(this);
     this.propertyChangeHandler = new PropertyChangeHandler<>(this, true);
 
     start(); // Start the RMI server
@@ -107,6 +109,16 @@ public class Server implements RemoteModel, LocalListener<Object, Object>
   @Override public String getRules(int roomId) throws RemoteException
   {
     return model.getRules(roomId);
+  }
+
+  @Override public void startGame(int roomId) throws RemoteException
+  {
+    model.startGame(roomId);
+  }
+
+  @Override public void makeMove(int roomId, Player player, int number) throws RemoteException
+  {
+    model.makeMove(roomId, player, number);
   }
 
   /**

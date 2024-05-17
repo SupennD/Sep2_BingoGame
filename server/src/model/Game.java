@@ -4,7 +4,9 @@ import java.io.Serializable;
 
 public interface Game extends Serializable
 {
-  Card getCard();
   String getRules();
   void addPlayer(Player player);
+  void start(int roomId);
+  void makeMove(Player player, int number);
+  boolean isFull();
 }
