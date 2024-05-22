@@ -1,5 +1,7 @@
 package model;
 
+import model.card.Cell;
+import model.uPickBingo.UPickBingoGame;
 import utils.blocking.BlockingArrayDeque;
 import utils.blocking.BlockingDeque;
 import utils.log.Log;
@@ -35,10 +37,10 @@ public class RoomList
     return room.getRules();
   }
 
-  public void makeMove(int roomId, Player player, int number)
+  public void makeMove(int roomId, Player player, Cell cell)
   {
     Room room = getRoomById(roomId);
-    room.makeMove(player, number);
+    room.makeMove(player, cell);
   }
 
   public void startGame(int roomId)

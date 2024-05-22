@@ -1,6 +1,7 @@
 package model;
 
 import mediator.Client;
+import model.card.Cell;
 import utility.observer.event.ObserverEvent;
 import utility.observer.listener.GeneralListener;
 import utility.observer.listener.LocalListener;
@@ -58,9 +59,9 @@ public class ModelManager implements Model, LocalListener<Object, Object>
     client.startGame(roomId);
   }
 
-  @Override public void makeMove(int roomId, Player player, int number) throws IllegalStateException
+  @Override public void makeMove(int roomId, Player player, Cell cell) throws IllegalStateException
   {
-    client.makeMove(roomId, player, number);
+    client.makeMove(roomId, player, cell);
   }
 
   @Override public void callBingo(int roomId, Player player) throws IllegalStateException

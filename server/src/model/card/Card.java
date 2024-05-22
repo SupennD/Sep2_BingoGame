@@ -1,4 +1,4 @@
-package model;
+package model.card;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -7,7 +7,8 @@ import java.util.ArrayList;
  * An interface to be implemented by all variations of a BINGO card.
  *
  * @author Alexandru Tofan
- * @version 1.0.0 - May 2024
+ * @author Lucia Andronic
+ * @version 1.1.0 - May 2024
  */
 public interface Card extends Serializable
 {
@@ -22,5 +23,5 @@ public interface Card extends Serializable
    *
    * @return the 2-dimensional array representing the items
    */
-  int[][] getItems(); // TODO: maybe this should be generic
+  Cell[][] getCells();
 }

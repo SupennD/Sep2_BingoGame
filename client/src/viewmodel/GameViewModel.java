@@ -7,9 +7,10 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import model.Card;
 import model.Model;
 import model.Player;
+import model.card.Card;
+import model.card.Cell;
 import utility.observer.event.ObserverEvent;
 import utility.observer.listener.LocalListener;
 
@@ -29,7 +30,7 @@ public class GameViewModel extends ViewModel implements LocalListener<Object, Ob
   private final ObjectProperty<Player> currentPlayerProperty;
   private final ObjectProperty<Player> winnerPlayerProperty;
   private final ObjectProperty<Card> cardProperty;
-  private final ObservableList<Integer> calledNumbersProperty;
+  private final ObservableList<Cell> calledCellsProperty;
   private final StringProperty errorProperty;
 
   public GameViewModel(Model model, ViewModelState viewModelState)
@@ -41,7 +42,7 @@ public class GameViewModel extends ViewModel implements LocalListener<Object, Ob
     this.currentPlayerProperty = new SimpleObjectProperty<>();
     this.winnerPlayerProperty = new SimpleObjectProperty<>();
     this.cardProperty = new SimpleObjectProperty<>();
-    this.calledNumbersProperty = FXCollections.observableArrayList();
+    this.calledCellsProperty = FXCollections.observableArrayList();
     this.errorProperty = new SimpleStringProperty();
   }
 
@@ -56,7 +57,7 @@ public class GameViewModel extends ViewModel implements LocalListener<Object, Ob
     currentPlayerProperty.set(null);
     winnerPlayerProperty.set(null);
     cardProperty.set(currentPlayer.getCard());
-    calledNumbersProperty.clear();
+    calledCellsProperty.clear();
     errorProperty.set(null);
   }
 
@@ -80,9 +81,9 @@ public class GameViewModel extends ViewModel implements LocalListener<Object, Ob
     return cardProperty;
   }
 
-  public ObservableList<Integer> calledNumbersProperty()
+  public ObservableList<Cell> calledCellsProperty()
   {
-    return calledNumbersProperty;
+    return calledCellsProperty;
   }
 
   public StringProperty errorProperty()
@@ -90,7 +91,7 @@ public class GameViewModel extends ViewModel implements LocalListener<Object, Ob
     return errorProperty;
   }
 
-  public boolean makeMove(int number)
+  public boolean makeMove(Cell cell)
   {
     errorProperty.set(null);
 
@@ -98,7 +99,7 @@ public class GameViewModel extends ViewModel implements LocalListener<Object, Ob
     {
       int roomId = (Integer) viewModelState.get("roomId");
       Player currentPlayer = (Player) viewModelState.get("currentPlayer");
-      model.makeMove(roomId, currentPlayer, number);
+      model.makeMove(roomId, currentPlayer, cell);
 
       return true;
     }
@@ -160,8 +161,8 @@ public class GameViewModel extends ViewModel implements LocalListener<Object, Ob
 
     if (roomId == currentRoomId)
     {
-      int calledNumber = (Integer) observerEvent.getValue2();
-      calledNumbersProperty.add(calledNumber);
+      Cell calledCell = (Cell) observerEvent.getValue2();
+      calledCellsProperty.add(calledCell);
     }
   }
 

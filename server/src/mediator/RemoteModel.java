@@ -1,6 +1,7 @@
 package mediator;
 
 import model.Player;
+import model.card.Cell;
 import utility.observer.subject.RemoteSubject;
 
 import java.rmi.RemoteException;
@@ -12,7 +13,7 @@ import java.rmi.RemoteException;
  * @author Alexandru Tofan
  * @author Supendra Bogati
  * @author Lucia Andronic
- * @version 1.3.0 - May 2024
+ * @version 1.4.0 - May 2024
  */
 public interface RemoteModel extends RemoteSubject<Object, Object>
 {
@@ -21,6 +22,6 @@ public interface RemoteModel extends RemoteSubject<Object, Object>
   int joinRoom(Player player) throws RemoteException;
   String getRules(int roomId) throws RemoteException;
   void startGame(int roomId) throws RemoteException;
-  void makeMove(int roomId, Player player, int number) throws RemoteException;
+  void makeMove(int roomId, Player player, Cell cell) throws RemoteException;
   void callBingo(int roomId, Player player) throws RemoteException;
 }

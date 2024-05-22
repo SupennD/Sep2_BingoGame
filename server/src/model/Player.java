@@ -1,11 +1,12 @@
 package model;
 
+import model.card.Card;
+
 /**
  * A class containing player specific data and methods.
  *
  * @author Lucia Andronic
  * @version 1.1.0 - May 2024
- * TODO: implement necessary functionality
  */
 public class Player extends User
 {

@@ -1,6 +1,9 @@
-package model;
+package model.uPickBingo;
 
 import mediator.GameEvent;
+import model.Game;
+import model.Player;
+import model.card.Cell;
 import utility.observer.event.ObserverEvent;
 import utility.observer.listener.LocalListener;
 import utils.Timer;
@@ -22,7 +25,7 @@ public class UPickBingoGame implements Game, LocalListener<Integer, String>
   private static final int MAX_PLAYERS = 4;
   private static final int SECONDS_PER_TURN = 15;
   private final ArrayList<Player> players;
-  private final ArrayList<Integer> calledNumbers;
+  private final ArrayList<Cell> calledCells;
   private final Timer timer;
   private final Log log = Log.getInstance();
   private final GameEvent gameEvent = GameEvent.getInstance();
@@ -36,7 +39,7 @@ public class UPickBingoGame implements Game, LocalListener<Integer, String>
     timer.addListener(this, "timer:done");
     this.players = new ArrayList<>();
     this.currentPlayer = 0;
-    this.calledNumbers = new ArrayList<>();
+    this.calledCells = new ArrayList<>();
     this.isStarted = false;
   }
 
@@ -54,11 +57,11 @@ public class UPickBingoGame implements Game, LocalListener<Integer, String>
     log.info("Next player " + nextPlayer);
   }
 
-  private synchronized boolean wasNumberCalled(int number)
+  private synchronized boolean wasCellCalled(Cell cell)
   {
-    for (Integer calledNumber : calledNumbers)
+    for (Cell calledCell : calledCells)
     {
-      if (calledNumber == number)
+      if (calledCell.equals(cell))
       {
         return true;
       }
@@ -67,26 +70,26 @@ public class UPickBingoGame implements Game, LocalListener<Integer, String>
     return false;
   }
 
-  private synchronized void callNumber(int number)
+  private synchronized void callCell(Cell cell)
   {
-    if (!wasNumberCalled(number))
+    if (!wasCellCalled(cell))
     {
-      calledNumbers.add(number);
-      gameEvent.fireEvent("game:call", roomId, number);
-      log.info("Called number " + number);
+      calledCells.add(cell);
+      gameEvent.fireEvent("game:call", roomId, cell);
+      log.info("Called cell " + cell);
       nextPlayer();
     }
   }
 
-  private synchronized void markNumber(int number)
+  private synchronized void markCell(Cell cell)
   {
-    if (wasNumberCalled(number))
+    if (wasCellCalled(cell))
     {
-      log.info("Marked number " + number);
+      log.info("Marked cell " + cell);
     }
     else
     {
-      throw new IllegalStateException("Cannot mark number " + number + " as it was not called.");
+      throw new IllegalStateException("Cannot mark cell " + cell + " as it was not called.");
     }
   }
 
@@ -150,16 +153,16 @@ public class UPickBingoGame implements Game, LocalListener<Integer, String>
     log.info("U Pick BINGO game started in room " + roomId);
   }
 
-  @Override public synchronized void makeMove(Player player, int number)
+  @Override public synchronized void makeMove(Player player, Cell cell)
   {
-    log.info("Make move, player: " + player + ", number: " + number + ", currentPlayer: " + isCurrentPlayer(player));
+    log.info("Make move, player: " + player + ", cell: " + cell + ", currentPlayer: " + isCurrentPlayer(player));
 
     if (isCurrentPlayer(player))
     {
-      callNumber(number);
+      callCell(cell);
     }
 
-    markNumber(number);
+    markCell(cell);
   }
 
   @Override public synchronized boolean isFull()

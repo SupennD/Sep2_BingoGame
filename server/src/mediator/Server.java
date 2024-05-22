@@ -2,6 +2,7 @@ package mediator;
 
 import model.Model;
 import model.Player;
+import model.card.Cell;
 import utility.observer.event.ObserverEvent;
 import utility.observer.listener.GeneralListener;
 import utility.observer.listener.LocalListener;
@@ -116,9 +117,9 @@ public class Server implements RemoteModel, LocalListener<Object, Object>
     model.startGame(roomId);
   }
 
-  @Override public void makeMove(int roomId, Player player, int number) throws RemoteException
+  @Override public void makeMove(int roomId, Player player, Cell cell) throws RemoteException
   {
-    model.makeMove(roomId, player, number);
+    model.makeMove(roomId, player, cell);
   }
 
   @Override public void callBingo(int roomId, Player player) throws RemoteException

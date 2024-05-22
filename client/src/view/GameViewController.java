@@ -16,8 +16,9 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
-import model.Card;
 import model.Player;
+import model.card.Card;
+import model.card.Cell;
 import viewmodel.GameViewModel;
 
 import java.util.ArrayList;
@@ -34,7 +35,7 @@ import java.util.List;
 public class GameViewController extends ViewController<GameViewModel>
 {
   @FXML private VBox playersVBox;
-  @FXML private HBox calledNumbers;
+  @FXML private HBox calledCells;
   @FXML private GridPane cardGridPane;
   @FXML private Text errorText;
 
@@ -51,12 +52,12 @@ public class GameViewController extends ViewController<GameViewModel>
     viewModel.winnerPlayerProperty().addListener((o, ov, winnerPlayer) -> {
       viewHandler.openView(View.WIN);
     });
-    viewModel.calledNumbersProperty().addListener((InvalidationListener) o -> {
-      updateCalledNumbers(viewModel.calledNumbersProperty());
+    viewModel.calledCellsProperty().addListener((InvalidationListener) o -> {
+      updateCalledCells(viewModel.calledCellsProperty());
     });
     viewModel.cardProperty().addListener((o, ov, card) -> {
       updateTitle(card);
-      updateItems(card);
+      updateCells(card);
     });
     errorText.textProperty().bind(viewModel.errorProperty());
   }
@@ -120,18 +121,14 @@ public class GameViewController extends ViewController<GameViewModel>
     });
   }
 
-  private void updateCalledNumbers(List<Integer> numbers)
+  private void updateCalledCells(List<Cell> cells)
   {
-    if (!numbers.isEmpty())
+    calledCells.getChildren().clear();
+
+    for (int i = cells.size() - 1; i >= 0; i--)
     {
-      calledNumbers.getChildren().clear();
-      int start = numbers.size() > 5 ? numbers.size() - 5 : 0;
-      for (int i = start; i < numbers.size(); i++)
-      {
-        Text text = new Text(String.valueOf(numbers.get(i)));
-        text.setFont(Font.font("Arial Bold", 24));
-        calledNumbers.getChildren().add(text);
-      }
+      Text text = new Text(cells.get(i).toString());
+      calledCells.getChildren().add(text);
     }
   }
 
@@ -150,18 +147,19 @@ public class GameViewController extends ViewController<GameViewModel>
     }
   }
 
-  private void updateItems(Card card)
+  private void updateCells(Card card)
   {
-    int[][] cardNumbers = card.getItems();
+    Cell[][] cells = card.getCells();
 
-    for (int rowIndex = 0; rowIndex < cardNumbers.length; rowIndex++)
+    for (int rowIndex = 0; rowIndex < cells.length; rowIndex++)
     {
-      for (int columnIndex = 0; columnIndex < cardNumbers[rowIndex].length; columnIndex++)
+      for (int columnIndex = 0; columnIndex < cells[rowIndex].length; columnIndex++)
       {
-        String cellNumber = cardNumbers[rowIndex][columnIndex] + "";
-        Button button = new Button(cellNumber);
+        Cell cell = cells[rowIndex][columnIndex];
+        Button button = new Button(cell.toString());
         button.setPrefWidth(64);
         button.setPrefHeight(64);
+        button.setUserData(cell);
         button.setOnAction(this::makeMove);
         cardGridPane.add(button, columnIndex, rowIndex + 1);
       }
@@ -171,8 +169,8 @@ public class GameViewController extends ViewController<GameViewModel>
   private void makeMove(ActionEvent event)
   {
     Button button = (Button) event.getSource();
-    int number = Integer.parseInt(button.getText());
-    boolean success = viewModel.makeMove(number);
+    Cell cell = (Cell) button.getUserData();
+    boolean success = viewModel.makeMove(cell);
 
     if (success)
     {

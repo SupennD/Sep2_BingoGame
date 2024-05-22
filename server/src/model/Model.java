@@ -1,5 +1,6 @@
 package model;
 
+import model.card.Cell;
 import utility.observer.subject.LocalSubject;
 
 /**
@@ -17,6 +18,6 @@ public interface Model extends LocalSubject<Object, Object>
   int joinRoom(Player player);
   String getRules(int roomId) throws IllegalStateException;
   void startGame(int roomId) throws IllegalStateException;
-  void makeMove(int roomId, Player player, int number) throws IllegalStateException;
+  void makeMove(int roomId, Player player, Cell cell) throws IllegalStateException;
   void callBingo(int roomId, Player player) throws IllegalStateException;
 }

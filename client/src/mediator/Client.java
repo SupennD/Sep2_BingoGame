@@ -2,6 +2,7 @@ package mediator;
 
 import model.Model;
 import model.Player;
+import model.card.Cell;
 import utility.observer.event.ObserverEvent;
 import utility.observer.listener.GeneralListener;
 import utility.observer.listener.RemoteListener;
@@ -142,11 +143,11 @@ public class Client implements Model, RemoteListener<Object, Object>
     }
   }
 
-  @Override public void makeMove(int roomId, Player player, int number) throws IllegalStateException
+  @Override public void makeMove(int roomId, Player player, Cell cell) throws IllegalStateException
   {
     try
     {
-      remoteModel.makeMove(roomId, player, number);
+      remoteModel.makeMove(roomId, player, cell);
     }
     catch (RemoteException e)
     {

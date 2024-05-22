@@ -1,4 +1,7 @@
-package model;
+package model.uPickBingo;
+
+import model.card.Card;
+import model.card.Cell;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -8,7 +11,8 @@ import java.util.Random;
  * A class representing a card for the custom "Laso Bingo" variation of the BINGO game.
  *
  * @author Alexandru Tofan
- * @version 1.0.0 - May 2024
+ * @author Lucia Andronic
+ * @version 1.1.0 - May 2024
  */
 public class UPickBingoCard implements Card
 {
@@ -17,7 +21,7 @@ public class UPickBingoCard implements Card
   public static final int SIZE = ROWS * COLUMNS;
 
   private final ArrayList<String> title;
-  private final ArrayList<Integer> numbers;
+  private final ArrayList<Cell> cells;
 
   /**
    * The default constructor initializing the card items to auto-generated numbers and the title to "BINGO".
@@ -25,7 +29,7 @@ public class UPickBingoCard implements Card
   public UPickBingoCard()
   {
     this.title = initTitle();
-    this.numbers = initNumbers();
+    this.cells = initCells();
   }
 
   @Override public ArrayList<String> getTitle()
@@ -33,9 +37,9 @@ public class UPickBingoCard implements Card
     return title;
   }
 
-  @Override public int[][] getItems()
+  @Override public Cell[][] getCells()
   {
-    int[][] numbersArray = new int[ROWS][COLUMNS];
+    Cell[][] cellsArray = new UPickBingoCell[ROWS][COLUMNS];
 
     int index = 0;
 
@@ -43,12 +47,12 @@ public class UPickBingoCard implements Card
     {
       for (int j = 0; j < COLUMNS; j++)
       {
-        numbersArray[i][j] = numbers.get(index);
+        cellsArray[i][j] = cells.get(index);
         index++;
       }
     }
 
-    return numbersArray;
+    return cellsArray;
   }
 
   private ArrayList<String> initTitle()
@@ -56,24 +60,23 @@ public class UPickBingoCard implements Card
     return new ArrayList<>(Arrays.asList("B", "I", "N", "G", "O"));
   }
 
-  private ArrayList<Integer> initNumbers()
+  private ArrayList<Cell> initCells()
   {
     Random random = new Random();
-    ArrayList<Integer> randomNumbers = new ArrayList<>();
+    ArrayList<Cell> uniqueCells = new ArrayList<>();
 
-    while (randomNumbers.size() < SIZE)
+    while (uniqueCells.size() < SIZE)
     {
       int number = random.nextInt(1, SIZE + 1);
+      Cell cell = new UPickBingoCell(number);
 
       // Make sure all the numbers are unique
-      if (randomNumbers.contains(number))
+      if (!uniqueCells.contains(cell))
       {
-        continue;
+        uniqueCells.add(cell);
       }
-
-      randomNumbers.add(number);
     }
 
-    return randomNumbers;
+    return uniqueCells;
   }
 }

@@ -34,10 +34,10 @@
         <option value="Enum" />
         <option value="module-info" />
         <option value="JUnit5 Test Class" />
-        <option value="Interface" />
         <option value="CSS File" />
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -52,7 +52,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="alex/implement-win-view-and-calling-bingo" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -90,7 +90,7 @@
     <option name="myRunOnSave" value="true" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -119,6 +119,7 @@
     "JUnit.LasoCardTest.executor": "Run",
     "JUnit.MainTest.executor": "Run",
     "JUnit.RegisterLoginTest.executor": "Run",
+    "JUnit.UPickBingoCardTest.executor": "Run",
     "JUnit.UserRegisterLoginTest.executor": "Run",
     "JUnit.WeirdBingoCardTest.executor": "Run",
     "Repository.Attach.Annotations": "false",
@@ -130,10 +131,10 @@
     "code.cleanup.on.save": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "alex/implement-win-view-and-calling-bingo",
+    "git-widget-placeholder": "lucia/update-Bingo-card",
     "jdk.selected.JAVA_MODULE": "17",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/lucia/IdeaProjects/VIA-SEP2/server/src/view",
+    "last_opened_file_path": "/Users/lucia/IdeaProjects/VIA-SEP2/server/src/model/uPickBingo",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.stylelint": "true",
@@ -157,17 +158,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="model.card" />
       <recent name="persistence" />
       <recent name="viewmodel" />
       <recent name="mediator" />
       <recent name="model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/server/src/view" />
-      <recent name="C:\OctavianPrograming\SEP1 Project\VIA-SEP2\client\resources\view" />
+      <recent name="$PROJECT_DIR$/server/src/model/uPickBingo" />
       <recent name="$PROJECT_DIR$/server/src/model" />
+      <recent name="$PROJECT_DIR$/client/src/model/uPickBingo" />
       <recent name="$PROJECT_DIR$/client/src/model" />
-      <recent name="$PROJECT_DIR$/client/src/utils" />
+      <recent name="$PROJECT_DIR$/server/src/view" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -185,17 +187,34 @@
       <recent name="viewmodel" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="mediator" />
+      <recent name="model.uPickBingo" />
       <recent name="viewmodel" />
       <recent name="model" />
       <recent name="view" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Client">
-    <configuration name="UPickBingoGameCardTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.UPickBingoCardTest">
+    <configuration name="UPickBingoCardTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="server" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="model" />
+      <option name="MAIN_CLASS_NAME" value="model.UPickBingoCardTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UPickBingoGameCardTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="model.uPickBingo.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -219,11 +238,13 @@
     <list>
       <item itemvalue="Application.Server" />
       <item itemvalue="Application.Client" />
+      <item itemvalue="JUnit.UPickBingoCardTest" />
       <item itemvalue="JUnit.UPickBingoGameCardTest" />
       <item itemvalue="JUnit.UserRegisterLoginTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UPickBingoCardTest" />
         <item itemvalue="JUnit.UPickBingoGameCardTest" />
         <item itemvalue="JUnit.UserRegisterLoginTest" />
         <item itemvalue="JUnit.UserRegisterLoginTest" />
@@ -250,15 +271,7 @@
       <workItem from="1715946225854" duration="13810000" />
       <workItem from="1716049582247" duration="18780000" />
       <workItem from="1716214868603" duration="24047000" />
-      <workItem from="1716356338778" duration="2878000" />
-    </task>
-    <task id="LOCAL-00046" summary="add unit test for LasoCard">
-      <option name="closed" value="true" />
-      <created>1715548835766</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1715548835766</updated>
+      <workItem from="1716356338778" duration="24281000" />
     </task>
     <task id="LOCAL-00047" summary="add unit test for LasoCard">
       <option name="closed" value="true" />
@@ -644,7 +657,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716359031858</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="add win view">
+      <option name="closed" value="true" />
+      <created>1716359246023</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1716359246023</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -678,7 +699,6 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <option name="RELOAD_CONTEXT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="add Game to Room and delegate calls to it&#10;&#10;update rules method" />
     <MESSAGE value="move rules to Room view&#10;&#10;Since every room has its own instance of a game variation, every room has different rules" />
     <MESSAGE value="add room:full event and send roomId instead of whole Room" />
     <MESSAGE value="remove dependency on Room from RemoteModel and server/client communication" />
@@ -703,7 +723,8 @@
     <MESSAGE value="add the default styles to all FXML views" />
     <MESSAGE value="add method for calling BINGO" />
     <MESSAGE value="rename player in state to currentPlayer to make the distinction clear" />
-    <option name="LAST_COMMIT_MESSAGE" value="rename player in state to currentPlayer to make the distinction clear" />
+    <MESSAGE value="add win view" />
+    <option name="LAST_COMMIT_MESSAGE" value="add win view" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
