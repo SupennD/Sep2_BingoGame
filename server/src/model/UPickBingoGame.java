@@ -1,12 +1,13 @@
 package model;
 
-import mediator.GameEvents;
+import mediator.GameEvent;
 import utility.observer.event.ObserverEvent;
 import utility.observer.listener.LocalListener;
 import utils.Timer;
 import utils.log.Log;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * A class that is responsible for handling all the actions in the game It checks for many state and do the things that
@@ -14,7 +15,7 @@ import java.util.ArrayList;
  *
  * @author Supendra Bogati
  * @author Alexandru Tofan
- * @version 1.1.0 - May 2024
+ * @version 1.3.0 - May 2024
  */
 public class UPickBingoGame implements Game, LocalListener<Integer, String>
 {
@@ -24,7 +25,7 @@ public class UPickBingoGame implements Game, LocalListener<Integer, String>
   private final ArrayList<Integer> calledNumbers;
   private final Timer timer;
   private final Log log = Log.getInstance();
-  private final GameEvents gameEvents = GameEvents.getInstance();
+  private final GameEvent gameEvent = GameEvent.getInstance();
   private boolean isStarted;
   private int currentPlayer;
   private int roomId;
@@ -32,7 +33,7 @@ public class UPickBingoGame implements Game, LocalListener<Integer, String>
   public UPickBingoGame()
   {
     this.timer = new Timer(SECONDS_PER_TURN, true);
-    timer.addListener(this, "timer:tick", "timer:done");
+    timer.addListener(this, "timer:done");
     this.players = new ArrayList<>();
     this.currentPlayer = 0;
     this.calledNumbers = new ArrayList<>();
@@ -47,9 +48,9 @@ public class UPickBingoGame implements Game, LocalListener<Integer, String>
   private synchronized void nextPlayer()
   {
     timer.reset();
-    currentPlayer = (currentPlayer + 1) % players.size();
+    currentPlayer = (currentPlayer + 1) % players.size(); // TODO: check this in relation to the data-structure
     Player nextPlayer = players.get(currentPlayer);
-    gameEvents.fireEvent("game:turn", roomId, nextPlayer);
+    gameEvent.fireEvent("game:turn", roomId, nextPlayer);
     log.info("Next player " + nextPlayer);
   }
 
@@ -71,7 +72,7 @@ public class UPickBingoGame implements Game, LocalListener<Integer, String>
     if (!wasNumberCalled(number))
     {
       calledNumbers.add(number);
-      gameEvents.fireEvent("game:call", roomId, number);
+      gameEvent.fireEvent("game:call", roomId, number);
       log.info("Called number " + number);
       nextPlayer();
     }
@@ -91,11 +92,7 @@ public class UPickBingoGame implements Game, LocalListener<Integer, String>
 
   @Override public void propertyChange(ObserverEvent<Integer, String> observerEvent)
   {
-    switch (observerEvent.getPropertyName())
-    {
-      case "timer:tick" -> gameEvents.fireEvent("game:tick", null, observerEvent.getValue2());
-      case "timer:done" -> nextPlayer();
-    }
+    nextPlayer();
   }
 
   @Override public String getRules()
@@ -138,14 +135,19 @@ public class UPickBingoGame implements Game, LocalListener<Integer, String>
       throw new IllegalStateException("Not enough players to start a game.");
     }
 
+    // Set isStarted to true so that future calls can be ignored
+    isStarted = true;
     // Set the roomId to the id of the room where it's played
     this.roomId = roomId;
     // Start a timer that will be used to manage turns
     Thread timerThread = new Thread(timer);
     timerThread.setDaemon(true);
     timerThread.start();
-    isStarted = true;
-    log.info("Game started");
+    // Start the first turn
+    Player nextPlayer = players.get(currentPlayer);
+    gameEvent.fireEvent("game:turn", roomId, nextPlayer);
+
+    log.info("U Pick BINGO game started in room " + roomId);
   }
 
   @Override public synchronized void makeMove(Player player, int number)
@@ -163,5 +165,21 @@ public class UPickBingoGame implements Game, LocalListener<Integer, String>
   @Override public synchronized boolean isFull()
   {
     return players.size() == MAX_PLAYERS;
+  }
+
+  @Override public synchronized void callBingo(int roomId, Player player)
+  {
+    // TODO: check win once the card is updated to use objects for numbers
+    boolean won = new Random().nextBoolean();
+
+    if (won)
+    {
+      gameEvent.fireEvent("game:win", roomId, player);
+      log.info("Player " + player + " won in room " + roomId);
+    }
+    else
+    {
+      throw new IllegalStateException("Oops! I think you're trying to cheat");
+    }
   }
 }

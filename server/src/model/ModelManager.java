@@ -13,7 +13,7 @@ import utility.observer.subject.PropertyChangeHandler;
  *
  * @author Alexandru Tofan
  * @author Lucia Andronic
- * @version 1.1.0 - April 2024
+ * @version 1.3.0 - May 2024
  */
 public class ModelManager implements Model
 {
@@ -77,6 +77,11 @@ public class ModelManager implements Model
   @Override public void makeMove(int roomId, Player player, int number) throws IllegalStateException
   {
     roomList.makeMove(roomId, player, number);
+  }
+
+  @Override public void callBingo(int roomId, Player player) throws IllegalStateException
+  {
+    roomList.callBingo(roomId, player);
   }
 
   /**

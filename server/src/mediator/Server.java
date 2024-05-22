@@ -20,14 +20,14 @@ import java.rmi.server.UnicastRemoteObject;
  * A class that will be exposed as a remote object using RMI, to be used by clients for communicating with the server.
  *
  * @author Alexandru Tofan
- * @version 1.1.0 - April 2024
+ * @version 1.3.0 - May 2024
  */
 public class Server implements RemoteModel, LocalListener<Object, Object>
 {
   private final Model model;
   private final int PORT = 1099;
   private final Log log = Log.getInstance();
-  private final GameEvents gameEvents = GameEvents.getInstance();
+  private final GameEvent gameEvent = GameEvent.getInstance();
   private final PropertyChangeHandler<Object, Object> propertyChangeHandler;
 
   /**
@@ -39,7 +39,7 @@ public class Server implements RemoteModel, LocalListener<Object, Object>
   {
     this.model = model;
     this.model.addListener(this);
-    this.gameEvents.addListener(this);
+    this.gameEvent.addListener(this);
     this.propertyChangeHandler = new PropertyChangeHandler<>(this, true);
 
     start(); // Start the RMI server
@@ -121,6 +121,11 @@ public class Server implements RemoteModel, LocalListener<Object, Object>
     model.makeMove(roomId, player, number);
   }
 
+  @Override public void callBingo(int roomId, Player player) throws RemoteException
+  {
+    model.callBingo(roomId, player);
+  }
+
   /**
    * Add a remote or local listener to this remote subject.
    *
@@ -152,7 +157,6 @@ public class Server implements RemoteModel, LocalListener<Object, Object>
    */
   @Override public void propertyChange(ObserverEvent<Object, Object> observerEvent)
   {
-    log.debug("Model event received: " + observerEvent);
     propertyChangeHandler.firePropertyChange(observerEvent.getPropertyName(), observerEvent.getValue1(),
         observerEvent.getValue2());
   }

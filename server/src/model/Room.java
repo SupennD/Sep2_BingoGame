@@ -11,7 +11,8 @@ import java.util.ArrayList;
  *
  * @author Supendra Bogati
  * @author Lucia Andronic
- * @version 1.1.0 - May 2024
+ * @author Alexandru Tofan
+ * @version 1.3.0 - May 2024
  */
 public class Room implements Serializable
 {
@@ -71,6 +72,11 @@ public class Room implements Serializable
   public String getRules()
   {
     return game.getRules();
+  }
+
+  public void callBingo(Player player)
+  {
+    game.callBingo(getId(), player);
   }
 
   @Override public boolean equals(Object obj)

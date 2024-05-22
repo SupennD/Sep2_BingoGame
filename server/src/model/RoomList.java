@@ -8,7 +8,8 @@ import utils.log.Log;
  * A class that contains an arraylist of rooms and necessary methods
  *
  * @author Supendra Bogati
- * @version 1.0.0 - May 2024
+ * @author Alexandru Tofan
+ * @version 1.2.0 - May 2024
  */
 public class RoomList
 {
@@ -28,6 +29,30 @@ public class RoomList
     return room;
   }
 
+  public String getRules(int roomId)
+  {
+    Room room = getRoomById(roomId);
+    return room.getRules();
+  }
+
+  public void makeMove(int roomId, Player player, int number)
+  {
+    Room room = getRoomById(roomId);
+    room.makeMove(player, number);
+  }
+
+  public void startGame(int roomId)
+  {
+    Room room = getRoomById(roomId);
+    room.startGame();
+  }
+
+  public void callBingo(int roomId, Player player)
+  {
+    Room room = getRoomById(roomId);
+    room.callBingo(player);
+  }
+
   private Room getAvailableRoom()
   {
     Room room = rooms.peek();
@@ -44,13 +69,7 @@ public class RoomList
     return room;
   }
 
-  public String getRules(int roomId)
-  {
-    Room room = getRoomById(roomId);
-    return room.getRules();
-  }
-
-  public Room getRoomById(int roomId)
+  private Room getRoomById(int roomId)
   {
     for (Room room : rooms.toArrayList())
     {
@@ -61,17 +80,5 @@ public class RoomList
     }
 
     throw new IllegalStateException("No room found with id: " + roomId);
-  }
-
-  public void makeMove(int roomId, Player player, int number)
-  {
-    Room room = getRoomById(roomId);
-    room.makeMove(player, number);
-  }
-
-  public void startGame(int roomId)
-  {
-    Room room = getRoomById(roomId);
-    room.startGame();
   }
 }

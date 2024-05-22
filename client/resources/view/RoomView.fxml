@@ -7,9 +7,10 @@
 <VBox xmlns:fx="http://javafx.com/fxml/1" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity"
       minHeight="-Infinity"
       minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="24.0"
-      userData="Bingo - Public room" xmlns="http://javafx.com/javafx/21" fx:controller="view.RoomViewController">
+      stylesheets="@../css/styles.css" userData="Bingo - Public room" xmlns="http://javafx.com/javafx/21"
+      fx:controller="view.RoomViewController">
     <children>
-        <HBox prefWidth="-Infinity" prefHeight="-Infinity" spacing="12.0" alignment="CENTER_LEFT">
+        <HBox alignment="CENTER_LEFT" prefHeight="-Infinity" prefWidth="-Infinity" spacing="12.0">
             <children>
                 <Button mnemonicParsing="false" onAction="#onGetRules" text="Rules"/>
             </children>
@@ -18,9 +19,8 @@
             <children>
                 <VBox alignment="CENTER" spacing="8.0" HBox.hgrow="ALWAYS">
                     <children>
-                        <VBox alignment="CENTER" fillWidth="false" maxHeight="72.0" maxWidth="72.0"
-                              prefHeight="72.0"
-                              prefWidth="72.0" style="-fx-background-color: #e2e2e2; -fx-background-radius: 8px;"
+                        <VBox alignment="CENTER" fillWidth="false" maxHeight="72.0" maxWidth="72.0" prefHeight="72.0"
+                              prefWidth="72.0" style="-fx-background-color: -fx-base; -fx-background-radius: 8px;"
                               VBox.vgrow="NEVER">
                             <children>
                                 <ProgressIndicator maxHeight="32.0" maxWidth="32.0"/>
@@ -31,9 +31,8 @@
                 </VBox>
                 <VBox alignment="CENTER" spacing="8.0" HBox.hgrow="ALWAYS">
                     <children>
-                        <VBox alignment="CENTER" fillWidth="false" maxHeight="72.0" maxWidth="72.0"
-                              prefHeight="72.0"
-                              prefWidth="72.0" style="-fx-background-color: #e2e2e2; -fx-background-radius: 8px;"
+                        <VBox alignment="CENTER" fillWidth="false" maxHeight="72.0" maxWidth="72.0" prefHeight="72.0"
+                              prefWidth="72.0" style="-fx-background-color: -fx-base; -fx-background-radius: 8px;"
                               VBox.vgrow="NEVER">
                             <children>
                                 <ProgressIndicator maxHeight="32.0" maxWidth="32.0"/>
@@ -44,9 +43,8 @@
                 </VBox>
                 <VBox alignment="CENTER" spacing="8.0" HBox.hgrow="ALWAYS">
                     <children>
-                        <VBox alignment="CENTER" fillWidth="false" maxHeight="72.0" maxWidth="72.0"
-                              prefHeight="72.0"
-                              prefWidth="72.0" style="-fx-background-color: #e2e2e2; -fx-background-radius: 8px;"
+                        <VBox alignment="CENTER" fillWidth="false" maxHeight="72.0" maxWidth="72.0" prefHeight="72.0"
+                              prefWidth="72.0" style="-fx-background-color: -fx-base; -fx-background-radius: 8px;"
                               VBox.vgrow="NEVER">
                             <children>
                                 <ProgressIndicator maxHeight="32.0" maxWidth="32.0"/>
@@ -57,9 +55,8 @@
                 </VBox>
                 <VBox alignment="CENTER" spacing="8.0" HBox.hgrow="ALWAYS">
                     <children>
-                        <VBox alignment="CENTER" fillWidth="false" maxHeight="72.0" maxWidth="72.0"
-                              prefHeight="72.0"
-                              prefWidth="72.0" style="-fx-background-color: #e2e2e2; -fx-background-radius: 8px;"
+                        <VBox alignment="CENTER" fillWidth="false" maxHeight="72.0" maxWidth="72.0" prefHeight="72.0"
+                              prefWidth="72.0" style="-fx-background-color: -fx-base; -fx-background-radius: 8px;"
                               VBox.vgrow="NEVER">
                             <children>
                                 <ProgressIndicator maxHeight="32.0" maxWidth="32.0"/>

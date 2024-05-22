@@ -18,8 +18,8 @@ public class MainViewModel extends ViewModel
 
   @Override public void reset()
   {
-    Player player = (Player) viewModelState.get("player");
-    playerProperty.set(player);
+    Player currentPlayer = (Player) viewModelState.get("currentPlayer");
+    playerProperty.set(currentPlayer);
   }
 
   public ObjectProperty<Player> playerProperty()

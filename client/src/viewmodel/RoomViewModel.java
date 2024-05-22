@@ -30,19 +30,12 @@ public class RoomViewModel extends ViewModel implements LocalListener<Object, Ob
     this.isFullProperty = new SimpleBooleanProperty();
     this.errorProperty = new SimpleStringProperty();
     this.messageProperty = new SimpleStringProperty();
-
-    // Update the message automatically when the room is full
-    this.isFullProperty.addListener((o, ov, isFull) -> {
-      if (isFull)
-      {
-        this.messageProperty.set("The game will now start");
-      }
-    });
   }
 
   @Override public void reset()
   {
-    joinRoom();
+    playersProperty.clear();
+    joinRoom(); // Send a join request for the current player
     isFullProperty.set(false);
     errorProperty.set(null);
     messageProperty.set("Waiting for enough players to join...");
@@ -68,34 +61,14 @@ public class RoomViewModel extends ViewModel implements LocalListener<Object, Ob
     return messageProperty;
   }
 
-  public boolean startGame()
-  {
-    errorProperty.set(null);
-
-    try
-    {
-      int roomId = (Integer) viewModelState.get("roomId");
-      model.startGame(roomId);
-
-      return true;
-    }
-    catch (IllegalStateException e)
-    {
-      errorProperty.set(e.getMessage());
-    }
-
-    return false;
-  }
-
   private void joinRoom()
   {
-    playersProperty.clear();
     errorProperty.set(null);
 
     try
     {
-      Player player = (Player) viewModelState.get("player");
-      int roomId = model.joinRoom(player);
+      Player currentPlayer = (Player) viewModelState.get("currentPlayer");
+      int roomId = model.joinRoom(currentPlayer);
       viewModelState.put("roomId", roomId);
     }
     catch (IllegalStateException e)
@@ -118,9 +91,9 @@ public class RoomViewModel extends ViewModel implements LocalListener<Object, Ob
       viewModelState.put("players", players);
 
       // Update current player stored in state
-      Player player = (Player) viewModelState.get("player");
-      int currentPlayerIndex = players.indexOf(player);
-      viewModelState.put("player", players.get(currentPlayerIndex));
+      Player currentPlayer = (Player) viewModelState.get("currentPlayer");
+      int currentPlayerIndex = players.indexOf(currentPlayer);
+      viewModelState.put("currentPlayer", players.get(currentPlayerIndex));
     }
   }
 
@@ -131,6 +104,7 @@ public class RoomViewModel extends ViewModel implements LocalListener<Object, Ob
 
     if (currentRoomId == roomId)
     {
+      messageProperty.set("The game will now start");
       isFullProperty.set(true);
     }
   }

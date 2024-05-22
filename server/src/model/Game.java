@@ -9,4 +9,5 @@ public interface Game extends Serializable
   void start(int roomId);
   void makeMove(Player player, int number);
   boolean isFull();
+  void callBingo(int roomId, Player player);
 }

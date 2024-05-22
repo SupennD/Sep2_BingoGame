@@ -45,10 +45,15 @@ public class Main extends Application
 
     Client client = new Client(host);
 
+    Model model = new ModelManager(client);
+    ViewModelFactory viewModelFactory = new ViewModelFactory(model);
+    ViewHandler viewHandler = new ViewHandler(viewModelFactory);
+
     // Stop the server when the javafx application is closed
     primaryStage.setOnCloseRequest(windowEvent -> {
       try
       {
+        viewHandler.stop();
         client.stop();
       }
       catch (RemoteException e)
@@ -56,10 +61,6 @@ public class Main extends Application
         Platform.exit();
       }
     });
-
-    Model model = new ModelManager(client);
-    ViewModelFactory viewModelFactory = new ViewModelFactory(model);
-    ViewHandler viewHandler = new ViewHandler(viewModelFactory);
 
     viewHandler.start(primaryStage);
   }

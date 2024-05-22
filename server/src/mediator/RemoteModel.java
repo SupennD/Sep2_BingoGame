@@ -12,7 +12,7 @@ import java.rmi.RemoteException;
  * @author Alexandru Tofan
  * @author Supendra Bogati
  * @author Lucia Andronic
- * @version 1.2.1 - May 2024
+ * @version 1.3.0 - May 2024
  */
 public interface RemoteModel extends RemoteSubject<Object, Object>
 {
@@ -22,4 +22,5 @@ public interface RemoteModel extends RemoteSubject<Object, Object>
   String getRules(int roomId) throws RemoteException;
   void startGame(int roomId) throws RemoteException;
   void makeMove(int roomId, Player player, int number) throws RemoteException;
+  void callBingo(int roomId, Player player) throws RemoteException;
 }

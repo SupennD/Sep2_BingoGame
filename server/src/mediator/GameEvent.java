@@ -11,16 +11,16 @@ import utility.observer.subject.PropertyChangeHandler;
  * @author Alexandru Tofan
  * @version 1.0.0 - May 2024
  */
-public class GameEvents implements LocalSubject<Object, Object>
+public class GameEvent implements LocalSubject<Object, Object>
 {
   private static final Object lock = new Object();
-  private static GameEvents instance;
+  private static GameEvent instance;
   private final PropertyChangeHandler<Object, Object> propertyChangeHandler;
 
   /**
    * Private constructor that creates an instance of this class.
    */
-  private GameEvents()
+  private GameEvent()
   {
     this.propertyChangeHandler = new PropertyChangeHandler<>(this, true);
   }
@@ -30,7 +30,7 @@ public class GameEvents implements LocalSubject<Object, Object>
    *
    * @return the singleton instance
    */
-  public static GameEvents getInstance()
+  public static GameEvent getInstance()
   {
     if (instance == null)
     {
@@ -38,7 +38,7 @@ public class GameEvents implements LocalSubject<Object, Object>
       {
         if (instance == null)
         {
-          instance = new GameEvents();
+          instance = new GameEvent();
         }
       }
     }

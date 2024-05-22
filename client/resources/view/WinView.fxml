@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER" prefHeight="400.0" prefWidth="600.0"
+      stylesheets="@../css/styles.css"
+      userData="Bingo" xmlns="http://javafx.com/javafx/21" fx:controller="view.WinViewController">
+    <Text fx:id="messageText" styleClass="h1" text="Win message"/>
+</VBox>

@@ -1,8 +1,8 @@
 package view;
 
-import javafx.animation.PauseTransition;
-import javafx.collections.ListChangeListener;
-import javafx.event.ActionEvent;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.beans.InvalidationListener;
 import javafx.fxml.FXML;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Region;
@@ -32,51 +32,40 @@ public class RoomViewController extends ViewController<RoomViewModel>
     super.init(viewHandler, viewModel, root);
 
     // Add a listener to the observable list of players and update the view when it changes
-    viewModel.playersProperty().addListener((ListChangeListener<Player>) change -> {
-      while (change.next())
-      {
-        // Convert to a normal list
-        List<Player> list = change.getList().stream().map(player -> (Player) player).toList();
-
-        // Loop through the players and replace the placeholders on screen
-        for (int i = 0; i < list.size(); i++)
-        {
-          Player player = list.get(i);
-          VBox playerVBox = (VBox) playersHBox.getChildren().get(i);
-          // The first children is a VBox container for the image
-          VBox imageVbox = (VBox) playerVBox.getChildren().get(0);
-          // The second one is a Text node for the username
-          Text userNameText = (Text) playerVBox.getChildren().get(1);
-
-          // TODO: maybe add an image later
-          imageVbox.getChildren().setAll(new Text("*"));
-          userNameText.setText(player.getUserName());
-        }
-      }
+    viewModel.playersProperty().addListener((InvalidationListener) o -> {
+      updatePlayers(viewModel.playersProperty().stream().toList());
     });
-
     errorText.textProperty().bind(viewModel.errorProperty());
     messageText.textProperty().bind(viewModel.messageProperty());
 
-    PauseTransition pauseTransition = new PauseTransition(Duration.seconds(2));
-    pauseTransition.setOnFinished(this::startGame);
+    // Delay opening the game view for 2s to give players some time
+    Timeline openGameViewTimeline = new Timeline(
+        new KeyFrame(Duration.seconds(2), e -> viewHandler.openView(View.GAME)));
 
-    // Listen for when the room is full and open the game view by playing the transition
+    // Listen for when the room is full and open the game view by playing the timeline
     viewModel.isFullProperty().addListener((o, ov, isFull) -> {
       if (isFull)
       {
-        pauseTransition.play();
+        openGameViewTimeline.play(); // start the game in 2s after the room is full
       }
     });
   }
 
-  private void startGame(ActionEvent actionEvent)
+  private void updatePlayers(List<Player> players)
   {
-    boolean success = viewModel.startGame();
-
-    if (success)
+    // Loop through the players and replace the placeholders on screen
+    for (int i = 0; i < players.size(); i++)
     {
-      viewHandler.openView(View.GAME);
+      Player player = players.get(i);
+      VBox playerVBox = (VBox) playersHBox.getChildren().get(i);
+      // The first children is a VBox container for the image
+      VBox imageVbox = (VBox) playerVBox.getChildren().get(0);
+      // The second one is a Text node for the username
+      Text userNameText = (Text) playerVBox.getChildren().get(1);
+
+      // TODO: maybe add an image later
+      imageVbox.getChildren().setAll(new Text("*"));
+      userNameText.setText(player.getUserName());
     }
   }
 

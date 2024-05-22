@@ -8,7 +8,7 @@ import view.View;
  *
  * @author Alexandru Tofan
  * @author Lucia Andronic
- * @version 1.0.1 - April 2024
+ * @version 1.3.0 - May 2024
  */
 public class ViewModelFactory
 {
@@ -48,6 +48,7 @@ public class ViewModelFactory
       case ROOM -> new RoomViewModel(model, viewModelState);
       case GAME -> new GameViewModel(model, viewModelState);
       case RULES -> new RulesViewModel(model, viewModelState);
+      case WIN -> new WinViewModel(model, viewModelState);
     };
   }
 }

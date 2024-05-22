@@ -15,26 +15,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69055953-a1eb-40be-bf41-6f36698da6d9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/client/resources/view/RulesView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/view/RulesViewController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/viewmodel/RulesViewModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/client/client.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/resources/view/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/client/resources/view/MainView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/mediator/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/mediator/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/mediator/RemoteModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/mediator/RemoteModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/model/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/model/ModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/model/ModelManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/view/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/view/MainViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/view/View.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/viewmodel/ViewModelFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/viewmodel/ViewModelFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/mediator/RemoteModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/mediator/RemoteModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/mediator/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/mediator/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/model/BingoGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/model/BingoGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/model/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/model/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/model/ModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/model/ModelManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/persistence/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/persistence/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/resources/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/resources/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/resources/view/GameView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/client/resources/view/GameView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/resources/view/RoomView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/client/resources/view/RoomView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/view/GameViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/view/GameViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/Main.java" afterDir="false" />
     </list>
     <list id="2ad0883f-27d6-414c-bd6a-e3da7901b8f0" name="Changes by supendd" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,10 +33,11 @@
       <list>
         <option value="Enum" />
         <option value="module-info" />
-        <option value="FxmlFile" />
         <option value="JUnit5 Test Class" />
         <option value="Interface" />
+        <option value="CSS File" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -65,7 +52,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="alex/refactor-rooms-and-game" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -143,10 +130,11 @@
     "code.cleanup.on.save": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "#22 on alex/implement-make-move",
+    "git-widget-placeholder": "alex/implement-win-view-and-calling-bingo",
     "jdk.selected.JAVA_MODULE": "17",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/OctavianPrograming/SEP1 Project/VIA-SEP2/client/resources/view",
+    "last_opened_file_path": "/Users/lucia/IdeaProjects/VIA-SEP2/server/src/view",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.stylelint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -157,7 +145,7 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.30393487",
     "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "project.propVCSSupport.Confirmation",
+    "settings.editor.selected.configurable": "preferences.general",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -175,14 +163,17 @@
       <recent name="model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/server/src/view" />
       <recent name="C:\OctavianPrograming\SEP1 Project\VIA-SEP2\client\resources\view" />
       <recent name="$PROJECT_DIR$/server/src/model" />
       <recent name="$PROJECT_DIR$/client/src/model" />
       <recent name="$PROJECT_DIR$/client/src/utils" />
-      <recent name="$PROJECT_DIR$/client/resources/css" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/resources/sounds/" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="utils" />
@@ -194,6 +185,7 @@
       <recent name="viewmodel" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="viewmodel" />
       <recent name="model" />
       <recent name="view" />
     </key>
@@ -238,14 +230,6 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
-        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
-      </set>
-    </attachedChunks>
-  </component>
   <component name="ShelveChangesManager">
     <option name="remove_strategy" value="true" />
   </component>
@@ -263,127 +247,10 @@
       <workItem from="1715540727873" duration="10395000" />
       <workItem from="1715590102681" duration="20306000" />
       <workItem from="1715847249344" duration="10477000" />
-      <workItem from="1715946225854" duration="3170000" />
-    </task>
-    <task id="LOCAL-00031" summary="add toArrayList method">
-      <option name="closed" value="true" />
-      <created>1715095339593</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1715095339593</updated>
-    </task>
-    <task id="LOCAL-00032" summary="add toArrayList method">
-      <option name="closed" value="true" />
-      <created>1715095371380</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1715095371380</updated>
-    </task>
-    <task id="LOCAL-00033" summary="add Game interface and update impl">
-      <option name="closed" value="true" />
-      <created>1715095413247</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1715095413247</updated>
-    </task>
-    <task id="LOCAL-00034" summary="add joinRoom method to model">
-      <option name="closed" value="true" />
-      <created>1715095976602</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1715095976602</updated>
-    </task>
-    <task id="LOCAL-00035" summary="implement RMI server methods">
-      <option name="closed" value="true" />
-      <created>1715096434821</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1715096434821</updated>
-    </task>
-    <task id="LOCAL-00036" summary="copy blocking deque utils from server">
-      <option name="closed" value="true" />
-      <created>1715097018935</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1715097018935</updated>
-    </task>
-    <task id="LOCAL-00037" summary="REMOVE STATES">
-      <option name="closed" value="true" />
-      <created>1715168000382</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1715168000382</updated>
-    </task>
-    <task id="LOCAL-00038" summary="remove blocking list">
-      <option name="closed" value="true" />
-      <created>1715168172397</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1715168172397</updated>
-    </task>
-    <task id="LOCAL-00039" summary="refactor views">
-      <option name="closed" value="true" />
-      <created>1715168334447</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1715168334447</updated>
-    </task>
-    <task id="LOCAL-00040" summary="add security policy for development">
-      <option name="closed" value="true" />
-      <created>1715171724992</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1715171724992</updated>
-    </task>
-    <task id="LOCAL-00041" summary="allow setting hostname from command line">
-      <option name="closed" value="true" />
-      <created>1715173343398</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1715173343398</updated>
-    </task>
-    <task id="LOCAL-00042" summary="add run later to start game">
-      <option name="closed" value="true" />
-      <created>1715262331998</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1715262331998</updated>
-    </task>
-    <task id="LOCAL-00043" summary="add testing libraries to server">
-      <option name="closed" value="true" />
-      <created>1715262357191</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1715262357191</updated>
-    </task>
-    <task id="LOCAL-00044" summary="remove adding files to git automatically">
-      <option name="closed" value="true" />
-      <created>1715262641986</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1715262641986</updated>
-    </task>
-    <task id="LOCAL-00045" summary="add card interface and LasoCard impl">
-      <option name="closed" value="true" />
-      <created>1715548818621</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1715548818621</updated>
+      <workItem from="1715946225854" duration="13810000" />
+      <workItem from="1716049582247" duration="18780000" />
+      <workItem from="1716214868603" duration="24047000" />
+      <workItem from="1716356338778" duration="2878000" />
     </task>
     <task id="LOCAL-00046" summary="add unit test for LasoCard">
       <option name="closed" value="true" />
@@ -657,7 +524,127 @@
       <option name="project" value="LOCAL" />
       <updated>1715894050054</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="change the turn timer to 15s">
+      <option name="closed" value="true" />
+      <created>1715949732020</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1715949732020</updated>
+    </task>
+    <task id="LOCAL-00081" summary="add global styles for base color and font">
+      <option name="closed" value="true" />
+      <created>1716063882265</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1716063882265</updated>
+    </task>
+    <task id="LOCAL-00082" summary="update login view to match newly added styles">
+      <option name="closed" value="true" />
+      <created>1716063901326</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1716063901326</updated>
+    </task>
+    <task id="LOCAL-00083" summary="add stop method to ViewHandler, ViewController and ViewModel&#10;&#10;This method will allow to do some clean-up before a view is closed">
+      <option name="closed" value="true" />
+      <created>1716072012768</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1716072012768</updated>
+    </task>
+    <task id="LOCAL-00084" summary="add stop method to ViewHandler, ViewController and ViewModel&#10;&#10;This method will allow to do some clean-up before a view is closed">
+      <option name="closed" value="true" />
+      <created>1716072168356</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1716072168356</updated>
+    </task>
+    <task id="LOCAL-00085" summary="add some helpful messages for failed connections">
+      <option name="closed" value="true" />
+      <created>1716073097526</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1716073097526</updated>
+    </task>
+    <task id="LOCAL-00086" summary="remove game:tick and start the game from the GameViewModel&#10;&#10;This is a fix for turns and the timer being out of sync with the client. The timer animation should be on client and start when the turn starts.">
+      <option name="closed" value="true" />
+      <created>1716234782573</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1716234782573</updated>
+    </task>
+    <task id="LOCAL-00087" summary="remove loading styles from ViewHandler&#10;&#10;Should add them manually to the FXML">
+      <option name="closed" value="true" />
+      <created>1716238060831</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1716238060831</updated>
+    </task>
+    <task id="LOCAL-00088" summary="add the default styles to all FXML views">
+      <option name="closed" value="true" />
+      <created>1716238767983</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1716238767983</updated>
+    </task>
+    <task id="LOCAL-00089" summary="add the default styles to all FXML views">
+      <option name="closed" value="true" />
+      <created>1716238956944</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1716238956944</updated>
+    </task>
+    <task id="LOCAL-00090" summary="add the default styles to all FXML views">
+      <option name="closed" value="true" />
+      <created>1716239037544</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1716239037544</updated>
+    </task>
+    <task id="LOCAL-00091" summary="add the default styles to all FXML views">
+      <option name="closed" value="true" />
+      <created>1716239110872</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1716239110872</updated>
+    </task>
+    <task id="LOCAL-00092" summary="add the default styles to all FXML views">
+      <option name="closed" value="true" />
+      <created>1716239136722</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1716239136722</updated>
+    </task>
+    <task id="LOCAL-00093" summary="add method for calling BINGO">
+      <option name="closed" value="true" />
+      <created>1716357078411</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1716357078412</updated>
+    </task>
+    <task id="LOCAL-00094" summary="rename player in state to currentPlayer to make the distinction clear">
+      <option name="closed" value="true" />
+      <created>1716359031858</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1716359031858</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -691,16 +678,6 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <option name="RELOAD_CONTEXT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="add unit test for LasoCard" />
-    <MESSAGE value="replace start with joinRoom to make it clear" />
-    <MESSAGE value="add JavaDoc to Card" />
-    <MESSAGE value="update tests" />
-    <MESSAGE value="add Bingo card" />
-    <MESSAGE value="fix card view" />
-    <MESSAGE value="add timer implementation" />
-    <MESSAGE value="rename class BingoGame&#10;&#10;This is just one variation of Bingo so it should not be named Bingo as a generic" />
-    <MESSAGE value="rename card to match bingo game variation" />
-    <MESSAGE value="make roomList be the mediator between model and game" />
     <MESSAGE value="add Game to Room and delegate calls to it&#10;&#10;update rules method" />
     <MESSAGE value="move rules to Room view&#10;&#10;Since every room has its own instance of a game variation, every room has different rules" />
     <MESSAGE value="add room:full event and send roomId instead of whole Room" />
@@ -716,10 +693,30 @@
     <MESSAGE value="fix called numbers list and turns" />
     <MESSAGE value="add reset to timer to fix turns" />
     <MESSAGE value="add build artifacts" />
-    <option name="LAST_COMMIT_MESSAGE" value="add build artifacts" />
+    <MESSAGE value="change the turn timer to 15s" />
+    <MESSAGE value="add global styles for base color and font" />
+    <MESSAGE value="update login view to match newly added styles" />
+    <MESSAGE value="add stop method to ViewHandler, ViewController and ViewModel&#10;&#10;This method will allow to do some clean-up before a view is closed" />
+    <MESSAGE value="add some helpful messages for failed connections" />
+    <MESSAGE value="remove game:tick and start the game from the GameViewModel&#10;&#10;This is a fix for turns and the timer being out of sync with the client. The timer animation should be on client and start when the turn starts." />
+    <MESSAGE value="remove loading styles from ViewHandler&#10;&#10;Should add them manually to the FXML" />
+    <MESSAGE value="add the default styles to all FXML views" />
+    <MESSAGE value="add method for calling BINGO" />
+    <MESSAGE value="rename player in state to currentPlayer to make the distinction clear" />
+    <option name="LAST_COMMIT_MESSAGE" value="rename player in state to currentPlayer to make the distinction clear" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint type="java-exception">
+          <properties class="java.lang.IllegalArgumentException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

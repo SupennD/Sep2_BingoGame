@@ -6,11 +6,10 @@ import viewmodel.ViewModel;
 /**
  * A general class that defines the base structure of a ViewController and should be extended by concrete view
  * controllers.
- * TODO: fix generic type
  *
  * @param <VM> the concrete {@link ViewModel} to be used in this view controller
  * @author Alexandru Tofan
- * @version 1.0.0 - April 2024
+ * @version 1.1.0 - May 2024
  */
 public class ViewController<VM extends ViewModel>
 {
@@ -38,6 +37,15 @@ public class ViewController<VM extends ViewModel>
     this.viewHandler = viewHandler;
     this.viewModel = viewModel;
     this.root = root;
+  }
+
+  /**
+   * A method called by the {@link ViewHandler} before opening a new view. It delegates to this controllers
+   * {@link ViewModel} and can be used for clean-up.
+   */
+  public final void stop()
+  {
+    viewModel.stop();
   }
 
   /**

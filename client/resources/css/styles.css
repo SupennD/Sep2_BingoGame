@@ -1,0 +1,42 @@
+.root {
+    /* Customize the default theme to use blue colors */
+    -fx-base: #c1edff;
+    -fx-accent: #69cbff;
+    -fx-accent-alt: #ef6e11;
+    -fx-control-inner-background: derive(-fx-base, 45%);
+    -fx-default-button: -fx-accent;
+
+    /* Use Avenir as the default font for all nodes */
+    -fx-font-family: "Avenir Next Condensed";
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+
+    /* Some custom style variables */
+    -bingo-shadow: dropshadow(gaussian, rgba(9, 46, 92, 0.05), 8, 0, 1, 3);
+    -bingo-background: radial-gradient(focus-angle -52.59deg, focus-distance -25.4335%, center 27.2853% 72.8029%, radius 96.2428%, -fx-base 0.0%, #ffffff 100.0%);
+
+    -fx-background-color: -bingo-background;
+}
+
+.h1 {
+    -fx-font-size: 24px;
+    -fx-stroke: white;
+    -fx-stroke-type: outside;
+    -fx-stroke-width: 1px;
+    -fx-effect: -bingo-shadow;
+}
+
+.surface {
+    -fx-background-color: -fx-base;
+    -fx-background-radius: 8px;
+    -fx-effect: -bingo-shadow;
+}
+
+.rounded {
+    -fx-background-radius: 4px;
+    -fx-border-radius: 4px;
+}
+
+.selected {
+    -fx-background-color: -fx-accent;
+}

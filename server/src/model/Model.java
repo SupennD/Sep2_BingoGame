@@ -8,7 +8,7 @@ import utility.observer.subject.LocalSubject;
  *
  * @author Alexandru Tofan
  * @author Lucia Andronic
- * @version 1.1.0 - April 2024
+ * @version 1.3.0 - May 2024
  */
 public interface Model extends LocalSubject<Object, Object>
 {
@@ -18,4 +18,5 @@ public interface Model extends LocalSubject<Object, Object>
   String getRules(int roomId) throws IllegalStateException;
   void startGame(int roomId) throws IllegalStateException;
   void makeMove(int roomId, Player player, int number) throws IllegalStateException;
+  void callBingo(int roomId, Player player) throws IllegalStateException;
 }

@@ -15,7 +15,7 @@ import utility.observer.subject.PropertyChangeHandler;
  * @author Alexandru Tofan
  * @author Supendra Bogati
  * @author Lucia Andronic
- * @version 1.1.1 - May 2024
+ * @version 1.3.0 - May 2024
  */
 public class ModelManager implements Model, LocalListener<Object, Object>
 {
@@ -61,6 +61,11 @@ public class ModelManager implements Model, LocalListener<Object, Object>
   @Override public void makeMove(int roomId, Player player, int number) throws IllegalStateException
   {
     client.makeMove(roomId, player, number);
+  }
+
+  @Override public void callBingo(int roomId, Player player) throws IllegalStateException
+  {
+    client.callBingo(roomId, player);
   }
 
   /**

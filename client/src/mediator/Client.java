@@ -11,6 +11,7 @@ import utility.observer.subject.RemoteSubject;
 import utils.log.Log;
 
 import java.net.MalformedURLException;
+import java.rmi.ConnectException;
 import java.rmi.Naming;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
@@ -23,7 +24,7 @@ import java.rmi.server.UnicastRemoteObject;
  *
  * @author Alexandru Tofan
  * @author Supendra Bogati
- * @version 1.1.0 - April 2024
+ * @version 1.3.0 - May 2024
  */
 public class Client implements Model, RemoteListener<Object, Object>
 {
@@ -39,8 +40,18 @@ public class Client implements Model, RemoteListener<Object, Object>
   {
     start(); // Start the RMI server
 
-    this.remoteModel = (RemoteModel) Naming.lookup("rmi://" + host + ":" + PORT + "/RemoteModel");
-    this.remoteModel.addListener(this);
+    try
+    {
+      this.remoteModel = (RemoteModel) Naming.lookup("rmi://" + host + ":" + PORT + "/RemoteModel");
+      this.remoteModel.addListener(this);
+    }
+    catch (ConnectException e)
+    {
+      log.warn("Could not connect to the server. Make sure the server is running and you used the correct host.");
+      log.warn("You can pass the --host parameter when starting the application.");
+      throw e; // Just throw the exception to be dealt with by classes using Client
+    }
+
     this.propertyChangeHandler = new PropertyChangeHandler<>(this, true);
   }
 
@@ -143,6 +154,18 @@ public class Client implements Model, RemoteListener<Object, Object>
     }
   }
 
+  @Override public void callBingo(int roomId, Player player) throws IllegalStateException
+  {
+    try
+    {
+      remoteModel.callBingo(roomId, player);
+    }
+    catch (RemoteException e)
+    {
+      throw new IllegalStateException(e);
+    }
+  }
+
   /**
    * Add a local listener to this local subject.
    *
@@ -172,7 +195,6 @@ public class Client implements Model, RemoteListener<Object, Object>
    */
   @Override public void propertyChange(ObserverEvent<Object, Object> observerEvent)
   {
-    log.debug("Remote event received: " + observerEvent);
     propertyChangeHandler.firePropertyChange(observerEvent);
   }
 }

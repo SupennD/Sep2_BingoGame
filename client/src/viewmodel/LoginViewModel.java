@@ -54,8 +54,8 @@ public class LoginViewModel extends ViewModel
 
     try
     {
-      Player player = model.register(userNameProperty.get(), passwordProperty.get());
-      viewModelState.put("player", player);
+      Player currentPlayer = model.register(userNameProperty.get(), passwordProperty.get());
+      viewModelState.put("currentPlayer", currentPlayer);
 
       return true;
     }
@@ -73,8 +73,8 @@ public class LoginViewModel extends ViewModel
 
     try
     {
-      Player player = model.login(userNameProperty.get(), passwordProperty.get());
-      viewModelState.put("player", player);
+      Player currentPlayer = model.login(userNameProperty.get(), passwordProperty.get());
+      viewModelState.put("currentPlayer", currentPlayer);
 
       return true;
     }

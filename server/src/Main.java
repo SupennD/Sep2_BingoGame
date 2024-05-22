@@ -43,6 +43,8 @@ public class Main extends Application
     // Ex... java -jar server.jar --host=127.0.0.1
     Map<String, String> namedParameters = getParameters().getNamed();
     String host = namedParameters.getOrDefault("host", HOST);
+    // Set the rmi server hostname property, otherwise it uses the default
+    // which does not always work on local networks (Mac's especially).
     System.setProperty("java.rmi.server.hostname", host);
 
     Model model = new ModelManager();
@@ -55,6 +57,7 @@ public class Main extends Application
     primaryStage.setOnCloseRequest(windowEvent -> {
       try
       {
+        viewHandler.stop();
         server.stop();
       }
       catch (RemoteException | MalformedURLException e)
