@@ -65,6 +65,11 @@ public class ModelManager implements Model
     return room.getId();
   }
 
+  @Override public void leaveRoom(int roomId, Player player)
+  {
+    roomList.leaveRoom(roomId, player);
+  }
+
   @Override public String getRules(int roomId) throws IllegalStateException
   {
     return roomList.getRules(roomId);

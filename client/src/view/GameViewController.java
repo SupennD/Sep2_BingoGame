@@ -108,7 +108,7 @@ public class GameViewController extends ViewController<GameViewModel>
           timer.setUserData(remainingSeconds - 1);
           timer.setText(String.format("%02d:%02d", minutes, seconds));
         }));
-        timeline.setCycleCount(15);
+        timeline.setCycleCount(16);
         timeline.playFromStart();
       }
       else

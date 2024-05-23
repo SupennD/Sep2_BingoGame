@@ -131,7 +131,7 @@
     "code.cleanup.on.save": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "lucia/update-Bingo-card",
+    "git-widget-placeholder": "supen-sprint66",
     "jdk.selected.JAVA_MODULE": "17",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/lucia/IdeaProjects/VIA-SEP2/server/src/model/uPickBingo",
@@ -146,11 +146,12 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.30393487",
     "rearrange.code.on.save": "true",
-    "settings.editor.selected.configurable": "preferences.general",
+    "settings.editor.selected.configurable": "preferences.JavaFX",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
-    "ChangesTree.GroupingKeys": [],
+    "ChangesTree.GroupingKeys": [
+    ],
     "GitStage.ChangesTree.GroupingKeys": [
       "repository"
     ]
@@ -194,7 +195,7 @@
       <recent name="view" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UPickBingoCardTest">
+  <component name="RunManager" selected="Application.Client">
     <configuration name="UPickBingoCardTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="server" />
       <extension name="coverage">
@@ -272,38 +273,6 @@
       <workItem from="1716049582247" duration="18780000" />
       <workItem from="1716214868603" duration="24047000" />
       <workItem from="1716356338778" duration="24281000" />
-    </task>
-    <task id="LOCAL-00047" summary="add unit test for LasoCard">
-      <option name="closed" value="true" />
-      <created>1715548981094</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1715548981094</updated>
-    </task>
-    <task id="LOCAL-00048" summary="add unit test for LasoCard">
-      <option name="closed" value="true" />
-      <created>1715549064202</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1715549064202</updated>
-    </task>
-    <task id="LOCAL-00049" summary="replace start with joinRoom to make it clear">
-      <option name="closed" value="true" />
-      <created>1715549329826</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1715549329826</updated>
-    </task>
-    <task id="LOCAL-00050" summary="add JavaDoc to Card">
-      <option name="closed" value="true" />
-      <created>1715550467636</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1715550467636</updated>
     </task>
     <task id="LOCAL-00051" summary="update tests">
       <option name="closed" value="true" />
@@ -665,7 +634,39 @@
       <option name="project" value="LOCAL" />
       <updated>1716359246023</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="final ver">
+      <option name="closed" value="true" />
+      <created>1716461623830</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1716461623830</updated>
+    </task>
+    <task id="LOCAL-00097" summary="vinal version of room">
+      <option name="closed" value="true" />
+      <created>1716464877568</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1716464877568</updated>
+    </task>
+    <task id="LOCAL-00098" summary="move condition after sleep in Timer">
+      <option name="closed" value="true" />
+      <created>1716467485796</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1716467485796</updated>
+    </task>
+    <task id="LOCAL-00099" summary="add one cycle to the timer timeline">
+      <option name="closed" value="true" />
+      <created>1716467519220</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1716467519221</updated>
+    </task>
+    <option name="localTasksCounter" value="100" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -699,10 +700,6 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <option name="RELOAD_CONTEXT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="move rules to Room view&#10;&#10;Since every room has its own instance of a game variation, every room has different rules" />
-    <MESSAGE value="add room:full event and send roomId instead of whole Room" />
-    <MESSAGE value="remove dependency on Room from RemoteModel and server/client communication" />
-    <MESSAGE value="remove classes made redundant by last commit 0448e8f" />
     <MESSAGE value="rename weird to UPick" />
     <MESSAGE value="add infinite option to the Timer" />
     <MESSAGE value="rename called numbers property" />
@@ -724,7 +721,11 @@
     <MESSAGE value="add method for calling BINGO" />
     <MESSAGE value="rename player in state to currentPlayer to make the distinction clear" />
     <MESSAGE value="add win view" />
-    <option name="LAST_COMMIT_MESSAGE" value="add win view" />
+    <MESSAGE value="final ver" />
+    <MESSAGE value="vinal version of room" />
+    <MESSAGE value="move condition after sleep in Timer" />
+    <MESSAGE value="add one cycle to the timer timeline" />
+    <option name="LAST_COMMIT_MESSAGE" value="add one cycle to the timer timeline" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

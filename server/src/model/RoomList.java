@@ -53,6 +53,17 @@ public class RoomList
   {
     Room room = getRoomById(roomId);
     room.callBingo(player);
+    rooms.remove(room);
+  }
+
+  public void leaveRoom(int roomId, Player player)
+  {
+    Room room = getRoomById(roomId);
+    room.leaveRoom(player);
+    if (room.isEmpty())
+    {
+      rooms.remove(room);
+    }
   }
 
   private Room getAvailableRoom()

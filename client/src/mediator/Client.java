@@ -119,6 +119,18 @@ public class Client implements Model, RemoteListener<Object, Object>
     }
   }
 
+  @Override public void leaveRoom(int roomId, Player player) throws IllegalStateException
+  {
+    try
+    {
+      remoteModel.leaveRoom(roomId, player);
+    }
+    catch (RemoteException e)
+    {
+      throw new IllegalStateException(e);
+    }
+  }
+
   @Override public String getRules(int roomId) throws IllegalStateException
   {
     try

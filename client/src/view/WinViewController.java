@@ -22,4 +22,9 @@ public class WinViewController extends ViewController<WinViewModel>
 
     messageText.textProperty().bind(viewModel.messageProperty());
   }
+
+  @FXML public void onReturn()
+  {
+    viewHandler.openView(View.MAIN);
+  }
 }

@@ -106,4 +106,20 @@ public class Room implements Serializable
   {
     game.makeMove(player, cell);
   }
+
+  public void leaveRoom(Player player)
+  {
+    players.remove(player);
+    game.removePlayer(player);
+
+    if (isEmpty())
+    {
+      game.stop(getId());
+    }
+  }
+
+  public boolean isEmpty()
+  {
+    return players.size() == 0;
+  }
 }

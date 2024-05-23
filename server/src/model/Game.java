@@ -12,4 +12,7 @@ public interface Game extends Serializable
   void makeMove(Player player, Cell cell);
   boolean isFull();
   void callBingo(int roomId, Player player);
+  void removePlayer(Player player);
+  void stop(int roomId);
+
 }

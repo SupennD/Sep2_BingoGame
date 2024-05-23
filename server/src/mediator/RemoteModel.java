@@ -20,6 +20,7 @@ public interface RemoteModel extends RemoteSubject<Object, Object>
   Player register(String userName, String password) throws RemoteException;
   Player login(String userName, String password) throws RemoteException;
   int joinRoom(Player player) throws RemoteException;
+  void leaveRoom(int roomId, Player player) throws RemoteException;
   String getRules(int roomId) throws RemoteException;
   void startGame(int roomId) throws RemoteException;
   void makeMove(int roomId, Player player, Cell cell) throws RemoteException;

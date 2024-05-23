@@ -52,7 +52,6 @@ public class Main extends Application
     ViewHandler viewHandler = new ViewHandler(viewModelFactory);
 
     Server server = new Server(model);
-
     // Stop the server when the javafx application is closed
     primaryStage.setOnCloseRequest(windowEvent -> {
       try

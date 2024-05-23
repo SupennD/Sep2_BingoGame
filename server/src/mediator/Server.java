@@ -21,6 +21,7 @@ import java.rmi.server.UnicastRemoteObject;
  * A class that will be exposed as a remote object using RMI, to be used by clients for communicating with the server.
  *
  * @author Alexandru Tofan
+ * @author Supendra Bogati
  * @version 1.3.0 - May 2024
  */
 public class Server implements RemoteModel, LocalListener<Object, Object>
@@ -105,6 +106,11 @@ public class Server implements RemoteModel, LocalListener<Object, Object>
   @Override public int joinRoom(Player player) throws RemoteException
   {
     return model.joinRoom(player);
+  }
+
+  @Override public void leaveRoom(int roomId, Player player) throws RemoteException
+  {
+    model.leaveRoom(roomId, player);
   }
 
   @Override public String getRules(int roomId) throws RemoteException

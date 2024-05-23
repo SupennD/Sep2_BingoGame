@@ -38,7 +38,7 @@ public class UPickBingoGame implements Game, LocalListener<Integer, String>
     this.timer = new Timer(SECONDS_PER_TURN, true);
     timer.addListener(this, "timer:done");
     this.players = new ArrayList<>();
-    this.currentPlayer = 0;
+    this.currentPlayer = -1;
     this.calledCells = new ArrayList<>();
     this.isStarted = false;
   }
@@ -50,11 +50,11 @@ public class UPickBingoGame implements Game, LocalListener<Integer, String>
 
   private synchronized void nextPlayer()
   {
-    timer.reset();
-    currentPlayer = (currentPlayer + 1) % players.size(); // TODO: check this in relation to the data-structure
+    currentPlayer = (currentPlayer + 1) % players.size();
     Player nextPlayer = players.get(currentPlayer);
     gameEvent.fireEvent("game:turn", roomId, nextPlayer);
     log.info("Next player " + nextPlayer);
+    timer.reset();
   }
 
   private synchronized boolean wasCellCalled(Cell cell)
@@ -143,12 +143,9 @@ public class UPickBingoGame implements Game, LocalListener<Integer, String>
     // Set the roomId to the id of the room where it's played
     this.roomId = roomId;
     // Start a timer that will be used to manage turns
-    Thread timerThread = new Thread(timer);
-    timerThread.setDaemon(true);
-    timerThread.start();
+    timer.start();
     // Start the first turn
-    Player nextPlayer = players.get(currentPlayer);
-    gameEvent.fireEvent("game:turn", roomId, nextPlayer);
+    nextPlayer();
 
     log.info("U Pick BINGO game started in room " + roomId);
   }
@@ -179,10 +176,23 @@ public class UPickBingoGame implements Game, LocalListener<Integer, String>
     {
       gameEvent.fireEvent("game:win", roomId, player);
       log.info("Player " + player + " won in room " + roomId);
+      stop(roomId);
     }
     else
     {
       throw new IllegalStateException("Oops! I think you're trying to cheat");
     }
+  }
+
+  @Override public synchronized void removePlayer(Player player)
+  {
+    players.remove(player);
+    log.info("Removed player " + player);
+  }
+
+  @Override public void stop(int roomId)
+  {
+    timer.stop();
+    log.info("The game ended in room " + roomId);
   }
 }

@@ -19,7 +19,9 @@ public class Timer implements Runnable, LocalSubject<Integer, String>
   private final PropertyChangeHandler<Integer, String> propertyChangeHandler;
   private final int timerSeconds;
   private final boolean infinite;
+  private final Thread timerThread;
   private int elapsedSeconds;
+  private boolean running;
 
   public Timer(int timerSeconds, boolean infinite)
   {
@@ -27,6 +29,9 @@ public class Timer implements Runnable, LocalSubject<Integer, String>
     this.timerSeconds = timerSeconds;
     this.elapsedSeconds = timerSeconds;
     this.infinite = infinite;
+    this.running = true;
+    this.timerThread = new Thread(this);
+    this.timerThread.setDaemon(true);
   }
 
   public Timer(int timerSeconds)
@@ -39,9 +44,20 @@ public class Timer implements Runnable, LocalSubject<Integer, String>
     return timerSeconds;
   }
 
+  public void start()
+  {
+    timerThread.start();
+  }
+
   public void reset()
   {
     elapsedSeconds = timerSeconds;
+  }
+
+  public void stop()
+  {
+    running = false;
+    propertyChangeHandler.firePropertyChange("timer:stop", elapsedSeconds, null);
   }
 
   @Override public void run()
@@ -50,10 +66,12 @@ public class Timer implements Runnable, LocalSubject<Integer, String>
     {
       DateTimeFormatter formatter = DateTimeFormatter.ofPattern("mm:ss");
 
-      while (elapsedSeconds >= 0)
+      while (elapsedSeconds >= 0 && running)
       {
         LocalTime time = LocalTime.ofSecondOfDay(elapsedSeconds);
         propertyChangeHandler.firePropertyChange("timer:tick", elapsedSeconds, time.format(formatter));
+
+        Thread.sleep(1000);
 
         if (elapsedSeconds == 0)
         {
@@ -62,13 +80,13 @@ public class Timer implements Runnable, LocalSubject<Integer, String>
           if (infinite)
           {
             propertyChangeHandler.firePropertyChange("timer:reset", elapsedSeconds, time.format(formatter));
-            elapsedSeconds = timerSeconds + 1;
+            reset();
           }
         }
-
-        Thread.sleep(1000);
-
-        elapsedSeconds--;
+        else
+        {
+          elapsedSeconds--;
+        }
       }
     }
     catch (InterruptedException e)

@@ -4,7 +4,9 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.beans.InvalidationListener;
 import javafx.fxml.FXML;
+import javafx.scene.control.ProgressIndicator;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
@@ -53,19 +55,28 @@ public class RoomViewController extends ViewController<RoomViewModel>
 
   private void updatePlayers(List<Player> players)
   {
-    // Loop through the players and replace the placeholders on screen
-    for (int i = 0; i < players.size(); i++)
-    {
-      Player player = players.get(i);
-      VBox playerVBox = (VBox) playersHBox.getChildren().get(i);
-      // The first children is a VBox container for the image
-      VBox imageVbox = (VBox) playerVBox.getChildren().get(0);
-      // The second one is a Text node for the username
-      Text userNameText = (Text) playerVBox.getChildren().get(1);
+    playersHBox.getChildren().clear();
 
-      // TODO: maybe add an image later
-      imageVbox.getChildren().setAll(new Text("*"));
-      userNameText.setText(player.getUserName());
+    for (int i = 0; i < 4; i++)
+    {
+      Text nameText = new Text("Connecting..");
+      ProgressIndicator progressIndicator = new ProgressIndicator();
+      VBox vBox = new VBox(progressIndicator);
+      VBox playerPlaceholder = new VBox(vBox, nameText);
+      playerPlaceholder.getStyleClass().add("player-placeholder");
+      HBox.setHgrow(playerPlaceholder, Priority.ALWAYS);
+
+      try
+      {
+        Player player = players.get(i);
+        nameText.setText(player.getUserName());
+        vBox.getChildren().setAll(new Text("*"));
+        playersHBox.getChildren().add(playerPlaceholder);
+      }
+      catch (IndexOutOfBoundsException e)
+      {
+        playersHBox.getChildren().add(playerPlaceholder);
+      }
     }
   }
 
