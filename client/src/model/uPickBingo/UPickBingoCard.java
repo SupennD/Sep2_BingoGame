@@ -12,7 +12,7 @@ import java.util.Random;
  *
  * @author Alexandru Tofan
  * @author Lucia Andronic
- * @version 1.1.0 - May 2024
+ * @version 1.2.0 - May 2024
  */
 public class UPickBingoCard implements Card
 {
@@ -53,6 +53,31 @@ public class UPickBingoCard implements Card
     }
 
     return cellsArray;
+  }
+
+  @Override public void markCell(Cell cell)
+  {
+    int cellIndex = cells.indexOf(cell);
+
+    if (cellIndex == -1)
+    {
+      throw new IllegalArgumentException("Cell " + cell + " not found. Cannot mark.");
+    }
+
+    cells.get(cellIndex).mark();
+  }
+
+  @Override public boolean isMarked(Cell cell)
+  {
+    int cellIndex = cells.indexOf(cell);
+
+    if (cellIndex == -1)
+    {
+      throw new IllegalArgumentException("Cell " + cell + " not found. Cannot check if it's marked.");
+
+    }
+
+    return cells.get(cellIndex).isMarked();
   }
 
   private ArrayList<String> initTitle()

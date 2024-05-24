@@ -10,7 +10,7 @@ public class MarkedCellState implements CellState
 {
   @Override public void mark(Cell cell)
   {
-    throw new UnsupportedOperationException("Cell already marked.");
+    throw new IllegalStateException("Cell already marked.");
   }
 
   @Override public boolean isMarked()

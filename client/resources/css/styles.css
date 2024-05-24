@@ -31,7 +31,7 @@
     -fx-alignment: center;
 }
 
-.player-placeholder VBox {
+.player-placeholder > VBox {
     -fx-background-color: -fx-base;
     -fx-background-radius: 8px;
     -fx-pref-width: 72px;
@@ -41,7 +41,7 @@
     -fx-alignment: center;
 }
 
-.player-placeholder ProgressIndicator {
+.player-placeholder > VBox > ProgressIndicator {
     -fx-max-width: 32px;
     -fx-max-height: 32px;
 }

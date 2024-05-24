@@ -1,12 +1,12 @@
 package viewmodel;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.application.Platform;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleObjectProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.util.Duration;
 import model.Model;
 import model.Player;
 import model.card.Card;
@@ -26,12 +26,16 @@ import java.util.ArrayList;
  */
 public class GameViewModel extends ViewModel implements LocalListener<Object, Object>
 {
+  public static final int SECONDS_PER_ROUND = 15; // TODO: Should get this from server
   private final ObservableList<Player> playersProperty;
-  private final ObjectProperty<Player> currentPlayerProperty;
+  private final IntegerProperty currentPlayerIndexProperty;
   private final ObjectProperty<Player> winnerPlayerProperty;
   private final ObjectProperty<Card> cardProperty;
   private final ObservableList<Cell> calledCellsProperty;
   private final StringProperty errorProperty;
+  private final IntegerProperty remainingSecondsProperty;
+  private final StringProperty timerProperty;
+  private final Timeline timerTimeline;
 
   public GameViewModel(Model model, ViewModelState viewModelState)
   {
@@ -39,11 +43,22 @@ public class GameViewModel extends ViewModel implements LocalListener<Object, Ob
 
     this.model.addListener(this, "game:turn", "game:call", "game:win");
     this.playersProperty = FXCollections.observableArrayList();
-    this.currentPlayerProperty = new SimpleObjectProperty<>();
+    this.currentPlayerIndexProperty = new SimpleIntegerProperty();
     this.winnerPlayerProperty = new SimpleObjectProperty<>();
     this.cardProperty = new SimpleObjectProperty<>();
     this.calledCellsProperty = FXCollections.observableArrayList();
     this.errorProperty = new SimpleStringProperty();
+    this.remainingSecondsProperty = new SimpleIntegerProperty();
+    this.timerProperty = new SimpleStringProperty();
+    // Update the timer text based on the remainingSeconds property
+    this.remainingSecondsProperty.addListener((o, ov, remainingSeconds) -> {
+      timerProperty.set(formatSeconds(remainingSeconds.intValue()));
+    });
+    // Create a timeline that subtracts 1 from remainingSeconds every second until it gets to 0
+    this.timerTimeline = new Timeline(new KeyFrame(Duration.seconds(1), event -> {
+      remainingSecondsProperty.set(remainingSecondsProperty.get() - 1);
+    }));
+    this.timerTimeline.setCycleCount(SECONDS_PER_ROUND);
   }
 
   @Override public void reset()
@@ -54,11 +69,13 @@ public class GameViewModel extends ViewModel implements LocalListener<Object, Ob
     Player currentPlayer = (Player) viewModelState.get("currentPlayer");
     playersProperty.clear();
     playersProperty.addAll(players);
-    currentPlayerProperty.set(null);
+    currentPlayerIndexProperty.set(-1);
     winnerPlayerProperty.set(null);
     cardProperty.set(currentPlayer.getCard());
     calledCellsProperty.clear();
     errorProperty.set(null);
+    remainingSecondsProperty.set(SECONDS_PER_ROUND);
+    timerProperty.set(formatSeconds(remainingSecondsProperty.get()));
   }
 
   public ObservableList<Player> playersProperty()
@@ -66,9 +83,9 @@ public class GameViewModel extends ViewModel implements LocalListener<Object, Ob
     return playersProperty;
   }
 
-  public ObjectProperty<Player> currentPlayerProperty()
+  public IntegerProperty currentPlayerIndexProperty()
   {
-    return currentPlayerProperty;
+    return currentPlayerIndexProperty;
   }
 
   public ObjectProperty<Player> winnerPlayerProperty()
@@ -89,6 +106,11 @@ public class GameViewModel extends ViewModel implements LocalListener<Object, Ob
   public StringProperty errorProperty()
   {
     return errorProperty;
+  }
+
+  public StringProperty timerProperty()
+  {
+    return timerProperty;
   }
 
   public boolean makeMove(Cell cell)
@@ -142,6 +164,13 @@ public class GameViewModel extends ViewModel implements LocalListener<Object, Ob
     }
   }
 
+  private String formatSeconds(int timeSeconds)
+  {
+    int minutes = timeSeconds / 60;
+    int seconds = timeSeconds % 60;
+    return String.format("%02d:%02d", minutes, seconds);
+  }
+
   private void gameTurn(ObserverEvent<Object, Object> observerEvent)
   {
     int roomId = (Integer) observerEvent.getValue1();
@@ -150,7 +179,9 @@ public class GameViewModel extends ViewModel implements LocalListener<Object, Ob
     if (currentRoomId == roomId)
     {
       Player player = (Player) observerEvent.getValue2();
-      currentPlayerProperty.set(player);
+      currentPlayerIndexProperty.set(playersProperty.indexOf(player));
+      remainingSecondsProperty.set(SECONDS_PER_ROUND); // Reset round timer
+      timerTimeline.playFromStart(); // Start round timer
     }
   }
 

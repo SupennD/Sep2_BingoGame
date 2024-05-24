@@ -3,6 +3,7 @@ package model.uPickBingo;
 import mediator.GameEvent;
 import model.Game;
 import model.Player;
+import model.card.Card;
 import model.card.Cell;
 import utility.observer.event.ObserverEvent;
 import utility.observer.listener.LocalListener;
@@ -30,7 +31,7 @@ public class UPickBingoGame implements Game, LocalListener<Integer, String>
   private final Log log = Log.getInstance();
   private final GameEvent gameEvent = GameEvent.getInstance();
   private boolean isStarted;
-  private int currentPlayer;
+  private int currentPlayerIndex;
   private int roomId;
 
   public UPickBingoGame()
@@ -38,84 +39,57 @@ public class UPickBingoGame implements Game, LocalListener<Integer, String>
     this.timer = new Timer(SECONDS_PER_TURN, true);
     timer.addListener(this, "timer:done");
     this.players = new ArrayList<>();
-    this.currentPlayer = -1;
+    this.currentPlayerIndex = -1; // If the game didn't start yet, nobody's current player
     this.calledCells = new ArrayList<>();
     this.isStarted = false;
   }
 
-  private synchronized boolean isCurrentPlayer(Player player)
-  {
-    return players.get(currentPlayer).equals(player);
-  }
-
   private synchronized void nextPlayer()
   {
-    currentPlayer = (currentPlayer + 1) % players.size();
-    Player nextPlayer = players.get(currentPlayer);
-    gameEvent.fireEvent("game:turn", roomId, nextPlayer);
-    log.info("Next player " + nextPlayer);
+    currentPlayerIndex = (currentPlayerIndex + 1) % players.size();
+
+    Player currentPlayer = players.get(currentPlayerIndex);
+    log.info("Current player " + currentPlayer);
+    gameEvent.fireEvent("game:turn", roomId, currentPlayer);
     timer.reset();
   }
 
-  private synchronized boolean wasCellCalled(Cell cell)
+  private synchronized boolean isCurrentPlayer(Player player)
   {
-    for (Cell calledCell : calledCells)
-    {
-      if (calledCell.equals(cell))
-      {
-        return true;
-      }
-    }
-
-    return false;
+    return players.get(currentPlayerIndex).equals(player);
   }
 
-  private synchronized void callCell(Cell cell)
+  private synchronized boolean isCalled(Cell cell)
   {
-    if (!wasCellCalled(cell))
+    return calledCells.contains(cell);
+  }
+
+  private synchronized boolean callCell(Cell cell)
+  {
+    if (isCalled(cell))
     {
-      calledCells.add(cell);
-      gameEvent.fireEvent("game:call", roomId, cell);
-      log.info("Called cell " + cell);
-      nextPlayer();
+      log.info("Number " + cell + " was already called");
+      return false;
     }
+
+    calledCells.add(cell);
+    gameEvent.fireEvent("game:call", roomId, cell);
+    log.info("Called number " + cell);
+    return true;
   }
 
   private synchronized void markCell(Cell cell)
   {
-    if (wasCellCalled(cell))
+    if (!isCalled(cell))
     {
-      log.info("Marked cell " + cell);
+      throw new IllegalStateException("Number " + cell + " was not called");
     }
-    else
-    {
-      throw new IllegalStateException("Cannot mark cell " + cell + " as it was not called.");
-    }
-  }
 
-  @Override public void propertyChange(ObserverEvent<Integer, String> observerEvent)
-  {
-    nextPlayer();
-  }
+    Player player = players.get(currentPlayerIndex);
+    Card card = player.getCard();
+    card.markCell(cell);
 
-  @Override public String getRules()
-  {
-    return """
-        When you start a game, you will be assigned to a public room with available spaces where
-        you will wait there for the other three players to join as the game only starts when there
-        are 4 players. But you can always go back to the main screen while waiting for other players.
-
-        Once the game starts the following rules apply:
-
-        1. Each player will have a 5 by 5 bingo card with random numbers between 1 and 25.
-        2. The players take turns to call a number from their bingo card.
-        3. The called number can be marked by all the players.
-        4. The steps 2 and 3 continue until a player hits “BINGO”
-        5. When 5 numbers are marked, either horizontally, vertically or diagonally, the line will be highlighted.
-        6. When a line is highlighted, a letter in “BINGO” also gets highlighted.
-        7. When all the letters in “BINGO” are highlighted the player can hit “BINGO” and win the game.
-        8. Whoever clicks the “BINGO” first will be the winner.
-        """;
+    log.info("Player " + player + " marked number " + cell);
   }
 
   @Override public synchronized void addPlayer(Player player)
@@ -123,6 +97,17 @@ public class UPickBingoGame implements Game, LocalListener<Integer, String>
     player.setCard(new UPickBingoCard());
     players.add(player);
     log.info("Added player " + player);
+  }
+
+  @Override public synchronized void removePlayer(Player player)
+  {
+    if (isCurrentPlayer(player))
+    {
+      nextPlayer(); // if the current player leaves, move to the next one
+    }
+
+    players.remove(player);
+    log.info("Removed player " + player);
   }
 
   @Override public synchronized void start(int roomId)
@@ -150,21 +135,30 @@ public class UPickBingoGame implements Game, LocalListener<Integer, String>
     log.info("U Pick BINGO game started in room " + roomId);
   }
 
+  @Override public synchronized void stop(int roomId)
+  {
+    timer.stop();
+    log.info("The game ended in room " + roomId);
+  }
+
   @Override public synchronized void makeMove(Player player, Cell cell)
   {
-    log.info("Make move, player: " + player + ", cell: " + cell + ", currentPlayer: " + isCurrentPlayer(player));
+    log.info("Make move, player: " + player + ", number: " + cell + ", currentPlayer: " + isCurrentPlayer(player));
 
     if (isCurrentPlayer(player))
     {
-      callCell(cell);
+      boolean success = callCell(cell);
+      markCell(cell);
+
+      if (success)
+      {
+        nextPlayer();
+      }
     }
-
-    markCell(cell);
-  }
-
-  @Override public synchronized boolean isFull()
-  {
-    return players.size() == MAX_PLAYERS;
+    else
+    {
+      markCell(cell);
+    }
   }
 
   @Override public synchronized void callBingo(int roomId, Player player)
@@ -184,15 +178,33 @@ public class UPickBingoGame implements Game, LocalListener<Integer, String>
     }
   }
 
-  @Override public synchronized void removePlayer(Player player)
+  @Override public synchronized boolean isFull()
   {
-    players.remove(player);
-    log.info("Removed player " + player);
+    return players.size() == MAX_PLAYERS;
   }
 
-  @Override public void stop(int roomId)
+  @Override public String getRules()
   {
-    timer.stop();
-    log.info("The game ended in room " + roomId);
+    return """
+        When you start a game, you will be assigned to a public room with available spaces where
+        you will wait there for the other three players to join as the game only starts when there
+        are 4 players. But you can always go back to the main screen while waiting for other players.
+
+        Once the game starts the following rules apply:
+
+        1. Each player will have a 5 by 5 bingo card with random numbers between 1 and 25.
+        2. The players take turns to call a number from their bingo card.
+        3. The called number can be marked by all the players.
+        4. The steps 2 and 3 continue until a player hits “BINGO”
+        5. When 5 numbers are marked, either horizontally, vertically or diagonally, the line will be highlighted.
+        6. When a line is highlighted, a letter in “BINGO” also gets highlighted.
+        7. When all the letters in “BINGO” are highlighted the player can hit “BINGO” and win the game.
+        8. Whoever clicks the “BINGO” first will be the winner.
+        """;
+  }
+
+  @Override public synchronized void propertyChange(ObserverEvent<Integer, String> observerEvent)
+  {
+    nextPlayer();
   }
 }

@@ -1,6 +1,8 @@
 package view;
 
-import javafx.animation.*;
+import javafx.animation.FadeTransition;
+import javafx.animation.ParallelTransition;
+import javafx.animation.TranslateTransition;
 import javafx.beans.InvalidationListener;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -46,8 +48,9 @@ public class GameViewController extends ViewController<GameViewModel>
     viewModel.playersProperty().addListener((InvalidationListener) o -> {
       updatePlayers(viewModel.playersProperty());
     });
-    viewModel.currentPlayerProperty().addListener((o, ov, currentPlayer) -> {
-      updateCurrentPlayer(currentPlayer);
+    viewModel.currentPlayerIndexProperty().addListener((o, lastPlayerIndex, currentPlayerIndex) -> {
+      updatePlayer(lastPlayerIndex.intValue(), false);
+      updatePlayer(currentPlayerIndex.intValue(), true);
     });
     viewModel.winnerPlayerProperty().addListener((o, ov, winnerPlayer) -> {
       viewHandler.openView(View.WIN);
@@ -64,61 +67,50 @@ public class GameViewController extends ViewController<GameViewModel>
 
   private void updatePlayers(List<Player> players)
   {
-    ObservableList<Node> playerNodes = playersVBox.getChildren();
+    ObservableList<Node> playerHBoxNodes = playersVBox.getChildren();
 
-    for (int i = 0; i < playerNodes.size(); i++)
+    for (int i = 0; i < playerHBoxNodes.size(); i++)
     {
-      HBox container = (HBox) playerNodes.get(i);
+      HBox playerHBox = (HBox) playerHBoxNodes.get(i);
       // TODO: update avatar once we add image support
-      // StackPane avatar = (StackPane) container.getChildren().get(0);
-      VBox details = (VBox) container.getChildren().get(1);
-      Text userName = (Text) details.getChildren().get(0);
+      // StackPane avatarStackPane = (StackPane) playerHBox.getChildren().get(0);
+      VBox detailsVBox = (VBox) playerHBox.getChildren().get(1);
+      Text userNameText = (Text) detailsVBox.getChildren().get(0);
+      Text timerText = (Text) detailsVBox.getChildren().get(1);
 
       Player player = players.get(i);
-      container.setUserData(player.getUserName());
-      userName.setText(player.getUserName());
+      userNameText.setText(player.getUserName());
+      timerText.setOpacity(0);
     }
   }
 
-  private void updateCurrentPlayer(Player currentPlayer)
+  private void updatePlayer(int playerIndex, boolean current)
   {
-    playersVBox.getChildren().forEach(node -> {
-      String userName = node.getUserData().toString();
-      HBox container = (HBox) node;
-      Text timer = (Text) ((VBox) container.getChildren().get(1)).getChildren().get(1);
+    if (playerIndex != -1)
+    {
+      HBox playerHBox = (HBox) playersVBox.getChildren().get(playerIndex);
+      VBox detailsVBox = (VBox) playerHBox.getChildren().get(1);
+      Text timerText = (Text) detailsVBox.getChildren().get(1);
 
-      TranslateTransition translateTransition = new TranslateTransition(Duration.millis(400), timer);
-      FadeTransition fadeTransition = new FadeTransition(Duration.millis(500), timer);
-      ParallelTransition parallelTransition = new ParallelTransition(translateTransition, fadeTransition);
-
-      if (currentPlayer.getUserName().equals(userName))
+      if (current)
       {
-        container.getStyleClass().add("selected");
-        timer.setText("00:15");
-        timer.setUserData(15);
-
-        translateTransition.setToY(0);
-        fadeTransition.setToValue(1);
-        parallelTransition.play();
-
-        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), event -> {
-          int remainingSeconds = Integer.parseInt(timer.getUserData().toString());
-          int minutes = remainingSeconds / 60;
-          int seconds = remainingSeconds % 60;
-          timer.setUserData(remainingSeconds - 1);
-          timer.setText(String.format("%02d:%02d", minutes, seconds));
-        }));
-        timeline.setCycleCount(16);
-        timeline.playFromStart();
+        timerText.textProperty().bind(viewModel.timerProperty());
+        playerHBox.getStyleClass().add("selected");
       }
       else
       {
-        container.getStyleClass().remove("selected");
-        translateTransition.setToY(3);
-        fadeTransition.setToValue(0);
-        parallelTransition.playFromStart();
+        timerText.textProperty().unbind();
+        playerHBox.getStyleClass().remove("selected");
       }
-    });
+
+      TranslateTransition translateTransition = new TranslateTransition(Duration.millis(200), timerText);
+      FadeTransition fadeTransition = new FadeTransition(Duration.millis(300), timerText);
+      ParallelTransition parallelTransition = new ParallelTransition(translateTransition, fadeTransition);
+
+      translateTransition.setToY(current ? 0 : 5);
+      fadeTransition.setToValue(current ? 1 : 0);
+      parallelTransition.playFromStart();
+    }
   }
 
   private void updateCalledCells(List<Cell> cells)

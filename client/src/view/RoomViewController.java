@@ -5,6 +5,7 @@ import javafx.animation.Timeline;
 import javafx.beans.InvalidationListener;
 import javafx.fxml.FXML;
 import javafx.scene.control.ProgressIndicator;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
@@ -59,23 +60,27 @@ public class RoomViewController extends ViewController<RoomViewModel>
 
     for (int i = 0; i < 4; i++)
     {
-      Text nameText = new Text("Connecting..");
+      Text userNameText = new Text("Connecting...");
       ProgressIndicator progressIndicator = new ProgressIndicator();
-      VBox vBox = new VBox(progressIndicator);
-      VBox playerPlaceholder = new VBox(vBox, nameText);
-      playerPlaceholder.getStyleClass().add("player-placeholder");
-      HBox.setHgrow(playerPlaceholder, Priority.ALWAYS);
+      VBox avatarVBox = new VBox(progressIndicator);
+      VBox playerVBox = new VBox(avatarVBox, userNameText);
+      playerVBox.getStyleClass().add("player-placeholder");
+      HBox.setHgrow(playerVBox, Priority.ALWAYS);
 
       try
       {
         Player player = players.get(i);
-        nameText.setText(player.getUserName());
-        vBox.getChildren().setAll(new Text("*"));
-        playersHBox.getChildren().add(playerPlaceholder);
+        userNameText.setText(player.getUserName());
+        // TODO: update avatar once we add image support
+        ImageView avatarImageView = new ImageView("images/user-placeholder.png");
+        avatarImageView.setFitWidth(48);
+        avatarImageView.setFitHeight(48);
+        avatarVBox.getChildren().setAll(avatarImageView);
+        playersHBox.getChildren().add(playerVBox);
       }
-      catch (IndexOutOfBoundsException e)
+      catch (IndexOutOfBoundsException e) // If player not present at position, show default placeholder
       {
-        playersHBox.getChildren().add(playerPlaceholder);
+        playersHBox.getChildren().add(playerVBox);
       }
     }
   }

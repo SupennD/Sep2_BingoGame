@@ -6,13 +6,12 @@ import java.io.Serializable;
 
 public interface Game extends Serializable
 {
-  String getRules();
   void addPlayer(Player player);
-  void start(int roomId);
-  void makeMove(Player player, Cell cell);
-  boolean isFull();
-  void callBingo(int roomId, Player player);
   void removePlayer(Player player);
+  void start(int roomId);
   void stop(int roomId);
-
+  void makeMove(Player player, Cell cell);
+  void callBingo(int roomId, Player player);
+  boolean isFull();
+  String getRules();
 }

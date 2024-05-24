@@ -25,6 +25,13 @@ public class RoomList
 
   public Room joinRoom(Player player)
   {
+    Room playerRoom = getRoomByPlayer(player);
+
+    if (playerRoom != null)
+    {
+      return playerRoom;
+    }
+
     Room room = getAvailableRoom();
     room.addPlayer(player);
 
@@ -93,5 +100,18 @@ public class RoomList
     }
 
     throw new IllegalStateException("No room found with id: " + roomId);
+  }
+
+  private Room getRoomByPlayer(Player player)
+  {
+    for (Room room : rooms.toArrayList())
+    {
+      if (room.getPlayer(player) != null)
+      {
+        return room;
+      }
+    }
+
+    return null;
   }
 }

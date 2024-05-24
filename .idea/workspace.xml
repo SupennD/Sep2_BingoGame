@@ -119,6 +119,7 @@
     "JUnit.LasoCardTest.executor": "Run",
     "JUnit.MainTest.executor": "Run",
     "JUnit.RegisterLoginTest.executor": "Run",
+    "JUnit.UPickBingoCardTest.cellsCanBeMarked.executor": "Debug",
     "JUnit.UPickBingoCardTest.executor": "Run",
     "JUnit.UserRegisterLoginTest.executor": "Run",
     "JUnit.WeirdBingoCardTest.executor": "Run",
@@ -131,7 +132,7 @@
     "code.cleanup.on.save": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "supen-sprint66",
+    "git-widget-placeholder": "#30 on alex/mark-cell-on-make-move",
     "jdk.selected.JAVA_MODULE": "17",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/lucia/IdeaProjects/VIA-SEP2/server/src/model/uPickBingo",
@@ -146,12 +147,12 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.30393487",
     "rearrange.code.on.save": "true",
+    "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "preferences.JavaFX",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
-    "ChangesTree.GroupingKeys": [
-    ],
+    "ChangesTree.GroupingKeys": [],
     "GitStage.ChangesTree.GroupingKeys": [
       "repository"
     ]
@@ -188,11 +189,11 @@
       <recent name="viewmodel" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="mediator" />
       <recent name="model.uPickBingo" />
+      <recent name="model.card" />
+      <recent name="mediator" />
       <recent name="viewmodel" />
       <recent name="model" />
-      <recent name="view" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Client">
@@ -206,21 +207,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="model" />
       <option name="MAIN_CLASS_NAME" value="model.UPickBingoCardTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UPickBingoGameCardTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="server" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="model.uPickBingo.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="model" />
-      <option name="MAIN_CLASS_NAME" value="model.UPickBingoGameCardTest" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
@@ -231,6 +217,7 @@
       <module name="client" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="UserRegisterLoginTest" />
+      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -240,13 +227,11 @@
       <item itemvalue="Application.Server" />
       <item itemvalue="Application.Client" />
       <item itemvalue="JUnit.UPickBingoCardTest" />
-      <item itemvalue="JUnit.UPickBingoGameCardTest" />
       <item itemvalue="JUnit.UserRegisterLoginTest" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.UPickBingoCardTest" />
-        <item itemvalue="JUnit.UPickBingoGameCardTest" />
         <item itemvalue="JUnit.UserRegisterLoginTest" />
         <item itemvalue="JUnit.UserRegisterLoginTest" />
       </list>
@@ -273,94 +258,7 @@
       <workItem from="1716049582247" duration="18780000" />
       <workItem from="1716214868603" duration="24047000" />
       <workItem from="1716356338778" duration="24281000" />
-    </task>
-    <task id="LOCAL-00051" summary="update tests">
-      <option name="closed" value="true" />
-      <created>1715550754666</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1715550754666</updated>
-    </task>
-    <task id="LOCAL-00052" summary="add Bingo card">
-      <option name="closed" value="true" />
-      <created>1715608826541</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1715608826541</updated>
-    </task>
-    <task id="LOCAL-00053" summary="add Bingo card">
-      <option name="closed" value="true" />
-      <created>1715608963046</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1715608963046</updated>
-    </task>
-    <task id="LOCAL-00054" summary="fix card view">
-      <option name="closed" value="true" />
-      <created>1715612798950</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1715612798950</updated>
-    </task>
-    <task id="LOCAL-00055" summary="add timer implementation">
-      <option name="closed" value="true" />
-      <created>1715784416902</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1715784416902</updated>
-    </task>
-    <task id="LOCAL-00056" summary="rename class BingoGame&#10;&#10;This is just one variation of Bingo so it should not be named Bingo as a generic">
-      <option name="closed" value="true" />
-      <created>1715784596570</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1715784596570</updated>
-    </task>
-    <task id="LOCAL-00057" summary="rename card to match bingo game variation">
-      <option name="closed" value="true" />
-      <created>1715784835442</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1715784835442</updated>
-    </task>
-    <task id="LOCAL-00058" summary="rename card to match bingo game variation">
-      <option name="closed" value="true" />
-      <created>1715784924773</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1715784924773</updated>
-    </task>
-    <task id="LOCAL-00059" summary="make roomList be the mediator between model and game">
-      <option name="closed" value="true" />
-      <created>1715785544037</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1715785544037</updated>
-    </task>
-    <task id="LOCAL-00060" summary="add Game to Room and delegate calls to it&#10;&#10;update rules method">
-      <option name="closed" value="true" />
-      <created>1715787111137</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1715787111137</updated>
-    </task>
-    <task id="LOCAL-00061" summary="move rules to Room view&#10;&#10;Since every room has its own instance of a game variation, every room has different rules">
-      <option name="closed" value="true" />
-      <created>1715787753248</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1715787753248</updated>
+      <workItem from="1716541032291" duration="8752000" />
     </task>
     <task id="LOCAL-00062" summary="add room:full event and send roomId instead of whole Room">
       <option name="closed" value="true" />
@@ -666,7 +564,95 @@
       <option name="project" value="LOCAL" />
       <updated>1716467519221</updated>
     </task>
-    <option name="localTasksCounter" value="100" />
+    <task id="LOCAL-00100" summary="add markCell method to Card">
+      <option name="closed" value="true" />
+      <created>1716472288103</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1716472288103</updated>
+    </task>
+    <task id="LOCAL-00101" summary="add markCell and is marked method to Card">
+      <option name="closed" value="true" />
+      <created>1716476166214</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1716476166215</updated>
+    </task>
+    <task id="LOCAL-00102" summary="add markCell and is marked method to Card">
+      <option name="closed" value="true" />
+      <created>1716476172345</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1716476172345</updated>
+    </task>
+    <task id="LOCAL-00103" summary="mark the cell on the players card server-side">
+      <option name="closed" value="true" />
+      <created>1716482493960</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1716482493960</updated>
+    </task>
+    <task id="LOCAL-00104" summary="update remove player">
+      <option name="closed" value="true" />
+      <created>1716493721796</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1716493721796</updated>
+    </task>
+    <task id="LOCAL-00105" summary="replace exception in cell state">
+      <option name="closed" value="true" />
+      <created>1716542143432</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1716542143433</updated>
+    </task>
+    <task id="LOCAL-00106" summary="fix turn logic">
+      <option name="closed" value="true" />
+      <created>1716542177385</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1716542177385</updated>
+    </task>
+    <task id="LOCAL-00107" summary="fix turn logic">
+      <option name="closed" value="true" />
+      <created>1716548008809</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1716548008809</updated>
+    </task>
+    <task id="LOCAL-00108" summary="fix timer on client">
+      <option name="closed" value="true" />
+      <created>1716548028167</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1716548028167</updated>
+    </task>
+    <task id="LOCAL-00109" summary="fix timer on client">
+      <option name="closed" value="true" />
+      <created>1716548038578</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1716548038578</updated>
+    </task>
+    <task id="LOCAL-00110" summary="fix image placeholder">
+      <option name="closed" value="true" />
+      <created>1716549385882</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1716549385882</updated>
+    </task>
+    <option name="localTasksCounter" value="111" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -700,14 +686,6 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <option name="RELOAD_CONTEXT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="rename weird to UPick" />
-    <MESSAGE value="add infinite option to the Timer" />
-    <MESSAGE value="rename called numbers property" />
-    <MESSAGE value="add startGame method and some cleanup" />
-    <MESSAGE value="initial makeMove implementation" />
-    <MESSAGE value="update game view" />
-    <MESSAGE value="add GameEvents mediator class" />
-    <MESSAGE value="fix called numbers list and turns" />
     <MESSAGE value="add reset to timer to fix turns" />
     <MESSAGE value="add build artifacts" />
     <MESSAGE value="change the turn timer to 15s" />
@@ -725,7 +703,15 @@
     <MESSAGE value="vinal version of room" />
     <MESSAGE value="move condition after sleep in Timer" />
     <MESSAGE value="add one cycle to the timer timeline" />
-    <option name="LAST_COMMIT_MESSAGE" value="add one cycle to the timer timeline" />
+    <MESSAGE value="add markCell method to Card" />
+    <MESSAGE value="add markCell and is marked method to Card" />
+    <MESSAGE value="mark the cell on the players card server-side" />
+    <MESSAGE value="update remove player" />
+    <MESSAGE value="replace exception in cell state" />
+    <MESSAGE value="fix turn logic" />
+    <MESSAGE value="fix timer on client" />
+    <MESSAGE value="fix image placeholder" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix image placeholder" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -739,6 +725,11 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="players" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

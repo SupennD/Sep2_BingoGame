@@ -8,7 +8,7 @@ import java.util.ArrayList;
  *
  * @author Alexandru Tofan
  * @author Lucia Andronic
- * @version 1.1.0 - May 2024
+ * @version 1.2.0 - May 2024
  */
 public interface Card extends Serializable
 {
@@ -24,4 +24,17 @@ public interface Card extends Serializable
    * @return the 2-dimensional array representing the items
    */
   Cell[][] getCells();
+  /**
+   * A method used to mark a cell on the card. This sets the {@link CellState} of the card to {@link MarkedCellState}.
+   *
+   * @param cell the cell to mark
+   */
+  void markCell(Cell cell);
+  /**
+   * A method used to check if a cell on the card is marked.
+   *
+   * @param cell the cell to check
+   * @return {@code true} if the given cell is marked, {@code false} otherwise
+   */
+  boolean isMarked(Cell cell);
 }

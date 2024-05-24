@@ -38,7 +38,7 @@ public class RoomViewModel extends ViewModel implements LocalListener<Object, Ob
     joinRoom(); // Send a join request for the current player
     isFullProperty.set(false);
     errorProperty.set(null);
-    messageProperty.set("Waiting for enough players to join...");
+    messageProperty.set("Waiting for enough players to join");
   }
 
   public ObservableList<Player> playersProperty()
