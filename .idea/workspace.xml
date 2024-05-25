@@ -52,7 +52,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="alex/implement-win-view-and-calling-bingo" />
+        <entry key="$PROJECT_DIR$" value="octavian/fix-rules-view" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -121,6 +121,9 @@
     "JUnit.RegisterLoginTest.executor": "Run",
     "JUnit.UPickBingoCardTest.cellsCanBeMarked.executor": "Debug",
     "JUnit.UPickBingoCardTest.executor": "Run",
+    "JUnit.UPickBingoCardTest.hasWinCombination.executor": "Run",
+    "JUnit.UPickBingoCardTest.markedLinesAreHighlighted.executor": "Run",
+    "JUnit.UPickBingoCardTest.validLinesCanBeHighlighted.executor": "Run",
     "JUnit.UserRegisterLoginTest.executor": "Run",
     "JUnit.WeirdBingoCardTest.executor": "Run",
     "Repository.Attach.Annotations": "false",
@@ -132,10 +135,10 @@
     "code.cleanup.on.save": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "#30 on alex/mark-cell-on-make-move",
+    "git-widget-placeholder": "lucia/card-win-logic",
     "jdk.selected.JAVA_MODULE": "17",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/lucia/IdeaProjects/VIA-SEP2/server/src/model/uPickBingo",
+    "last_opened_file_path": "/Users/lucia/IdeaProjects/VIA-SEP2/client/src/model/uPickBingo",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.stylelint": "true",
@@ -167,10 +170,10 @@
       <recent name="model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/server/src/model/uPickBingo" />
-      <recent name="$PROJECT_DIR$/server/src/model" />
       <recent name="$PROJECT_DIR$/client/src/model/uPickBingo" />
       <recent name="$PROJECT_DIR$/client/src/model" />
+      <recent name="$PROJECT_DIR$/server/src/model/uPickBingo" />
+      <recent name="$PROJECT_DIR$/server/src/model" />
       <recent name="$PROJECT_DIR$/server/src/view" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
@@ -196,7 +199,7 @@
       <recent name="model" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Client">
+  <component name="RunManager" selected="JUnit.UPickBingoCardTest.hasWinCombination">
     <configuration name="UPickBingoCardTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="server" />
       <extension name="coverage">
@@ -209,6 +212,54 @@
       <option name="MAIN_CLASS_NAME" value="model.UPickBingoCardTest" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UPickBingoCardTest.hasWinCombination" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="model" />
+      <option name="MAIN_CLASS_NAME" value="model.UPickBingoCardTest" />
+      <option name="METHOD_NAME" value="hasWinCombination" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UPickBingoCardTest.markedLinesAreHighlighted" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="model" />
+      <option name="MAIN_CLASS_NAME" value="model.UPickBingoCardTest" />
+      <option name="METHOD_NAME" value="markedLinesAreHighlighted" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UPickBingoCardTest.validLinesCanBeHighlighted" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="model" />
+      <option name="MAIN_CLASS_NAME" value="model.UPickBingoCardTest" />
+      <option name="METHOD_NAME" value="validLinesCanBeHighlighted" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -226,13 +277,18 @@
     <list>
       <item itemvalue="Application.Server" />
       <item itemvalue="Application.Client" />
+      <item itemvalue="JUnit.UPickBingoCardTest.hasWinCombination" />
+      <item itemvalue="JUnit.UPickBingoCardTest.markedLinesAreHighlighted" />
+      <item itemvalue="JUnit.UPickBingoCardTest.validLinesCanBeHighlighted" />
       <item itemvalue="JUnit.UPickBingoCardTest" />
       <item itemvalue="JUnit.UserRegisterLoginTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UPickBingoCardTest.hasWinCombination" />
+        <item itemvalue="JUnit.UPickBingoCardTest.markedLinesAreHighlighted" />
+        <item itemvalue="JUnit.UPickBingoCardTest.validLinesCanBeHighlighted" />
         <item itemvalue="JUnit.UPickBingoCardTest" />
-        <item itemvalue="JUnit.UserRegisterLoginTest" />
         <item itemvalue="JUnit.UserRegisterLoginTest" />
       </list>
     </recent_temporary>
@@ -259,6 +315,7 @@
       <workItem from="1716214868603" duration="24047000" />
       <workItem from="1716356338778" duration="24281000" />
       <workItem from="1716541032291" duration="8752000" />
+      <workItem from="1716653731301" duration="10491000" />
     </task>
     <task id="LOCAL-00062" summary="add room:full event and send roomId instead of whole Room">
       <option name="closed" value="true" />
@@ -725,6 +782,11 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="model.uPickBingo.UPickBingoCard" memberName="cells" />
+      </pinned-members>
+    </pin-to-top-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="players" language="JAVA" />

@@ -11,7 +11,6 @@ import utils.Timer;
 import utils.log.Log;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 /**
  * A class that is responsible for handling all the actions in the game It checks for many state and do the things that
@@ -19,7 +18,8 @@ import java.util.Random;
  *
  * @author Supendra Bogati
  * @author Alexandru Tofan
- * @version 1.3.0 - May 2024
+ * @author Lucia Andronic
+ * @version 1.3.1 - May 2024
  */
 public class UPickBingoGame implements Game, LocalListener<Integer, String>
 {
@@ -163,10 +163,10 @@ public class UPickBingoGame implements Game, LocalListener<Integer, String>
 
   @Override public synchronized void callBingo(int roomId, Player player)
   {
-    // TODO: check win once the card is updated to use objects for numbers
-    boolean won = new Random().nextBoolean();
+    Player caller = players.get(players.indexOf(player));
+    Card card = caller.getCard();
 
-    if (won)
+    if (card.hasWinCombination())
     {
       gameEvent.fireEvent("game:win", roomId, player);
       log.info("Player " + player + " won in room " + roomId);
@@ -174,7 +174,7 @@ public class UPickBingoGame implements Game, LocalListener<Integer, String>
     }
     else
     {
-      throw new IllegalStateException("Oops! I think you're trying to cheat");
+      throw new IllegalStateException("Wow! I think you're trying to cheat");
     }
   }
 

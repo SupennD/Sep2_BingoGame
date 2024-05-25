@@ -1,20 +1,20 @@
 package model.card;
 
 /**
- * A class defining the marked state of the cell. This is the final state that a cell can be in.
+ * A class defining the marked state of the cell.
  *
  * @author Lucia Andronic
- * @version 1.0.0 - May 2024
+ * @version 1.1.0 - May 2024
  */
-public class MarkedCellState implements CellState
+public class MarkedCellState extends CellState
 {
-  @Override public void mark(Cell cell)
-  {
-    throw new IllegalStateException("Cell already marked.");
-  }
-
   @Override public boolean isMarked()
   {
     return true;
+  }
+
+  @Override public void highlight(Cell cell)
+  {
+    cell.setState(new MarkedAndHighlightedCellState());
   }
 }

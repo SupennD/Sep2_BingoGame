@@ -8,7 +8,7 @@ import java.util.ArrayList;
  *
  * @author Alexandru Tofan
  * @author Lucia Andronic
- * @version 1.2.0 - May 2024
+ * @version 1.3.0 - May 2024
  */
 public interface Card extends Serializable
 {
@@ -37,4 +37,17 @@ public interface Card extends Serializable
    * @return {@code true} if the given cell is marked, {@code false} otherwise
    */
   boolean isMarked(Cell cell);
+  /**
+   * A method used to check if a cell on the card is highlighted.
+   *
+   * @param cell the cell to check
+   * @return {@code true} if the given cell is highlighted, {@code false} otherwise
+   */
+  boolean isHighlighted(Cell cell);
+  /**
+   * A method used to check if a cell on the card is highlighted.
+   *
+   * @return {@code true} if card has a win combination, {@code false} otherwise
+   */
+  boolean hasWinCombination();
 }

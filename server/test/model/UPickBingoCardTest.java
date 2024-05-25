@@ -80,4 +80,37 @@ class UPickBingoCardTest
 
     assertThrows(IllegalArgumentException.class, () -> card.markCell(cellToMark));
   }
+
+  @Test public void hasWinCombination()
+  {
+    Cell[][] cells = card.getCells();
+
+    for (int i = 0; i < cells.length; i++)
+    {
+      for (int j = 0; j < cells[i].length; j++)
+      {
+        if (!card.isMarked(cells[i][j]) && i < 2) // Add only 2 rows
+        {
+          card.markCell(card.getCells()[i][j]);
+        }
+
+        if (!card.isMarked(cells[j][i]) && i < 1) // Add only one column
+        {
+          card.markCell(card.getCells()[j][i]);
+        }
+
+        if (!card.isMarked(cells[i][i]))
+        {
+          card.markCell(card.getCells()[i][i]);
+        }
+
+        if (!card.isMarked(cells[i][cells.length - 1 - i]))
+        {
+          card.markCell(card.getCells()[i][cells.length - 1 - i]);
+        }
+      }
+    }
+
+    assertTrue(card.hasWinCombination());
+  }
 }
