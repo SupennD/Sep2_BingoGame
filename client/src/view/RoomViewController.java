@@ -87,6 +87,7 @@ public class RoomViewController extends ViewController<RoomViewModel>
 
   @FXML public void onGetRules()
   {
-    viewHandler.openView(View.RULES);
+    InformationAlert rulesAlert = new InformationAlert("Rules", "How to play", viewModel.rulesProperty().get());
+    rulesAlert.show();
   }
 }

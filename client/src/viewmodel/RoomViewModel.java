@@ -20,6 +20,7 @@ public class RoomViewModel extends ViewModel implements LocalListener<Object, Ob
   private final BooleanProperty isFullProperty;
   private final StringProperty errorProperty;
   private final StringProperty messageProperty;
+  private final StringProperty rulesProperty;
 
   public RoomViewModel(Model model, ViewModelState viewModelState)
   {
@@ -30,6 +31,7 @@ public class RoomViewModel extends ViewModel implements LocalListener<Object, Ob
     this.isFullProperty = new SimpleBooleanProperty();
     this.errorProperty = new SimpleStringProperty();
     this.messageProperty = new SimpleStringProperty();
+    this.rulesProperty = new SimpleStringProperty();
   }
 
   @Override public void reset()
@@ -39,6 +41,7 @@ public class RoomViewModel extends ViewModel implements LocalListener<Object, Ob
     isFullProperty.set(false);
     errorProperty.set(null);
     messageProperty.set("Waiting for enough players to join");
+    getRules(); // Get room rules
   }
 
   public ObservableList<Player> playersProperty()
@@ -61,6 +64,11 @@ public class RoomViewModel extends ViewModel implements LocalListener<Object, Ob
     return messageProperty;
   }
 
+  public StringProperty rulesProperty()
+  {
+    return rulesProperty;
+  }
+
   private void joinRoom()
   {
     errorProperty.set(null);
@@ -70,6 +78,22 @@ public class RoomViewModel extends ViewModel implements LocalListener<Object, Ob
       Player currentPlayer = (Player) viewModelState.get("currentPlayer");
       int roomId = model.joinRoom(currentPlayer);
       viewModelState.put("roomId", roomId);
+    }
+    catch (IllegalStateException e)
+    {
+      errorProperty.set(e.getMessage());
+    }
+  }
+
+  private void getRules()
+  {
+    errorProperty.set(null);
+
+    try
+    {
+      int roomId = (int) viewModelState.get("roomId");
+      String rules = model.getRules(roomId);
+      rulesProperty.set(rules);
     }
     catch (IllegalStateException e)
     {
