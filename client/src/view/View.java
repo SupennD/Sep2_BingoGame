@@ -13,7 +13,6 @@ public enum View
   MAIN("MainView"),//
   ROOM("RoomView"),//
   GAME("GameView"),//
-  RULES("RulesView"),//
   WIN("WinView");
 
   private final String name;

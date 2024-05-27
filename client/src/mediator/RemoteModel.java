@@ -5,6 +5,7 @@ import model.card.Cell;
 import utility.observer.subject.RemoteSubject;
 
 import java.rmi.RemoteException;
+import java.util.ArrayList;
 
 /**
  * An interface intended to be implemented by model classes that want to expose themselves as remote objects. This
@@ -25,4 +26,6 @@ public interface RemoteModel extends RemoteSubject<Object, Object>
   void startGame(int roomId) throws RemoteException;
   void makeMove(int roomId, Player player, Cell cell) throws RemoteException;
   void callBingo(int roomId, Player player) throws RemoteException;
+  Player getScores(Player player) throws RemoteException;
+  ArrayList<Player> getTopPlayers() throws RemoteException;
 }

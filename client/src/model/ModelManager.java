@@ -8,6 +8,8 @@ import utility.observer.listener.LocalListener;
 import utility.observer.subject.LocalSubject;
 import utility.observer.subject.PropertyChangeHandler;
 
+import java.util.ArrayList;
+
 /**
  * A facade exposing methods to be used by clients of this application. This is also a {@link LocalSubject} in an
  * observer pattern that can be used by {@link LocalListener}s to subscribe to changes and receive updates
@@ -16,7 +18,7 @@ import utility.observer.subject.PropertyChangeHandler;
  * @author Alexandru Tofan
  * @author Supendra Bogati
  * @author Lucia Andronic
- * @version 1.3.0 - May 2024
+ * @version 1.4.0 - May 2024
  */
 public class ModelManager implements Model, LocalListener<Object, Object>
 {
@@ -72,6 +74,16 @@ public class ModelManager implements Model, LocalListener<Object, Object>
   @Override public void callBingo(int roomId, Player player) throws IllegalStateException
   {
     client.callBingo(roomId, player);
+  }
+
+  @Override public Player getScores(Player player) throws IllegalStateException
+  {
+    return client.getScores(player);
+  }
+
+  @Override public ArrayList<Player> getTopPlayers() throws IllegalStateException
+  {
+    return client.getTopPlayers();
   }
 
   /**

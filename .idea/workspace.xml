@@ -52,7 +52,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="supen&amp;sprint7" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -111,7 +111,7 @@
     "Application.BlockingArrayDeque.executor": "Debug",
     "Application.Client.executor": "Run",
     "Application.Huinea.executor": "Run",
-    "Application.Server.executor": "Debug",
+    "Application.Server.executor": "Run",
     "Downloaded.Files.Path": "/Users/lucia/IdeaProjects/VIA-SEP2/server/libs",
     "Downloaded.Files.Path.Enabled": "true",
     "JUnit.BingoCardTest.cardNumbersAreUnique.executor": "Debug",
@@ -135,7 +135,7 @@
     "code.cleanup.on.save": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "#29 on T6final",
+    "git-widget-placeholder": "lucia/server-leaderboard",
     "jdk.selected.JAVA_MODULE": "17",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/lucia/IdeaProjects/VIA-SEP2/client/src/model",
@@ -195,14 +195,14 @@
       <recent name="viewmodel" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="mediator" />
       <recent name="model" />
       <recent name="model.uPickBingo" />
       <recent name="model.card" />
-      <recent name="mediator" />
       <recent name="viewmodel" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Server">
+  <component name="RunManager" selected="Application.Client">
     <configuration name="UPickBingoCardTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="server" />
       <extension name="coverage">
@@ -267,38 +267,6 @@
       <workItem from="1716653731301" duration="10491000" />
       <workItem from="1716762761819" duration="1259000" />
       <workItem from="1716797292365" duration="7647000" />
-    </task>
-    <task id="LOCAL-00072" summary="initial makeMove implementation">
-      <option name="closed" value="true" />
-      <created>1715873768604</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1715873768604</updated>
-    </task>
-    <task id="LOCAL-00073" summary="update game view">
-      <option name="closed" value="true" />
-      <created>1715876224711</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1715876224711</updated>
-    </task>
-    <task id="LOCAL-00074" summary="add GameEvents mediator class">
-      <option name="closed" value="true" />
-      <created>1715886378459</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1715886378459</updated>
-    </task>
-    <task id="LOCAL-00075" summary="add GameEvents mediator class">
-      <option name="closed" value="true" />
-      <created>1715886953513</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1715886953513</updated>
     </task>
     <task id="LOCAL-00076" summary="fix called numbers list and turns">
       <option name="closed" value="true" />
@@ -660,7 +628,39 @@
       <option name="project" value="LOCAL" />
       <updated>1716826648954</updated>
     </task>
-    <option name="localTasksCounter" value="121" />
+    <task id="LOCAL-00121" summary="revert unrelated changes">
+      <option name="closed" value="true" />
+      <created>1716827932630</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1716827932630</updated>
+    </task>
+    <task id="LOCAL-00122" summary="remove unused references">
+      <option name="closed" value="true" />
+      <created>1716829448474</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1716829448474</updated>
+    </task>
+    <task id="LOCAL-00123" summary="add methods to RemoteModel">
+      <option name="closed" value="true" />
+      <created>1716829591419</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1716829591419</updated>
+    </task>
+    <task id="LOCAL-00124" summary="add leaderboard to client ViewModel">
+      <option name="closed" value="true" />
+      <created>1716833115960</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1716833115960</updated>
+    </task>
+    <option name="localTasksCounter" value="125" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -694,10 +694,6 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <option name="RELOAD_CONTEXT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="remove game:tick and start the game from the GameViewModel&#10;&#10;This is a fix for turns and the timer being out of sync with the client. The timer animation should be on client and start when the turn starts." />
-    <MESSAGE value="remove loading styles from ViewHandler&#10;&#10;Should add them manually to the FXML" />
-    <MESSAGE value="add the default styles to all FXML views" />
-    <MESSAGE value="add method for calling BINGO" />
     <MESSAGE value="rename player in state to currentPlayer to make the distinction clear" />
     <MESSAGE value="add win view" />
     <MESSAGE value="final ver" />
@@ -719,7 +715,11 @@
     <MESSAGE value="copy Score and Player class to client" />
     <MESSAGE value="fix sql to return array of scores and rename topScores to topPlayers" />
     <MESSAGE value="add method to get total score on player" />
-    <option name="LAST_COMMIT_MESSAGE" value="add method to get total score on player" />
+    <MESSAGE value="revert unrelated changes" />
+    <MESSAGE value="remove unused references" />
+    <MESSAGE value="add methods to RemoteModel" />
+    <MESSAGE value="add leaderboard to client ViewModel" />
+    <option name="LAST_COMMIT_MESSAGE" value="add leaderboard to client ViewModel" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

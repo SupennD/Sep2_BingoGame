@@ -17,6 +17,7 @@ import java.rmi.Naming;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.ArrayList;
 
 /**
  * A class that will be exposed as a remote object using RMI, so that the server can call methods on it. This is also a
@@ -25,7 +26,7 @@ import java.rmi.server.UnicastRemoteObject;
  *
  * @author Alexandru Tofan
  * @author Supendra Bogati
- * @version 1.3.0 - May 2024
+ * @version 1.4.0 - May 2024
  */
 public class Client implements Model, RemoteListener<Object, Object>
 {
@@ -172,6 +173,30 @@ public class Client implements Model, RemoteListener<Object, Object>
     try
     {
       remoteModel.callBingo(roomId, player);
+    }
+    catch (RemoteException e)
+    {
+      throw new IllegalStateException(e);
+    }
+  }
+
+  @Override public Player getScores(Player player) throws IllegalStateException
+  {
+    try
+    {
+      return remoteModel.getScores(player);
+    }
+    catch (RemoteException e)
+    {
+      throw new IllegalStateException(e);
+    }
+  }
+
+  @Override public ArrayList<Player> getTopPlayers() throws IllegalStateException
+  {
+    try
+    {
+      return remoteModel.getTopPlayers();
     }
     catch (RemoteException e)
     {
