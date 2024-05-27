@@ -111,7 +111,7 @@
     "Application.BlockingArrayDeque.executor": "Debug",
     "Application.Client.executor": "Run",
     "Application.Huinea.executor": "Run",
-    "Application.Server.executor": "Run",
+    "Application.Server.executor": "Debug",
     "Downloaded.Files.Path": "/Users/lucia/IdeaProjects/VIA-SEP2/server/libs",
     "Downloaded.Files.Path.Enabled": "true",
     "JUnit.BingoCardTest.cardNumbersAreUnique.executor": "Debug",
@@ -135,10 +135,10 @@
     "code.cleanup.on.save": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "lucia/card-win-logic",
+    "git-widget-placeholder": "supen&&sprint7",
     "jdk.selected.JAVA_MODULE": "17",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/lucia/IdeaProjects/VIA-SEP2/client/src/model/uPickBingo",
+    "last_opened_file_path": "/Users/lucia/IdeaProjects/VIA-SEP2/client/src/model",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.stylelint": "true",
@@ -151,13 +151,16 @@
     "project.structure.side.proportion": "0.30393487",
     "rearrange.code.on.save": "true",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.JavaFX",
+    "settings.editor.selected.configurable": "Shelf.Project.Settings",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
     "ChangesTree.GroupingKeys": [],
     "GitStage.ChangesTree.GroupingKeys": [
       "repository"
+    ],
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "XML"
     ]
   }
 }]]></component>
@@ -170,8 +173,8 @@
       <recent name="model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/client/src/model/uPickBingo" />
       <recent name="$PROJECT_DIR$/client/src/model" />
+      <recent name="$PROJECT_DIR$/client/src/model/uPickBingo" />
       <recent name="$PROJECT_DIR$/server/src/model/uPickBingo" />
       <recent name="$PROJECT_DIR$/server/src/model" />
       <recent name="$PROJECT_DIR$/server/src/view" />
@@ -192,14 +195,14 @@
       <recent name="viewmodel" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="model" />
       <recent name="model.uPickBingo" />
       <recent name="model.card" />
       <recent name="mediator" />
       <recent name="viewmodel" />
-      <recent name="model" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UPickBingoCardTest.hasWinCombination">
+  <component name="RunManager" selected="Application.Server">
     <configuration name="UPickBingoCardTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="server" />
       <extension name="coverage">
@@ -212,54 +215,6 @@
       <option name="MAIN_CLASS_NAME" value="model.UPickBingoCardTest" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UPickBingoCardTest.hasWinCombination" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="server" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="model" />
-      <option name="MAIN_CLASS_NAME" value="model.UPickBingoCardTest" />
-      <option name="METHOD_NAME" value="hasWinCombination" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UPickBingoCardTest.markedLinesAreHighlighted" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="server" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="model" />
-      <option name="MAIN_CLASS_NAME" value="model.UPickBingoCardTest" />
-      <option name="METHOD_NAME" value="markedLinesAreHighlighted" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UPickBingoCardTest.validLinesCanBeHighlighted" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="server" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="model" />
-      <option name="MAIN_CLASS_NAME" value="model.UPickBingoCardTest" />
-      <option name="METHOD_NAME" value="validLinesCanBeHighlighted" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -277,17 +232,11 @@
     <list>
       <item itemvalue="Application.Server" />
       <item itemvalue="Application.Client" />
-      <item itemvalue="JUnit.UPickBingoCardTest.hasWinCombination" />
-      <item itemvalue="JUnit.UPickBingoCardTest.markedLinesAreHighlighted" />
-      <item itemvalue="JUnit.UPickBingoCardTest.validLinesCanBeHighlighted" />
       <item itemvalue="JUnit.UPickBingoCardTest" />
       <item itemvalue="JUnit.UserRegisterLoginTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UPickBingoCardTest.hasWinCombination" />
-        <item itemvalue="JUnit.UPickBingoCardTest.markedLinesAreHighlighted" />
-        <item itemvalue="JUnit.UPickBingoCardTest.validLinesCanBeHighlighted" />
         <item itemvalue="JUnit.UPickBingoCardTest" />
         <item itemvalue="JUnit.UserRegisterLoginTest" />
       </list>
@@ -316,78 +265,8 @@
       <workItem from="1716356338778" duration="24281000" />
       <workItem from="1716541032291" duration="8752000" />
       <workItem from="1716653731301" duration="10491000" />
-    </task>
-    <task id="LOCAL-00062" summary="add room:full event and send roomId instead of whole Room">
-      <option name="closed" value="true" />
-      <created>1715789077095</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1715789077095</updated>
-    </task>
-    <task id="LOCAL-00063" summary="add room:full event and send roomId instead of whole Room">
-      <option name="closed" value="true" />
-      <created>1715789451973</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1715789451973</updated>
-    </task>
-    <task id="LOCAL-00064" summary="remove dependency on Room from RemoteModel and server/client communication">
-      <option name="closed" value="true" />
-      <created>1715800814223</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1715800814223</updated>
-    </task>
-    <task id="LOCAL-00065" summary="remove classes made redundant by last commit 0448e8f">
-      <option name="closed" value="true" />
-      <created>1715801035406</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1715801035406</updated>
-    </task>
-    <task id="LOCAL-00066" summary="rename weird to UPick">
-      <option name="closed" value="true" />
-      <created>1715854453313</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1715854453314</updated>
-    </task>
-    <task id="LOCAL-00067" summary="add infinite option to the Timer">
-      <option name="closed" value="true" />
-      <created>1715866083757</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1715866083757</updated>
-    </task>
-    <task id="LOCAL-00068" summary="rename called numbers property">
-      <option name="closed" value="true" />
-      <created>1715867298786</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1715867298786</updated>
-    </task>
-    <task id="LOCAL-00069" summary="add startGame method and some cleanup">
-      <option name="closed" value="true" />
-      <created>1715873479938</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1715873479938</updated>
-    </task>
-    <task id="LOCAL-00070" summary="add startGame method and some cleanup">
-      <option name="closed" value="true" />
-      <created>1715873580113</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1715873580113</updated>
+      <workItem from="1716762761819" duration="1259000" />
+      <workItem from="1716797292365" duration="7647000" />
     </task>
     <task id="LOCAL-00071" summary="add startGame method and some cleanup">
       <option name="closed" value="true" />
@@ -709,7 +588,79 @@
       <option name="project" value="LOCAL" />
       <updated>1716549385882</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <task id="LOCAL-00111" summary="fix database source connection&#10;&#10;Please don't change this because it will break the connection in IntelliJ">
+      <option name="closed" value="true" />
+      <created>1716710109919</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1716710109919</updated>
+    </task>
+    <task id="LOCAL-00112" summary="fix sql and add some help comments">
+      <option name="closed" value="true" />
+      <created>1716710580296</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1716710580296</updated>
+    </task>
+    <task id="LOCAL-00113" summary="fix sql and add some help comments">
+      <option name="closed" value="true" />
+      <created>1716710585344</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1716710585344</updated>
+    </task>
+    <task id="LOCAL-00114" summary="fix sql and add some help comments">
+      <option name="closed" value="true" />
+      <created>1716710591681</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1716710591681</updated>
+    </task>
+    <task id="LOCAL-00115" summary="add second constructor to User&#10;&#10;This constructor will aid creating new players and keeping error messages contained in the User class">
+      <option name="closed" value="true" />
+      <created>1716712953945</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1716712953945</updated>
+    </task>
+    <task id="LOCAL-00116" summary="add second constructor to User&#10;&#10;This constructor will aid creating new players and keeping error messages contained in the User class">
+      <option name="closed" value="true" />
+      <created>1716712976537</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1716712976537</updated>
+    </task>
+    <task id="LOCAL-00117" summary=".idea meta files">
+      <option name="closed" value="true" />
+      <created>1716811770292</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1716811770292</updated>
+    </task>
+    <task id="LOCAL-00118" summary="fix sql to return array of scores and rename topScores to topPlayers">
+      <option name="closed" value="true" />
+      <created>1716826176015</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1716826176015</updated>
+    </task>
+    <task id="LOCAL-00119" summary="fix sql to return array of scores and rename topScores to topPlayers">
+      <option name="closed" value="true" />
+      <created>1716826302016</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1716826302016</updated>
+    </task>
+    <option name="localTasksCounter" value="120" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -743,12 +694,6 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <option name="RELOAD_CONTEXT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="add reset to timer to fix turns" />
-    <MESSAGE value="add build artifacts" />
-    <MESSAGE value="change the turn timer to 15s" />
-    <MESSAGE value="add global styles for base color and font" />
-    <MESSAGE value="update login view to match newly added styles" />
-    <MESSAGE value="add stop method to ViewHandler, ViewController and ViewModel&#10;&#10;This method will allow to do some clean-up before a view is closed" />
     <MESSAGE value="add some helpful messages for failed connections" />
     <MESSAGE value="remove game:tick and start the game from the GameViewModel&#10;&#10;This is a fix for turns and the timer being out of sync with the client. The timer animation should be on client and start when the turn starts." />
     <MESSAGE value="remove loading styles from ViewHandler&#10;&#10;Should add them manually to the FXML" />
@@ -768,7 +713,13 @@
     <MESSAGE value="fix turn logic" />
     <MESSAGE value="fix timer on client" />
     <MESSAGE value="fix image placeholder" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix image placeholder" />
+    <MESSAGE value="fix database source connection&#10;&#10;Please don't change this because it will break the connection in IntelliJ" />
+    <MESSAGE value="fix sql and add some help comments" />
+    <MESSAGE value="add second constructor to User&#10;&#10;This constructor will aid creating new players and keeping error messages contained in the User class" />
+    <MESSAGE value=".idea meta files" />
+    <MESSAGE value="copy Score and Player class to client" />
+    <MESSAGE value="fix sql to return array of scores and rename topScores to topPlayers" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix sql to return array of scores and rename topScores to topPlayers" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -787,11 +738,6 @@
         <PinnedItemInfo parentTag="model.uPickBingo.UPickBingoCard" memberName="cells" />
       </pinned-members>
     </pin-to-top-manager>
-    <watches-manager>
-      <configuration name="Application">
-        <watch expression="players" language="JAVA" />
-      </configuration>
-    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

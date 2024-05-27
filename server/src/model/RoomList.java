@@ -56,11 +56,13 @@ public class RoomList
     room.startGame();
   }
 
-  public void callBingo(int roomId, Player player)
+  public Score callBingo(int roomId, Player player)
   {
     Room room = getRoomById(roomId);
-    room.callBingo(player);
+    Score score = room.callBingo(player);
     rooms.remove(room);
+
+    return score;
   }
 
   public void leaveRoom(int roomId, Player player)

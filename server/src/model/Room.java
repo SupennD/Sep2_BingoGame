@@ -75,9 +75,9 @@ public class Room implements Serializable
     return game.getRules();
   }
 
-  public void callBingo(Player player)
+  public Score callBingo(Player player)
   {
-    game.callBingo(getId(), player);
+    return game.callBingo(getId(), player);
   }
 
   @Override public boolean equals(Object obj)

@@ -1,5 +1,7 @@
 package persistence;
 
+import model.Player;
+import model.Score;
 import model.User;
 import utils.log.Log;
 
@@ -12,7 +14,8 @@ import java.util.Map;
  *
  * @author Lucia Andronic
  * @author Alexandru Tofan
- * @version 1.1.0 - May 2024
+ * @author Supendra Bogati
+ * @version 1.2.0 - May 2024
  */
 public class DatabaseCache implements Persistence
 {
@@ -66,7 +69,24 @@ public class DatabaseCache implements Persistence
 
   @Override public ArrayList<User> getAllUsers()
   {
-    // Always return a fresh list, this could potentially be too big to keep in cache
+    // This changes frequently, so fresh data is important
     return db.getAllUsers();
+  }
+
+  @Override public void addScore(Score score)
+  {
+    db.addScore(score);
+  }
+
+  @Override public Player getScores(Player player)
+  {
+    // This changes frequently, so fresh data is important
+    return db.getScores(player);
+  }
+
+  @Override public ArrayList<Player> getTopPlayers()
+  {
+    // This changes frequently, so fresh data is important
+    return db.getTopPlayers();
   }
 }

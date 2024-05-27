@@ -1,5 +1,7 @@
 package persistence;
 
+import model.Player;
+import model.Score;
 import model.User;
 import utility.persistence.MyDatabase;
 import utils.log.Log;
@@ -12,14 +14,15 @@ import java.util.ArrayList;
  *
  * @author Lucia Andronic
  * @author Alexandru Tofan
- * @version 1.1.0 - May 2024
+ * @author Supendra Bogati
+ * @version 1.2.0 - May 2024
  */
 public class Database implements Persistence
 {
   private static final String DRIVER = "org.postgresql.Driver";
   private static final String URL = "jdbc:postgresql://localhost:5432/postgres?currentSchema=bingo";
   private static final String USER = "postgres";
-  private static final String PASSWORD = "";
+  private static final String PASSWORD = ""; // This should not be done in a production environment
   private final MyDatabase db;
   private final Log log = Log.getInstance();
 
@@ -47,7 +50,7 @@ public class Database implements Persistence
 
       if (message.contains("duplicate"))
       {
-        message = "Username already taken";
+        message = "Username taken, choose another one";
       }
       else
       {
@@ -62,16 +65,18 @@ public class Database implements Persistence
   {
     try
     {
+      User user = new User(userName);
+
       String sql = "SELECT * FROM \"user\" WHERE \"userName\" = ?;";
-      ArrayList<Object[]> rows = db.query(sql, userName);
+      ArrayList<Object[]> rows = db.query(sql, user.getUserName());
 
       if (rows.isEmpty())
       {
-        throw new IllegalStateException("User not found. Please register first");
+        throw new IllegalStateException("User not found, register first");
       }
 
       Object[] row = rows.get(0);
-      User user = new User(row[0].toString(), row[1].toString());
+      user.setPassword(row[1].toString()); // Update the user password to the one from database
 
       log.info("Database: getUser: " + user);
 
@@ -85,16 +90,12 @@ public class Database implements Persistence
 
   @Override public User getUser(String userName, String password)
   {
-    User user = getUser(userName);
+    User user = new User(userName, password);
+    User storedUser = getUser(user.getUserName());
 
-    if (password == null || password.isEmpty())
+    if (!user.getPassword().equals(storedUser.getPassword()))
     {
-      throw new IllegalArgumentException("Password cannot be empty");
-    }
-
-    if (!user.getPassword().equals(password))
-    {
-      throw new IllegalArgumentException("Wrong password");
+      throw new IllegalArgumentException("Wrong password, try again");
     }
 
     log.info("Database: getUser: " + user);
@@ -123,6 +124,92 @@ public class Database implements Persistence
     catch (SQLException e)
     {
       throw new IllegalStateException("Getting users failed");
+    }
+  }
+
+  @Override public void addScore(Score score)
+  {
+    try
+    {
+      String sql = "INSERT INTO \"score\"(\"gameId\", \"userName\", \"score\") VALUES (?, ?, ?);";
+      db.update(sql, score.getGameId(), score.getUserName(), score.getScore());
+
+      log.info("Database: addScore: " + score);
+    }
+    catch (SQLException e)
+    {
+      throw new IllegalStateException("Adding score failed");
+    }
+  }
+
+  @Override public Player getScores(Player player)
+  {
+    try
+    {
+      String sql = """
+          SELECT score."gameId", score."userName", SUM(score."score") AS totalScore
+          FROM score
+          WHERE score."userName" = ?
+          GROUP BY score."gameId", score."userName";
+          """;
+      ArrayList<Object[]> rows = db.query(sql, player.getUserName());
+
+      if (rows.isEmpty())
+      {
+        throw new IllegalStateException("No scores found");
+      }
+
+      for (Object[] row : rows)
+      {
+        player.addScore(new Score(Long.valueOf(row[0].toString()), row[1].toString(), Long.valueOf(row[2].toString())));
+      }
+
+      log.info("Database: getScores: " + player.getScores().size());
+
+      return player;
+    }
+    catch (SQLException e)
+    {
+      throw new IllegalStateException("Getting scores failed");
+    }
+  }
+
+  @Override public ArrayList<Player> getTopPlayers()
+  {
+    try
+    {
+      String sql = """
+          SELECT score."userName", SUM(score."score") AS totalScore
+          FROM score
+          GROUP BY score."userName"
+          ORDER BY totalScore DESC
+          LIMIT 5;
+          """;
+      ArrayList<Object[]> rows = db.query(sql);
+
+      if (rows.isEmpty())
+      {
+        throw new IllegalStateException("No records yet");
+      }
+
+      ArrayList<Player> players = new ArrayList<>();
+
+      for (Object[] row : rows)
+      {
+        Score score = new Score(row[0].toString(), Long.valueOf(row[1].toString()));
+        Player player = new Player(score.getUserName());
+        player.addScore(score);
+
+        players.add(player);
+      }
+
+      log.info("Database: getTopPlayers: " + players.size());
+
+      return players;
+    }
+    catch (SQLException e)
+    {
+      throw new IllegalStateException("Getting top players failed");
     }
   }
 }

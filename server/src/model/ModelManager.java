@@ -6,6 +6,8 @@ import persistence.Persistence;
 import utility.observer.listener.GeneralListener;
 import utility.observer.subject.PropertyChangeHandler;
 
+import java.util.ArrayList;
+
 /**
  * A facade exposing methods to be used by clients of this application. This is also a
  * {@link utility.observer.subject.LocalSubject} in an observer pattern that can be used by
@@ -36,7 +38,7 @@ public class ModelManager implements Model
       throws IllegalArgumentException, IllegalStateException
   {
     User user = persistence.addUser(userName, password);
-    Player player = new Player(userName, password);
+    Player player = new Player(user.getUserName());
     propertyChangeHandler.firePropertyChange("register", user, player);
 
     return player;
@@ -46,7 +48,7 @@ public class ModelManager implements Model
       throws IllegalArgumentException, IllegalStateException
   {
     User user = persistence.getUser(userName, password);
-    Player player = new Player(userName, password);
+    Player player = new Player(user.getUserName());
     propertyChangeHandler.firePropertyChange("login", user, player);
 
     return player;
@@ -87,7 +89,18 @@ public class ModelManager implements Model
 
   @Override public void callBingo(int roomId, Player player) throws IllegalStateException
   {
-    roomList.callBingo(roomId, player);
+    Score score = roomList.callBingo(roomId, player);
+    persistence.addScore(score);
+  }
+
+  @Override public synchronized Player getScores(Player player) throws IllegalStateException
+  {
+    return persistence.getScores(player);
+  }
+
+  @Override public synchronized ArrayList<Player> getTopPlayers() throws IllegalStateException
+  {
+    return persistence.getTopPlayers();
   }
 
   /**

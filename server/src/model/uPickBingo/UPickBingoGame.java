@@ -3,6 +3,7 @@ package model.uPickBingo;
 import mediator.GameEvent;
 import model.Game;
 import model.Player;
+import model.Score;
 import model.card.Card;
 import model.card.Cell;
 import utility.observer.event.ObserverEvent;
@@ -161,16 +162,21 @@ public class UPickBingoGame implements Game, LocalListener<Integer, String>
     }
   }
 
-  @Override public synchronized void callBingo(int roomId, Player player)
+  @Override public synchronized Score callBingo(int roomId, Player player)
   {
     Player caller = players.get(players.indexOf(player));
     Card card = caller.getCard();
 
     if (card.hasWinCombination())
     {
-      gameEvent.fireEvent("game:win", roomId, player);
-      log.info("Player " + player + " won in room " + roomId);
+      // TODO: new Score(id, caller.getUserName(), points);
+      Score score = new Score(1L, "todo", 100L);
+      caller.addScore(score); // Add the score to the player who won
+      gameEvent.fireEvent("game:win", roomId, caller);
+      log.info("Player " + caller + " won in room " + roomId);
       stop(roomId);
+
+      return score;
     }
     else
     {

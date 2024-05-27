@@ -6,12 +6,12 @@ import java.io.Serializable;
  * A class containing user specific data and methods.
  *
  * @author Lucia Andronic
- * @version 1.1.0 - May 2024
+ * @version 1.2.0 - May 2024
  */
 public class User implements Serializable
 {
   private final String userName;
-  private final String password;
+  private String password;
 
   public User(String userName, String password) throws IllegalArgumentException
   {
@@ -29,6 +29,16 @@ public class User implements Serializable
     this.password = password;
   }
 
+  public User(String userName) throws IllegalArgumentException
+  {
+    if (userName == null || userName.isEmpty())
+    {
+      throw new IllegalArgumentException("Please enter an username");
+    }
+
+    this.userName = userName;
+  }
+
   public String getUserName()
   {
     return userName;
@@ -37,6 +47,11 @@ public class User implements Serializable
   public String getPassword()
   {
     return password;
+  }
+
+  public void setPassword(String password)
+  {
+    this.password = password;
   }
 
   @Override public boolean equals(Object obj)

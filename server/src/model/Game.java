@@ -11,7 +11,7 @@ public interface Game extends Serializable
   void start(int roomId);
   void stop(int roomId);
   void makeMove(Player player, Cell cell);
-  void callBingo(int roomId, Player player);
+  Score callBingo(int roomId, Player player);
   boolean isFull();
   String getRules();
 }

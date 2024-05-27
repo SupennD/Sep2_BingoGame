@@ -3,6 +3,8 @@ package model;
 import model.card.Cell;
 import utility.observer.subject.LocalSubject;
 
+import java.util.ArrayList;
+
 /**
  * A facade interface to be implemented by a class to expose critical methods for interacting with the application. It
  * also acts as a subject in the observer pattern as part of the MVVM application.
@@ -21,4 +23,6 @@ public interface Model extends LocalSubject<Object, Object>
   void startGame(int roomId) throws IllegalStateException;
   void makeMove(int roomId, Player player, Cell cell) throws IllegalStateException;
   void callBingo(int roomId, Player player) throws IllegalStateException;
+  Player getScores(Player player) throws IllegalStateException;
+  ArrayList<Player> getTopPlayers() throws IllegalStateException;
 }
