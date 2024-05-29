@@ -1,5 +1,6 @@
 package model;
 
+import model.card.Card;
 import model.card.Cell;
 import persistence.DatabaseCache;
 import persistence.Persistence;
@@ -82,9 +83,9 @@ public class ModelManager implements Model
     roomList.startGame(roomId);
   }
 
-  @Override public void makeMove(int roomId, Player player, Cell cell) throws IllegalStateException
+  @Override public Card makeMove(int roomId, Player player, Cell cell) throws IllegalStateException
   {
-    roomList.makeMove(roomId, player, cell);
+    return roomList.makeMove(roomId, player, cell);
   }
 
   @Override public void callBingo(int roomId, Player player) throws IllegalStateException

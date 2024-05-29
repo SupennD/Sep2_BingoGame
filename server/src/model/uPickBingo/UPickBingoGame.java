@@ -79,18 +79,20 @@ public class UPickBingoGame implements Game, LocalListener<Integer, String>
     return true;
   }
 
-  private synchronized void markCell(Cell cell)
+  private synchronized Card markCell(int playerIndex, Cell cell)
   {
     if (!isCalled(cell))
     {
       throw new IllegalStateException("Number " + cell + " was not called");
     }
 
-    Player player = players.get(currentPlayerIndex);
+    Player player = players.get(playerIndex);
     Card card = player.getCard();
     card.markCell(cell);
 
     log.info("Player " + player + " marked number " + cell);
+
+    return card;
   }
 
   @Override public synchronized void addPlayer(Player player)
@@ -142,24 +144,26 @@ public class UPickBingoGame implements Game, LocalListener<Integer, String>
     log.info("The game ended in room " + roomId);
   }
 
-  @Override public synchronized void makeMove(Player player, Cell cell)
+  @Override public synchronized Card makeMove(Player player, Cell cell)
   {
     log.info("Make move, player: " + player + ", number: " + cell + ", currentPlayer: " + isCurrentPlayer(player));
+
+    int playerIndex = players.indexOf(player);
 
     if (isCurrentPlayer(player))
     {
       boolean success = callCell(cell);
-      markCell(cell);
+      Card card = markCell(playerIndex, cell);
 
       if (success)
       {
         nextPlayer();
       }
+
+      return card;
     }
-    else
-    {
-      markCell(cell);
-    }
+
+    return markCell(playerIndex, cell);
   }
 
   @Override public synchronized Score callBingo(int roomId, Player player)
@@ -169,7 +173,7 @@ public class UPickBingoGame implements Game, LocalListener<Integer, String>
 
     if (card.hasWinCombination())
     {
-      // TODO: new Score(id, caller.getUserName(), points);
+      // TODO: get the details from the db
       Score score = new Score(1L, "todo", 100L);
       caller.addScore(score); // Add the score to the player who won
       gameEvent.fireEvent("game:win", roomId, caller);
@@ -180,7 +184,7 @@ public class UPickBingoGame implements Game, LocalListener<Integer, String>
     }
     else
     {
-      throw new IllegalStateException("Wow! I think you're trying to cheat");
+      throw new IllegalStateException("Woah! I think you're trying to cheat");
     }
   }
 
@@ -192,20 +196,17 @@ public class UPickBingoGame implements Game, LocalListener<Integer, String>
   @Override public String getRules()
   {
     return """
-        When you start a game, you will be assigned to a public room with available spaces where
-        you will wait there for the other three players to join as the game only starts when there
-        are 4 players. But you can always go back to the main screen while waiting for other players.
+        UPick Bingo, is a BINGO variation that has turns and players act as callers in their turn.
+        When your turn comes just call a number! In the meantime you can mark already called numbers on your card and try to form 5 lines.
+        When you have 5 lines highlighted just hit "BINGO" to win the game.
 
         Once the game starts the following rules apply:
-
         1. Each player will have a 5 by 5 bingo card with random numbers between 1 and 25.
         2. The players take turns to call a number from their bingo card.
-        3. The called number can be marked by all the players.
-        4. The steps 2 and 3 continue until a player hits “BINGO”
+        3. The called number can be marked by all the players, and you can mark called numbers even if it's not your turn.
         5. When 5 numbers are marked, either horizontally, vertically or diagonally, the line will be highlighted.
-        6. When a line is highlighted, a letter in “BINGO” also gets highlighted.
-        7. When all the letters in “BINGO” are highlighted the player can hit “BINGO” and win the game.
-        8. Whoever clicks the “BINGO” first will be the winner.
+        6. When 5 lines are highlighted you can hit "BINGO" to win the game.
+        7. The game continues until one of the players hits "BINGO".
         """;
   }
 

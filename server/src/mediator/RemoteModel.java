@@ -1,6 +1,7 @@
 package mediator;
 
 import model.Player;
+import model.card.Card;
 import model.card.Cell;
 import utility.observer.subject.RemoteSubject;
 
@@ -24,7 +25,7 @@ public interface RemoteModel extends RemoteSubject<Object, Object>
   void leaveRoom(int roomId, Player player) throws RemoteException;
   String getRules(int roomId) throws RemoteException;
   void startGame(int roomId) throws RemoteException;
-  void makeMove(int roomId, Player player, Cell cell) throws RemoteException;
+  Card makeMove(int roomId, Player player, Cell cell) throws RemoteException;
   void callBingo(int roomId, Player player) throws RemoteException;
   Player getScores(Player player) throws RemoteException;
   ArrayList<Player> getTopPlayers() throws RemoteException;

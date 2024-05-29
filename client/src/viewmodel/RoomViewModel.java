@@ -36,11 +36,12 @@ public class RoomViewModel extends ViewModel implements LocalListener<Object, Ob
 
   @Override public void reset()
   {
-    playersProperty.clear();
+    // Initialize 4 null elements to show placeholders in the UI
+    playersProperty.setAll(null, null, null, null);
     joinRoom(); // Send a join request for the current player
     isFullProperty.set(false);
     errorProperty.set(null);
-    messageProperty.set("Waiting for enough players to join");
+    messageProperty.set("Waiting for all players to join...");
     getRules(); // Get room rules
   }
 
@@ -110,8 +111,12 @@ public class RoomViewModel extends ViewModel implements LocalListener<Object, Ob
 
     if (currentRoomId == roomId)
     {
-      playersProperty.clear();
-      playersProperty.addAll(players);
+      // By setting elements one by one we are replacing the placeholders in the UI with the actual players
+      for (int i = 0; i < players.size(); i++)
+      {
+        playersProperty.set(i, players.get(i));
+      }
+
       viewModelState.put("players", players);
 
       // Update current player stored in state
@@ -128,7 +133,7 @@ public class RoomViewModel extends ViewModel implements LocalListener<Object, Ob
 
     if (currentRoomId == roomId)
     {
-      messageProperty.set("The game will now start");
+      messageProperty.set("All players joined, game will start");
       isFullProperty.set(true);
     }
   }

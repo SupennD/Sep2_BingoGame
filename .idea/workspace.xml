@@ -45,6 +45,19 @@
     <option name="myRunOnSave" value="true" />
   </component>
   <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="main" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
         <option value="PawsitiveCoder &lt;167691828+pawsitivecoder@users.noreply.github.com&gt;" />
@@ -52,7 +65,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="lucia/server-leaderboard" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -83,6 +96,9 @@
         },
         &quot;editorReviewEnabled&quot;: false
         }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar:///Library/Java/JavaVirtualMachines/liberica-jdk-17-full.jdk/Contents/Home/lib/src.zip!/java.base/java/util/List.java" root0="SKIP_INSPECTION" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -111,7 +127,7 @@
     "Application.BlockingArrayDeque.executor": "Debug",
     "Application.Client.executor": "Run",
     "Application.Huinea.executor": "Run",
-    "Application.Server.executor": "Run",
+    "Application.Server.executor": "Debug",
     "Downloaded.Files.Path": "/Users/lucia/IdeaProjects/VIA-SEP2/server/libs",
     "Downloaded.Files.Path.Enabled": "true",
     "JUnit.BingoCardTest.cardNumbersAreUnique.executor": "Debug",
@@ -135,10 +151,10 @@
     "code.cleanup.on.save": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "lucia/server-leaderboard",
+    "git-widget-placeholder": "lucia/update-mainView",
     "jdk.selected.JAVA_MODULE": "17",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/lucia/IdeaProjects/VIA-SEP2/client/src/model",
+    "last_opened_file_path": "/Users/lucia/IdeaProjects/VIA-SEP2/client/resources/sounds",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.stylelint": "true",
@@ -173,11 +189,11 @@
       <recent name="model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/resources/sounds" />
       <recent name="$PROJECT_DIR$/client/src/model" />
       <recent name="$PROJECT_DIR$/client/src/model/uPickBingo" />
       <recent name="$PROJECT_DIR$/server/src/model/uPickBingo" />
       <recent name="$PROJECT_DIR$/server/src/model" />
-      <recent name="$PROJECT_DIR$/server/src/view" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -267,78 +283,7 @@
       <workItem from="1716653731301" duration="10491000" />
       <workItem from="1716762761819" duration="1259000" />
       <workItem from="1716797292365" duration="7647000" />
-    </task>
-    <task id="LOCAL-00076" summary="fix called numbers list and turns">
-      <option name="closed" value="true" />
-      <created>1715890279919</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1715890279920</updated>
-    </task>
-    <task id="LOCAL-00077" summary="add reset to timer to fix turns">
-      <option name="closed" value="true" />
-      <created>1715892473780</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1715892473780</updated>
-    </task>
-    <task id="LOCAL-00078" summary="add reset to timer to fix turns">
-      <option name="closed" value="true" />
-      <created>1715892516096</created>
-      <option name="number" value="00078" />
-      <option name="presentableId" value="LOCAL-00078" />
-      <option name="project" value="LOCAL" />
-      <updated>1715892516096</updated>
-    </task>
-    <task id="LOCAL-00079" summary="add build artifacts">
-      <option name="closed" value="true" />
-      <created>1715894050054</created>
-      <option name="number" value="00079" />
-      <option name="presentableId" value="LOCAL-00079" />
-      <option name="project" value="LOCAL" />
-      <updated>1715894050054</updated>
-    </task>
-    <task id="LOCAL-00080" summary="change the turn timer to 15s">
-      <option name="closed" value="true" />
-      <created>1715949732020</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1715949732020</updated>
-    </task>
-    <task id="LOCAL-00081" summary="add global styles for base color and font">
-      <option name="closed" value="true" />
-      <created>1716063882265</created>
-      <option name="number" value="00081" />
-      <option name="presentableId" value="LOCAL-00081" />
-      <option name="project" value="LOCAL" />
-      <updated>1716063882265</updated>
-    </task>
-    <task id="LOCAL-00082" summary="update login view to match newly added styles">
-      <option name="closed" value="true" />
-      <created>1716063901326</created>
-      <option name="number" value="00082" />
-      <option name="presentableId" value="LOCAL-00082" />
-      <option name="project" value="LOCAL" />
-      <updated>1716063901326</updated>
-    </task>
-    <task id="LOCAL-00083" summary="add stop method to ViewHandler, ViewController and ViewModel&#10;&#10;This method will allow to do some clean-up before a view is closed">
-      <option name="closed" value="true" />
-      <created>1716072012768</created>
-      <option name="number" value="00083" />
-      <option name="presentableId" value="LOCAL-00083" />
-      <option name="project" value="LOCAL" />
-      <updated>1716072012768</updated>
-    </task>
-    <task id="LOCAL-00084" summary="add stop method to ViewHandler, ViewController and ViewModel&#10;&#10;This method will allow to do some clean-up before a view is closed">
-      <option name="closed" value="true" />
-      <created>1716072168356</created>
-      <option name="number" value="00084" />
-      <option name="presentableId" value="LOCAL-00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1716072168356</updated>
+      <workItem from="1716964744800" duration="16889000" />
     </task>
     <task id="LOCAL-00085" summary="add some helpful messages for failed connections">
       <option name="closed" value="true" />
@@ -660,7 +605,79 @@
       <option name="project" value="LOCAL" />
       <updated>1716833115960</updated>
     </task>
-    <option name="localTasksCounter" value="125" />
+    <task id="LOCAL-00125" summary="main view leaderboard">
+      <option name="closed" value="true" />
+      <created>1716900008011</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1716900008011</updated>
+    </task>
+    <task id="LOCAL-00126" summary="replace room view players hbox with listview">
+      <option name="closed" value="true" />
+      <created>1716911785089</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1716911785089</updated>
+    </task>
+    <task id="LOCAL-00127" summary="use listview in game view for players">
+      <option name="closed" value="true" />
+      <created>1716913003864</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1716913003864</updated>
+    </task>
+    <task id="LOCAL-00128" summary="card highlight update">
+      <option name="closed" value="true" />
+      <created>1716939132844</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1716939132844</updated>
+    </task>
+    <task id="LOCAL-00129" summary="card highlight update">
+      <option name="closed" value="true" />
+      <created>1716939214055</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1716939214055</updated>
+    </task>
+    <task id="LOCAL-00130" summary="card highlight update">
+      <option name="closed" value="true" />
+      <created>1716939221360</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1716939221360</updated>
+    </task>
+    <task id="LOCAL-00131" summary="style called numbers">
+      <option name="closed" value="true" />
+      <created>1716976011960</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
+      <option name="project" value="LOCAL" />
+      <updated>1716976011960</updated>
+    </task>
+    <task id="LOCAL-00132" summary="add some bg music for fun">
+      <option name="closed" value="true" />
+      <created>1716977541316</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
+      <option name="project" value="LOCAL" />
+      <updated>1716977541316</updated>
+    </task>
+    <task id="LOCAL-00133" summary="update rules">
+      <option name="closed" value="true" />
+      <created>1716978292131</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1716978292131</updated>
+    </task>
+    <option name="localTasksCounter" value="134" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -694,13 +711,6 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <option name="RELOAD_CONTEXT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="rename player in state to currentPlayer to make the distinction clear" />
-    <MESSAGE value="add win view" />
-    <MESSAGE value="final ver" />
-    <MESSAGE value="vinal version of room" />
-    <MESSAGE value="move condition after sleep in Timer" />
-    <MESSAGE value="add one cycle to the timer timeline" />
-    <MESSAGE value="add markCell method to Card" />
     <MESSAGE value="add markCell and is marked method to Card" />
     <MESSAGE value="mark the cell on the players card server-side" />
     <MESSAGE value="update remove player" />
@@ -719,7 +729,14 @@
     <MESSAGE value="remove unused references" />
     <MESSAGE value="add methods to RemoteModel" />
     <MESSAGE value="add leaderboard to client ViewModel" />
-    <option name="LAST_COMMIT_MESSAGE" value="add leaderboard to client ViewModel" />
+    <MESSAGE value="main view leaderboard" />
+    <MESSAGE value="replace room view players hbox with listview" />
+    <MESSAGE value="use listview in game view for players" />
+    <MESSAGE value="card highlight update" />
+    <MESSAGE value="style called numbers" />
+    <MESSAGE value="add some bg music for fun" />
+    <MESSAGE value="update rules" />
+    <option name="LAST_COMMIT_MESSAGE" value="update rules" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -731,6 +748,11 @@
           <properties class="java.lang.IllegalArgumentException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/server/src/model/uPickBingo/UPickBingoGame.java</url>
+          <line>170</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>

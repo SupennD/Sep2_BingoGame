@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
-<VBox xmlns:fx="http://javafx.com/fxml/1" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity"
-      minHeight="-Infinity"
-      minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="24.0"
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" alignment="TOP_CENTER" prefHeight="600.0" prefWidth="480.0" spacing="12.0"
       stylesheets="@../css/styles.css" userData="Bingo - Public room" xmlns="http://javafx.com/javafx/21"
       fx:controller="view.RoomViewController">
     <children>
@@ -15,62 +16,16 @@
                 <Button mnemonicParsing="false" onAction="#onGetRules" text="Rules"/>
             </children>
         </HBox>
-        <HBox fx:id="playersHBox" prefHeight="100.0" prefWidth="200.0" spacing="24.0">
+        <TextFlow>
             <children>
-                <VBox alignment="CENTER" spacing="8.0" HBox.hgrow="ALWAYS">
-                    <children>
-                        <VBox alignment="CENTER" fillWidth="false" maxHeight="72.0" maxWidth="72.0" prefHeight="72.0"
-                              prefWidth="72.0" style="-fx-background-color: -fx-base; -fx-background-radius: 8px;"
-                              VBox.vgrow="NEVER">
-                            <children>
-                                <ProgressIndicator maxHeight="32.0" maxWidth="32.0"/>
-                            </children>
-                        </VBox>
-                        <Text text="Connecting"/>
-                    </children>
-                </VBox>
-                <VBox alignment="CENTER" spacing="8.0" HBox.hgrow="ALWAYS">
-                    <children>
-                        <VBox alignment="CENTER" fillWidth="false" maxHeight="72.0" maxWidth="72.0" prefHeight="72.0"
-                              prefWidth="72.0" style="-fx-background-color: -fx-base; -fx-background-radius: 8px;"
-                              VBox.vgrow="NEVER">
-                            <children>
-                                <ProgressIndicator maxHeight="32.0" maxWidth="32.0"/>
-                            </children>
-                        </VBox>
-                        <Text text="Connecting"/>
-                    </children>
-                </VBox>
-                <VBox alignment="CENTER" spacing="8.0" HBox.hgrow="ALWAYS">
-                    <children>
-                        <VBox alignment="CENTER" fillWidth="false" maxHeight="72.0" maxWidth="72.0" prefHeight="72.0"
-                              prefWidth="72.0" style="-fx-background-color: -fx-base; -fx-background-radius: 8px;"
-                              VBox.vgrow="NEVER">
-                            <children>
-                                <ProgressIndicator maxHeight="32.0" maxWidth="32.0"/>
-                            </children>
-                        </VBox>
-                        <Text text="Connecting"/>
-                    </children>
-                </VBox>
-                <VBox alignment="CENTER" spacing="8.0" HBox.hgrow="ALWAYS">
-                    <children>
-                        <VBox alignment="CENTER" fillWidth="false" maxHeight="72.0" maxWidth="72.0" prefHeight="72.0"
-                              prefWidth="72.0" style="-fx-background-color: -fx-base; -fx-background-radius: 8px;"
-                              VBox.vgrow="NEVER">
-                            <children>
-                                <ProgressIndicator maxHeight="32.0" maxWidth="32.0"/>
-                            </children>
-                        </VBox>
-                        <Text text="Connecting"/>
-                    </children>
-                </VBox>
+                <Text fx:id="messageText"/>
             </children>
-        </HBox>
-        <TextFlow textAlignment="CENTER">
+        </TextFlow>
+        <ListView fx:id="playersListView" minHeight="-Infinity" prefHeight="368.0" styleClass="strip-list-view"
+                  VBox.vgrow="ALWAYS"/>
+        <TextFlow>
             <children>
                 <Text fx:id="errorText" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0"/>
-                <Text fx:id="messageText"/>
             </children>
         </TextFlow>
     </children>

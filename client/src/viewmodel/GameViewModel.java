@@ -113,7 +113,7 @@ public class GameViewModel extends ViewModel implements LocalListener<Object, Ob
     return timerProperty;
   }
 
-  public boolean makeMove(Cell cell)
+  public void makeMove(Cell cell)
   {
     errorProperty.set(null);
 
@@ -121,16 +121,14 @@ public class GameViewModel extends ViewModel implements LocalListener<Object, Ob
     {
       int roomId = (Integer) viewModelState.get("roomId");
       Player currentPlayer = (Player) viewModelState.get("currentPlayer");
-      model.makeMove(roomId, currentPlayer, cell);
+      Card card = model.makeMove(roomId, currentPlayer, cell);
+      cardProperty.set(card);
 
-      return true;
     }
     catch (IllegalStateException e)
     {
       errorProperty.set(e.getMessage());
     }
-
-    return false;
   }
 
   public void callBingo()
@@ -193,7 +191,7 @@ public class GameViewModel extends ViewModel implements LocalListener<Object, Ob
     if (roomId == currentRoomId)
     {
       Cell calledCell = (Cell) observerEvent.getValue2();
-      calledCellsProperty.add(calledCell);
+      calledCellsProperty.add(0, calledCell);
     }
   }
 

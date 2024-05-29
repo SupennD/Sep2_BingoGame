@@ -118,6 +118,7 @@ public class UPickBingoCard implements Card
   private void highlightMarkedLines()
   {
     Cell[][] cells = getCells();
+    highlightedLines.clear();
     ArrayList<Cell> diagonal = new ArrayList<>();
     ArrayList<Cell> antiDiagonal = new ArrayList<>();
 

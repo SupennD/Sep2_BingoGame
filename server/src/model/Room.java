@@ -1,5 +1,6 @@
 package model;
 
+import model.card.Card;
 import model.card.Cell;
 import utils.blocking.BlockingArrayDeque;
 import utils.blocking.BlockingDeque;
@@ -102,9 +103,9 @@ public class Room implements Serializable
     game.start(getId());
   }
 
-  public void makeMove(Player player, Cell cell)
+  public Card makeMove(Player player, Cell cell)
   {
-    game.makeMove(player, cell);
+    return game.makeMove(player, cell);
   }
 
   public void leaveRoom(Player player)

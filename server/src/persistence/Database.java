@@ -156,7 +156,7 @@ public class Database implements Persistence
 
       if (rows.isEmpty())
       {
-        throw new IllegalStateException("No scores found");
+        return player;
       }
 
       for (Object[] row : rows)
@@ -189,7 +189,7 @@ public class Database implements Persistence
 
       if (rows.isEmpty())
       {
-        throw new IllegalStateException("No records yet");
+        throw new IllegalStateException("No top players yet");
       }
 
       ArrayList<Player> players = new ArrayList<>();

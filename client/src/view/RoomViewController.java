@@ -2,20 +2,13 @@ package view;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.beans.InvalidationListener;
 import javafx.fxml.FXML;
-import javafx.scene.control.ProgressIndicator;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Priority;
+import javafx.scene.control.ListView;
 import javafx.scene.layout.Region;
-import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 import model.Player;
 import viewmodel.RoomViewModel;
-
-import java.util.List;
 
 /**
  * A controller class responsible for starting the game when a room is full
@@ -26,7 +19,7 @@ import java.util.List;
  */
 public class RoomViewController extends ViewController<RoomViewModel>
 {
-  @FXML private HBox playersHBox;
+  @FXML private ListView<Player> playersListView;
   @FXML private Text errorText;
   @FXML private Text messageText;
 
@@ -34,10 +27,8 @@ public class RoomViewController extends ViewController<RoomViewModel>
   {
     super.init(viewHandler, viewModel, root);
 
-    // Add a listener to the observable list of players and update the view when it changes
-    viewModel.playersProperty().addListener((InvalidationListener) o -> {
-      updatePlayers(viewModel.playersProperty().stream().toList());
-    });
+    playersListView.setCellFactory(list -> new PlayerListCell());
+    playersListView.setItems(viewModel.playersProperty());
     errorText.textProperty().bind(viewModel.errorProperty());
     messageText.textProperty().bind(viewModel.messageProperty());
 
@@ -52,37 +43,6 @@ public class RoomViewController extends ViewController<RoomViewModel>
         openGameViewTimeline.play(); // start the game in 2s after the room is full
       }
     });
-  }
-
-  private void updatePlayers(List<Player> players)
-  {
-    playersHBox.getChildren().clear();
-
-    for (int i = 0; i < 4; i++)
-    {
-      Text userNameText = new Text("Connecting...");
-      ProgressIndicator progressIndicator = new ProgressIndicator();
-      VBox avatarVBox = new VBox(progressIndicator);
-      VBox playerVBox = new VBox(avatarVBox, userNameText);
-      playerVBox.getStyleClass().add("player-placeholder");
-      HBox.setHgrow(playerVBox, Priority.ALWAYS);
-
-      try
-      {
-        Player player = players.get(i);
-        userNameText.setText(player.getUserName());
-        // TODO: update avatar once we add image support
-        ImageView avatarImageView = new ImageView("images/user-placeholder.png");
-        avatarImageView.setFitWidth(48);
-        avatarImageView.setFitHeight(48);
-        avatarVBox.getChildren().setAll(avatarImageView);
-        playersHBox.getChildren().add(playerVBox);
-      }
-      catch (IndexOutOfBoundsException e) // If player not present at position, show default placeholder
-      {
-        playersHBox.getChildren().add(playerVBox);
-      }
-    }
   }
 
   @FXML public void onGetRules()

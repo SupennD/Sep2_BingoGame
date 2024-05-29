@@ -2,7 +2,7 @@
     /* Customize the default theme to use blue colors */
     -fx-base: #c1edff;
     -fx-accent: #69cbff;
-    -fx-accent-alt: #ef6e11;
+    -fx-accent-alt: #ff6f16;
     -fx-control-inner-background: derive(-fx-base, 45%);
     -fx-default-button: -fx-accent;
 
@@ -26,24 +26,22 @@
     -fx-effect: -bingo-shadow;
 }
 
-.player-placeholder {
-    -fx-spacing: 8px;
-    -fx-alignment: center;
+/* Strip default ListView styles */
+.strip-list-view > .virtual-flow > .scroll-bar,
+.strip-list-view > .virtual-flow > .scroll-bar .decrement-arrow,
+.strip-list-view > .virtual-flow > .scroll-bar .increment-arrow,
+.strip-list-view > .virtual-flow > .scroll-bar .decrement-button,
+.strip-list-view > .virtual-flow > .scroll-bar .increment-button {
+    -fx-pref-width: 0;
+    -fx-pref-height: 0;
 }
 
-.player-placeholder > VBox {
-    -fx-background-color: -fx-base;
-    -fx-background-radius: 8px;
-    -fx-pref-width: 72px;
-    -fx-pref-height: 72px;
-    -fx-max-width: 72px;
-    -fx-max-height: 72px;
-    -fx-alignment: center;
+.strip-list-view {
+    -fx-background-color: transparent;
 }
 
-.player-placeholder > VBox > ProgressIndicator {
-    -fx-max-width: 32px;
-    -fx-max-height: 32px;
+.strip-list-view .list-cell {
+    -fx-background-color: transparent;
 }
 
 .surface {
@@ -58,5 +56,88 @@
 }
 
 .selected {
+    -fx-background-color: -fx-accent;
+}
+
+#calledCellsListView {
+    -fx-padding: 0 6;
+}
+
+#calledCellsListView .list-cell {
+    -fx-padding: 0;
+    -fx-pref-width: 64;
+    -fx-pref-height: 64;
+    -fx-background-radius: 4;
+    -fx-background-insets: 4;
+    -fx-content-display: center;
+    -fx-alignment: center;
+    -fx-font-size: 24;
+}
+
+#calledCellsListView .list-cell:selected {
+    -fx-background-color: -fx-accent;
+    -fx-text-fill: white;
+}
+
+#calledCellsListView .list-cell Circle {
+    -fx-fill: derive(-fx-accent-alt, 99%);
+}
+
+#calledCellsListView .list-cell:selected Circle {
+    -fx-fill: -fx-accent-alt;
+}
+
+#cardGridPane {
+    -fx-hgap: 8;
+    -fx-vgap: 8;
+    -fx-padding: 8;
+    -fx-border-color: -fx-accent;
+    -fx-border-radius: 12;
+    -fx-border-width: 2;
+    -fx-background-color: linear-gradient(to top, #d4f9ff, #ffffff 40%);
+    -fx-background-radius: 12;
+    -fx-effect: -bingo-shadow;
+}
+
+#cardGridPane Pane {
+    -fx-background-color: linear-gradient(from 0px 0px to 64px 0px, repeat, transparent 92%, #c4f1ff 93%, #c4f1ff 95%, transparent 96%), linear-gradient(from 0px 0px to 0px 64px, repeat, transparent 92%, #c4f1ff 93%, #c4f1ff 95%, transparent 96%);
+}
+
+#cardGridPane StackPane {
+    -fx-background-color: -fx-base;
+    -fx-background-radius: 4;
+    -fx-max-height: 24;
+}
+
+#cardGridPane StackPane Text {
+    -fx-font-size: 18;
+}
+
+#cardGridPane Button {
+    -fx-padding: 0;
+    -fx-font-size: 24;
+    -fx-background-color: rgba(255, 255, 255, 0.7);
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-alignment: center;
+    -fx-content-display: center;
+    -fx-pref-width: 56;
+    -fx-pref-height: 56;
+}
+
+#cardGridPane Button Circle {
+    -fx-fill: derive(-fx-accent-alt, 99%);
+}
+
+#cardGridPane Button:disabled {
+    -fx-opacity: 1;
+    -fx-text-fill: white;
+}
+
+#cardGridPane Button:disabled Circle {
+    -fx-fill: -fx-accent-alt;
+}
+
+#cardGridPane Button.highlighted {
     -fx-background-color: -fx-accent;
 }
