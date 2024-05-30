@@ -173,8 +173,10 @@ public class UPickBingoGame implements Game, LocalListener<Integer, String>
 
     if (card.hasWinCombination())
     {
-      // TODO: get the details from the db
-      Score score = new Score(1L, "todo", 100L);
+      // TODO: Using the factory method the games should be created based on the users choice.
+      // Then the details about a game like id and points would be taken from the database and passed
+      // to the concrete game implementations.
+      Score score = new Score(1L, caller.getUserName(), 100L);
       caller.addScore(score); // Add the score to the player who won
       gameEvent.fireEvent("game:win", roomId, caller);
       log.info("Player " + caller + " won in room " + roomId);
@@ -204,9 +206,9 @@ public class UPickBingoGame implements Game, LocalListener<Integer, String>
         1. Each player will have a 5 by 5 bingo card with random numbers between 1 and 25.
         2. The players take turns to call a number from their bingo card.
         3. The called number can be marked by all the players, and you can mark called numbers even if it's not your turn.
-        5. When 5 numbers are marked, either horizontally, vertically or diagonally, the line will be highlighted.
-        6. When 5 lines are highlighted you can hit "BINGO" to win the game.
-        7. The game continues until one of the players hits "BINGO".
+        4. When 5 numbers are marked, either horizontally, vertically or diagonally, the line will be highlighted.
+        5. When 5 lines are highlighted you can hit "BINGO" to win the game.
+        6. The game continues until one of the players hits "BINGO".
         """;
   }
 

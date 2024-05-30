@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
- * A class offering PostgreSQL database persistence.
+ * A class offering Postgres SQL database persistence. Implements the {@link Persistence} interface
  *
  * @author Lucia Andronic
  * @author Alexandru Tofan
@@ -26,11 +26,24 @@ public class Database implements Persistence
   private final MyDatabase db;
   private final Log log = Log.getInstance();
 
+  /**
+   * Constructs a new Database instance.
+   *
+   * @throws ClassNotFoundException if the Postgres SQL driver class cannot be found
+   */
   public Database() throws ClassNotFoundException
   {
     this.db = new MyDatabase(DRIVER, URL, USER, PASSWORD);
   }
 
+  /**
+   * Adds a new user to the database.
+   *
+   * @param userName the username of the new user
+   * @param password the password of the new user
+   * @return the newly added user
+   * @throws IllegalStateException if adding the user fails, such as due to a duplicate username
+   */
   @Override public User addUser(String userName, String password)
   {
     try
@@ -61,6 +74,13 @@ public class Database implements Persistence
     }
   }
 
+  /**
+   * Gets a user from the database by their username.
+   *
+   * @param userName the username of the user to retrieve
+   * @return the user with the specified username
+   * @throws IllegalStateException if the user cannot be found
+   */
   @Override public User getUser(String userName)
   {
     try
@@ -88,6 +108,15 @@ public class Database implements Persistence
     }
   }
 
+  /**
+   * Gets a user from the database by their username and password.
+   *
+   * @param userName the username of the user to retrieve
+   * @param password the password of the user to retrieve
+   * @return the user with the specified username and password
+   * @throws IllegalArgumentException if the password is empty or incorrect
+   * @throws IllegalStateException if the user cannot be found
+   */
   @Override public User getUser(String userName, String password)
   {
     User user = new User(userName, password);
@@ -103,6 +132,12 @@ public class Database implements Persistence
     return user;
   }
 
+  /**
+   * Gets all users from the database.
+   *
+   * @return an ArrayList containing all users
+   * @throws IllegalStateException if retrieving users fails
+   */
   @Override public ArrayList<User> getAllUsers()
   {
     try
@@ -127,6 +162,12 @@ public class Database implements Persistence
     }
   }
 
+  /**
+   * Adds a score entry to the database.
+   *
+   * @param score the score to be added
+   * @throws IllegalStateException if adding the score fails
+   */
   @Override public void addScore(Score score)
   {
     try
@@ -142,6 +183,13 @@ public class Database implements Persistence
     }
   }
 
+  /**
+   * Gets scores for a specific player from the database.
+   *
+   * @param player the player for whom scores are to be retrieved
+   * @return the player with the retrieved scores
+   * @throws IllegalStateException if retrieving scores fails
+   */
   @Override public Player getScores(Player player)
   {
     try
@@ -174,6 +222,12 @@ public class Database implements Persistence
     }
   }
 
+  /**
+   * Gets the top players with the highest scores from the database.
+   *
+   * @return an ArrayList containing the top players
+   * @throws IllegalStateException if retrieving top players fails
+   */
   @Override public ArrayList<Player> getTopPlayers()
   {
     try

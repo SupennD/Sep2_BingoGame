@@ -12,6 +12,7 @@ import java.time.format.DateTimeFormatter;
  * to it to listen for {@code time} and {@code end} events.
  *
  * @author Lucia Andronic
+ * @author Supendra Bogati
  * @version 1.1.0 - May 2024
  */
 public class Timer implements Runnable, LocalSubject<Integer, String>
@@ -23,6 +24,12 @@ public class Timer implements Runnable, LocalSubject<Integer, String>
   private int elapsedSeconds;
   private boolean running;
 
+  /**
+   * A constructor setting a timer with the specified duration in seconds and the option to run infinitely.
+   *
+   * @param timerSeconds the duration of the timer in seconds
+   * @param infinite true if the timer should run infinitely otherwise false
+   */
   public Timer(int timerSeconds, boolean infinite)
   {
     this.propertyChangeHandler = new PropertyChangeHandler<>(this, true);
@@ -34,32 +41,56 @@ public class Timer implements Runnable, LocalSubject<Integer, String>
     this.timerThread.setDaemon(true);
   }
 
+  /**
+   * A constructor setting a timer with the specified duration in seconds and setting the option to run infinitely to
+   * false.
+   *
+   * @param timerSeconds the duration of the timer in seconds
+   */
   public Timer(int timerSeconds)
   {
     this(timerSeconds, false);
   }
 
+  /**
+   * A method that can be used to get the total duration of the timer in seconds.
+   *
+   * @return the total duration of the timer in seconds
+   */
   public int getSeconds()
   {
     return timerSeconds;
   }
 
+  /**
+   * Starts the timer.
+   */
   public void start()
   {
     timerThread.start();
   }
 
+  /**
+   * Resets the timer to its initial duration.
+   */
   public void reset()
   {
     elapsedSeconds = timerSeconds;
   }
 
+  /**
+   * Stops the timer.
+   */
   public void stop()
   {
     running = false;
     propertyChangeHandler.firePropertyChange("timer:stop", elapsedSeconds, null);
   }
 
+  /**
+   * Runs the timer thread and continuously updates the elapsed time and resets the timer to its initial duration.
+   * {@code elapsedSeconds = timerSeconds} .
+   */
   @Override public void run()
   {
     try
@@ -95,11 +126,25 @@ public class Timer implements Runnable, LocalSubject<Integer, String>
     }
   }
 
+  /**
+   * Adds a general listener to the timer, allowing it to listen for specific events.
+   *
+   * @param generalListener the listener to be added
+   * @param strings the event(s) to listen for
+   * @return true if the listener was successfully added, false otherwise
+   */
   @Override public boolean addListener(GeneralListener<Integer, String> generalListener, String... strings)
   {
     return propertyChangeHandler.addListener(generalListener, strings);
   }
 
+  /**
+   * Removes a general listener from the timer.
+   *
+   * @param generalListener the listener to be removed
+   * @param strings the event(s) to stop listening for
+   * @return true if the listener was successfully removed, false otherwise
+   */
   @Override public boolean removeListener(GeneralListener<Integer, String> generalListener, String... strings)
   {
     return propertyChangeHandler.removeListener(generalListener, strings);

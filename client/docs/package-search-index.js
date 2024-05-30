@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"mediator"},{"l":"model"},{"l":"model.card"},{"l":"model.uPickBingo"},{"l":"utils"},{"l":"utils.blocking"},{"l":"utils.log"},{"l":"view"},{"l":"viewmodel"}];updateSearchResults();

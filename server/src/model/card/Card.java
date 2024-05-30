@@ -8,7 +8,7 @@ import java.util.ArrayList;
  *
  * @author Alexandru Tofan
  * @author Lucia Andronic
- * @version 1.3.0 - May 2024
+ * @version 1.2.0 - May 2024
  */
 public interface Card extends Serializable
 {

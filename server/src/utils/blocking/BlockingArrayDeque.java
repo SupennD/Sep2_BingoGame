@@ -137,6 +137,11 @@ public class BlockingArrayDeque<T> implements BlockingDeque<T>
     return deque.size();
   }
 
+  /**
+   * Converts the elements of this deque into an {@link ArrayList}.
+   *
+   * @return an {@link ArrayList} containing all elements of this deque
+   */
   public synchronized ArrayList<T> toArrayList()
   {
     ArrayList<T> list = new ArrayList<>(size());

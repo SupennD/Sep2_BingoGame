@@ -12,7 +12,12 @@
         <Text styleClass="h1" text="You" VBox.vgrow="NEVER"/>
         <VBox fx:id="userVBox" VBox.vgrow="NEVER"/>
         <Text styleClass="h1" text="Play" VBox.vgrow="NEVER"/>
-        <Button mnemonicParsing="false" onAction="#onJoinRoom" text="U-Pick Bingo" VBox.vgrow="NEVER"/>
+        <HBox spacing="12.0">
+            <children>
+                <Button mnemonicParsing="false" onAction="#onJoinRoom" text="U-Pick Bingo" VBox.vgrow="NEVER"/>
+                <Button mnemonicParsing="false" text="More to come soon..." VBox.vgrow="NEVER" disable="true"/>
+            </children>
+        </HBox>
         <Text styleClass="h1" text="Leaderboard" VBox.vgrow="NEVER"/>
         <VBox minHeight="448.0" VBox.vgrow="ALWAYS">
             <children>

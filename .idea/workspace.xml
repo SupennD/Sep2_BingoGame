@@ -127,7 +127,7 @@
     "Application.BlockingArrayDeque.executor": "Debug",
     "Application.Client.executor": "Run",
     "Application.Huinea.executor": "Run",
-    "Application.Server.executor": "Debug",
+    "Application.Server.executor": "Run",
     "Downloaded.Files.Path": "/Users/lucia/IdeaProjects/VIA-SEP2/server/libs",
     "Downloaded.Files.Path.Enabled": "true",
     "JUnit.BingoCardTest.cardNumbersAreUnique.executor": "Debug",
@@ -151,7 +151,7 @@
     "code.cleanup.on.save": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "lucia/update-mainView",
+    "git-widget-placeholder": "JavaDoc",
     "jdk.selected.JAVA_MODULE": "17",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/lucia/IdeaProjects/VIA-SEP2/client/resources/sounds",
@@ -284,38 +284,6 @@
       <workItem from="1716762761819" duration="1259000" />
       <workItem from="1716797292365" duration="7647000" />
       <workItem from="1716964744800" duration="16889000" />
-    </task>
-    <task id="LOCAL-00085" summary="add some helpful messages for failed connections">
-      <option name="closed" value="true" />
-      <created>1716073097526</created>
-      <option name="number" value="00085" />
-      <option name="presentableId" value="LOCAL-00085" />
-      <option name="project" value="LOCAL" />
-      <updated>1716073097526</updated>
-    </task>
-    <task id="LOCAL-00086" summary="remove game:tick and start the game from the GameViewModel&#10;&#10;This is a fix for turns and the timer being out of sync with the client. The timer animation should be on client and start when the turn starts.">
-      <option name="closed" value="true" />
-      <created>1716234782573</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1716234782573</updated>
-    </task>
-    <task id="LOCAL-00087" summary="remove loading styles from ViewHandler&#10;&#10;Should add them manually to the FXML">
-      <option name="closed" value="true" />
-      <created>1716238060831</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1716238060831</updated>
-    </task>
-    <task id="LOCAL-00088" summary="add the default styles to all FXML views">
-      <option name="closed" value="true" />
-      <created>1716238767983</created>
-      <option name="number" value="00088" />
-      <option name="presentableId" value="LOCAL-00088" />
-      <option name="project" value="LOCAL" />
-      <updated>1716238767983</updated>
     </task>
     <task id="LOCAL-00089" summary="add the default styles to all FXML views">
       <option name="closed" value="true" />
@@ -677,7 +645,39 @@
       <option name="project" value="LOCAL" />
       <updated>1716978292131</updated>
     </task>
-    <option name="localTasksCounter" value="134" />
+    <task id="LOCAL-00134" summary="generate java doc">
+      <option name="closed" value="true" />
+      <created>1716983360346</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1716983360346</updated>
+    </task>
+    <task id="LOCAL-00135" summary="update javadocs">
+      <option name="closed" value="true" />
+      <created>1716983394310</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1716983394310</updated>
+    </task>
+    <task id="LOCAL-00136" summary="fix rule numbering">
+      <option name="closed" value="true" />
+      <created>1716993968486</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1716993968486</updated>
+    </task>
+    <task id="LOCAL-00137" summary="add more button">
+      <option name="closed" value="true" />
+      <created>1716994493813</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
+      <option name="project" value="LOCAL" />
+      <updated>1716994493813</updated>
+    </task>
+    <option name="localTasksCounter" value="138" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -711,10 +711,6 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <option name="RELOAD_CONTEXT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="add markCell and is marked method to Card" />
-    <MESSAGE value="mark the cell on the players card server-side" />
-    <MESSAGE value="update remove player" />
-    <MESSAGE value="replace exception in cell state" />
     <MESSAGE value="fix turn logic" />
     <MESSAGE value="fix timer on client" />
     <MESSAGE value="fix image placeholder" />
@@ -736,7 +732,11 @@
     <MESSAGE value="style called numbers" />
     <MESSAGE value="add some bg music for fun" />
     <MESSAGE value="update rules" />
-    <option name="LAST_COMMIT_MESSAGE" value="update rules" />
+    <MESSAGE value="generate java doc" />
+    <MESSAGE value="update javadocs" />
+    <MESSAGE value="fix rule numbering" />
+    <MESSAGE value="add more button" />
+    <option name="LAST_COMMIT_MESSAGE" value="add more button" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -748,11 +748,6 @@
           <properties class="java.lang.IllegalArgumentException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/server/src/model/uPickBingo/UPickBingoGame.java</url>
-          <line>170</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
